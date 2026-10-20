@@ -1,12 +1,13 @@
 {
   "private": true,
   "scripts": {
-    "build:css": "tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.css --minify"
+    "build:css": "tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.css --minify && node scripts/copy-font.js"
   },
   "overrides": {
     "@parcel/watcher": "2.6.0"
   },
   "devDependencies": {
+    "@fontsource/space-grotesk": "5.3.0",
     "@tailwindcss/cli": "4.3.3",
     "tailwindcss": "4.3.3"
   }
