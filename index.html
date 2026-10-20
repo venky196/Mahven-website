@@ -76,6 +76,22 @@
             color: var(--cyan);
         }
 
+        .site-nav a[aria-current="location"] {
+            position: relative;
+            color: #fff;
+        }
+
+        .site-nav a[aria-current="location"]::after {
+            position: absolute;
+            right: 0;
+            bottom: -0.65rem;
+            left: 0;
+            height: 2px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--cyan), #a78bfa);
+            content: "";
+        }
+
         .site-nav a span {
             background: rgba(98, 230, 229, 0.12);
             color: var(--cyan);
@@ -117,6 +133,58 @@
                 radial-gradient(ellipse at 72% 35%, rgba(97, 71, 221, 0.25), transparent 34%),
                 radial-gradient(ellipse at 92% 80%, rgba(44, 188, 206, 0.12), transparent 28%),
                 linear-gradient(128deg, #080f23 0%, #101a3a 54%, #121633 100%);
+        }
+
+        .section-spotlight {
+            position: relative;
+            isolation: isolate;
+        }
+
+        .section-spotlight::after {
+            position: absolute;
+            z-index: 0;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(
+                520px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
+                rgba(102, 122, 255, 0.13),
+                transparent 76%
+            );
+            content: "";
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 220ms ease;
+        }
+
+        .section-spotlight:hover::after,
+        .section-spotlight:focus-within::after {
+            opacity: 1;
+        }
+
+        .section-spotlight:hover,
+        .section-spotlight:focus-within {
+            box-shadow: inset 0 0 0 1px rgba(116, 137, 255, 0.22);
+        }
+
+        .section-spotlight > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-section.section-spotlight::after {
+            background: radial-gradient(
+                560px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
+                rgba(98, 230, 229, 0.11),
+                transparent 76%
+            );
+        }
+
+        .about-section.section-spotlight::after {
+            background: radial-gradient(
+                520px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
+                rgba(138, 105, 255, 0.2),
+                transparent 76%
+            );
         }
 
         .hero-section::before {
@@ -255,6 +323,11 @@
             box-shadow: 0 20px 48px rgba(48, 62, 126, 0.12);
         }
 
+        .service-grid > div:focus-within {
+            border-color: #c9d4ff;
+            box-shadow: 0 20px 48px rgba(48, 62, 126, 0.12);
+        }
+
         .service-grid > div > div:first-child {
             border: 1px solid #dee5ff;
             background: linear-gradient(145deg, #edf1ff, #f5eefe);
@@ -333,6 +406,14 @@
             border-color: #e3e8f3;
             border-radius: 1.5rem;
             box-shadow: 0 24px 60px rgba(25, 39, 79, 0.09);
+            transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+        }
+
+        .retail-card:hover,
+        .retail-card:focus-within {
+            transform: translateY(-4px);
+            border-color: #c9d4ff;
+            box-shadow: 0 28px 68px rgba(48, 62, 126, 0.15);
         }
 
         .retail-card input {
@@ -350,6 +431,14 @@
             border-radius: 1.5rem;
             background: #f8f9fd;
             box-shadow: 0 24px 60px rgba(25, 39, 79, 0.07);
+            transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+        }
+
+        .contact-card:hover,
+        .contact-card:focus-within {
+            transform: translateY(-4px);
+            border-color: #c9d4ff;
+            box-shadow: 0 28px 68px rgba(48, 62, 126, 0.13);
         }
 
         .contact-card label {
@@ -453,8 +542,16 @@
             }
 
             .site-nav a {
+                position: relative;
                 border-radius: 0.65rem;
                 padding: 0.85rem 1rem;
+            }
+
+            .site-nav a[aria-current="location"]::after {
+                right: auto;
+                bottom: 0.45rem;
+                left: 1rem;
+                width: 1.5rem;
             }
 
             .site-nav a:hover {
@@ -492,6 +589,12 @@
                 transition-duration: 0.01ms !important;
             }
         }
+
+        @media (hover: none) {
+            .section-spotlight::after {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
@@ -519,7 +622,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section section-spotlight">
         <div class="hero-layout mx-auto grid max-w-7xl items-center gap-14 px-6 text-center lg:grid-cols-2 lg:text-left">
             <div class="hero-copy">
                 <span class="hero-label mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-[0.68rem] font-bold uppercase">
@@ -569,7 +672,7 @@
     </section>
 
     <!-- IT Consulting Services -->
-    <section id="services" class="py-24">
+    <section id="services" class="section-spotlight py-24">
         <div class="max-w-7xl mx-auto px-6">
             <div class="services-heading mx-auto mb-14 max-w-2xl text-center">
                 <span class="section-kicker mb-4 inline-block rounded-full px-3 py-1.5 text-[0.65rem] font-bold uppercase">What we do</span>
@@ -602,7 +705,7 @@
     </section>
 
     <!-- About Mahven -->
-    <section id="about" class="about-section py-24">
+    <section id="about" class="about-section section-spotlight py-24">
         <div class="max-w-3xl mx-auto px-6 text-center">
             <span class="section-kicker mb-5 inline-block rounded-full px-3 py-1.5 text-[0.65rem] font-bold uppercase">Established in 2017</span>
             <h2 class="mb-5 font-bold">About Mahven</h2>
@@ -611,7 +714,7 @@
     </section>
 
     <!-- Retail Section Preview -->
-    <section id="retail" class="py-24">
+    <section id="retail" class="section-spotlight py-24">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
             <div class="retail-heading">
                 <span class="section-kicker mb-5 inline-block rounded-full border-amber-300/40 bg-amber-100 px-3 py-1.5 text-[0.65rem] font-bold uppercase text-amber-800">Upcoming Venture</span>
@@ -637,7 +740,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section border-t py-24">
+    <section id="contact" class="contact-section section-spotlight border-t py-24">
         <div class="max-w-3xl mx-auto px-6 text-center">
             <span class="section-kicker mb-4 inline-block rounded-full px-3 py-1.5 text-[0.65rem] font-bold uppercase">Let’s build what’s next</span>
             <h2 class="mb-4 font-bold">Start a Conversation</h2>
@@ -730,6 +833,54 @@
                 setMenuOpen(false);
             }
         });
+
+        const spotlightSections = document.querySelectorAll(".section-spotlight");
+        const navigableSections = [...siteNav.querySelectorAll("a[href^='#']")]
+            .map((link) => ({
+                link,
+                section: document.querySelector(link.getAttribute("href"))
+            }))
+            .filter(({ section }) => section);
+        let sectionUpdatePending = false;
+
+        spotlightSections.forEach((section) => {
+            section.addEventListener("pointermove", (event) => {
+                if (event.pointerType === "touch") {
+                    return;
+                }
+                const bounds = section.getBoundingClientRect();
+                section.style.setProperty("--spotlight-x", `${event.clientX - bounds.left}px`);
+                section.style.setProperty("--spotlight-y", `${event.clientY - bounds.top}px`);
+            });
+        });
+
+        function updateActiveNavigation() {
+            const focusLine = window.innerHeight * 0.42;
+            const activeSection = navigableSections.find(({ section }) => {
+                const bounds = section.getBoundingClientRect();
+                return bounds.top <= focusLine && bounds.bottom > focusLine;
+            });
+
+            navigableSections.forEach(({ link, section }) => {
+                if (activeSection && section === activeSection.section) {
+                    link.setAttribute("aria-current", "location");
+                } else {
+                    link.removeAttribute("aria-current");
+                }
+            });
+            sectionUpdatePending = false;
+        }
+
+        function scheduleActiveNavigationUpdate() {
+            if (!sectionUpdatePending) {
+                sectionUpdatePending = true;
+                window.requestAnimationFrame(updateActiveNavigation);
+            }
+        }
+
+        window.addEventListener("scroll", scheduleActiveNavigationUpdate, { passive: true });
+        window.addEventListener("resize", scheduleActiveNavigationUpdate);
+        updateActiveNavigation();
 
         const chatToggle = document.getElementById("chat-toggle");
         const chatPanel = document.getElementById("chat-panel");
