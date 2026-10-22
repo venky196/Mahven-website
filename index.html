@@ -182,33 +182,34 @@
         </div>
     </section>
 
-    <!-- Guided customer chat -->
+    <!-- Free, locally running FAQ assistant -->
     <div class="fixed bottom-5 right-5 z-50">
-        <section id="chat-panel" class="hidden mb-4 w-[calc(100vw-2.5rem)] max-w-sm overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl" role="dialog" aria-labelledby="chat-title" aria-modal="false">
+        <section id="chat-panel" class="hidden mb-4 max-h-[calc(100vh-6rem)] w-[calc(100vw-2.5rem)] max-w-sm overflow-y-auto rounded-2xl border border-slate-200 bg-white shadow-2xl" role="dialog" aria-labelledby="chat-title" aria-modal="false">
             <div class="flex items-start justify-between bg-slate-900 p-5 text-white">
                 <div>
-                    <h2 id="chat-title" class="font-bold">Mahven Chat Assistant</h2>
-                    <p class="mt-1 text-xs text-slate-300">Guided help, with enquiries by email</p>
+                    <h2 id="chat-title" class="font-bold">Mahven FAQ Assistant</h2>
+                    <p class="mt-1 text-xs text-slate-300">Quick answers about Mahven</p>
                 </div>
                 <button id="chat-close" type="button" class="rounded-lg p-1 text-slate-300 hover:bg-slate-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-white" aria-label="Close chat">
                     <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M4.293 4.293a1 1 0 0 1 1.414 0L10 8.586l4.293-4.293a1 1 0 1 1 1.414 1.414L11.414 10l4.293 4.293a1 1 0 0 1-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L8.586 10 4.293 5.707a1 1 0 0 1 0-1.414Z"/></svg>
                 </button>
             </div>
             <div class="p-5">
-                <p class="mb-4 text-sm leading-relaxed text-slate-700" aria-live="polite">Hi! What can we help you with today?</p>
+                <p id="chat-greeting" class="mb-4 text-sm leading-relaxed text-slate-700" aria-live="polite">Hi! Choose a topic to find out more.</p>
                 <div id="chat-topics" class="space-y-2">
-                    <button type="button" data-topic="IT consulting" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-600">IT consulting</button>
-                    <button type="button" data-topic="Quality engineering" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Quality engineering</button>
-                    <button type="button" data-topic="Specialised IT recruitment" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Specialised IT recruitment</button>
-                    <button type="button" data-topic="Retail updates" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Retail updates</button>
-                    <button type="button" data-topic="General enquiry" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Something else</button>
+                    <button type="button" data-topic="consulting" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">IT consulting</button>
+                    <button type="button" data-topic="quality" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Quality engineering</button>
+                    <button type="button" data-topic="recruitment" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">IT recruitment</button>
+                    <button type="button" data-topic="retail" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Retail updates</button>
+                    <button type="button" data-topic="about" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">About Mahven</button>
+                    <button type="button" data-topic="contact" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Contact the team</button>
                 </div>
                 <div id="chat-response" class="hidden" aria-live="polite">
                     <p id="chat-response-text" class="mb-4 text-sm leading-relaxed text-slate-700"></p>
                     <a id="chat-email-link" class="btn-enquiry block w-full text-center focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2" href="mailto:support@mahven.com.au">Email our team</a>
                     <button id="chat-back" type="button" class="mt-3 w-full rounded-xl px-4 py-2 text-sm font-medium text-blue-700 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Choose another topic</button>
                 </div>
-                <p class="mt-4 border-t border-slate-100 pt-3 text-xs text-slate-500">This guided assistant doesn't use AI or collect messages. Your email app will open so you can contact support@mahven.com.au.</p>
+                <p class="mt-4 border-t border-slate-100 pt-3 text-xs text-slate-500">Free FAQ helper — answers are prewritten, and nothing you type is collected or sent to an AI service.</p>
             </div>
         </section>
         <button id="chat-toggle" type="button" class="ml-auto flex items-center gap-2 rounded-full border border-blue-500/30 bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-slate-900/20 transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2" aria-expanded="false" aria-controls="chat-panel">
@@ -235,9 +236,42 @@
         const chatTopics = document.getElementById("chat-topics");
         const chatResponse = document.getElementById("chat-response");
         const chatResponseText = document.getElementById("chat-response-text");
+        const chatGreeting = document.getElementById("chat-greeting");
         const chatEmailLink = document.getElementById("chat-email-link");
         const chatClose = document.getElementById("chat-close");
         const chatBack = document.getElementById("chat-back");
+        const chatAnswers = {
+            consulting: {
+                label: "IT consulting",
+                answer: "Mahven provides technology consulting across systems integration, telecommunications operations support, enterprise architecture and digital strategy. The team can help with IT roadmaps, vendor evaluation and technology adoption.",
+                subject: "IT consulting enquiry"
+            },
+            quality: {
+                label: "quality engineering",
+                answer: "Mahven supports quality engineering through test management, automated testing frameworks and quality assurance transformations. Get in touch to discuss the needs of your team or project.",
+                subject: "Quality engineering enquiry"
+            },
+            recruitment: {
+                label: "specialised IT recruitment",
+                answer: "Mahven connects organisations with specialist talent in quality engineering, test automation, OSS/BSS, telecommunications and enterprise architecture.",
+                subject: "IT recruitment enquiry"
+            },
+            retail: {
+                label: "retail updates",
+                answer: "Mahven's retail portal is in development. The upcoming storefront is planned to feature curated consumer goods and tech-backed retail options. Contact the team to register your interest.",
+                subject: "Retail updates"
+            },
+            about: {
+                label: "Mahven",
+                answer: "Mahven Australia has been established since 2017 and delivers IT consulting, quality engineering and specialised recruitment.",
+                subject: "General enquiry"
+            },
+            contact: {
+                label: "the Mahven team",
+                answer: "Email support@mahven.com.au to discuss a project, consulting or recruitment needs, or the upcoming retail division.",
+                subject: "General enquiry"
+            }
+        };
 
         function closeChat() {
             chatPanel.classList.add("hidden");
@@ -262,16 +296,22 @@
                 return;
             }
 
-            const topic = topicButton.dataset.topic;
-            chatResponseText.textContent = `Thanks for your interest in ${topic.toLowerCase()}. Email our team and we'll help with your enquiry.`;
-            chatEmailLink.href = `mailto:support@mahven.com.au?subject=${encodeURIComponent(`Mahven enquiry: ${topic}`)}&body=${encodeURIComponent(`Hello Mahven team,\n\nI'm interested in ${topic.toLowerCase()}.\n\nName:\nCompany:\nHow can you help?\n`)}`;
+            const topic = chatAnswers[topicButton.dataset.topic];
+            if (!topic) {
+                return;
+            }
+
+            chatResponseText.textContent = topic.answer;
+            chatEmailLink.href = `mailto:support@mahven.com.au?subject=${encodeURIComponent(`Mahven enquiry: ${topic.subject}`)}&body=${encodeURIComponent(`Hello Mahven team,\n\nI'm interested in ${topic.label}.\n\nName:\nCompany:\nHow can you help?\n`)}`;
             chatTopics.classList.add("hidden");
+            chatGreeting.classList.add("hidden");
             chatResponse.classList.remove("hidden");
             chatBack.focus();
         });
 
         chatBack.addEventListener("click", () => {
             chatResponse.classList.add("hidden");
+            chatGreeting.classList.remove("hidden");
             chatTopics.classList.remove("hidden");
             chatTopics.querySelector("button").focus();
         });
