@@ -672,34 +672,40 @@
                 </p>
                 <div class="hero-actions flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
                     <a href="#contact" class="hero-primary rounded-xl px-7 py-4 text-center font-semibold text-white transition">Consult Our Experts <span aria-hidden="true">→</span></a>
-                    <a href="#retail" class="hero-secondary rounded-xl border px-7 py-4 text-center font-semibold transition">Explore Retail Division <span aria-hidden="true">→</span></a>
+                    <a href="#retail" class="hero-secondary rounded-xl border px-7 py-4 text-center font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900">See Retail Plans <span aria-hidden="true">→</span></a>
                 </div>
             </div>
-            <div class="hero-console rounded-3xl p-8 text-slate-200">
+            <div class="hero-console rounded-3xl p-6 text-slate-200 sm:p-8">
                 <div class="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
-                    <div class="flex items-center gap-2">
-                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <div class="flex items-center gap-2" aria-hidden="true">
+                        <span class="h-3 w-3 rounded-full bg-red-500"></span>
+                        <span class="h-3 w-3 rounded-full bg-yellow-500"></span>
+                        <span class="h-3 w-3 rounded-full bg-green-500"></span>
                     </div>
-                    <span class="ml-2 font-mono text-xs text-slate-400">mahven-core-services.sh</span>
                     <span class="rounded-full border border-emerald-300/20 bg-emerald-300/10 px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-wider text-emerald-200">Capabilities</span>
                 </div>
+                <h2 class="mb-4 text-lg font-semibold text-white">How Mahven Helps</h2>
+                <p class="mb-5 text-sm text-slate-300">Consulting, engineering and specialist talent</p>
                 <ul class="space-y-3 text-left text-sm">
-                    <li class="flex items-center text-emerald-300">
-                        <span class="mr-2">✔</span> Test Management & Automation Transformation
+                    <li class="flex items-start gap-3">
+                        <span class="mt-0.5 text-emerald-300" aria-hidden="true">✓</span>
+                        <span>Test management &amp; automation transformation</span>
                     </li>
-                    <li class="flex items-center text-emerald-300">
-                        <span class="mr-2">✔</span> Enterprise Systems Architecture
+                    <li class="flex items-start gap-3">
+                        <span class="mt-0.5 text-emerald-300" aria-hidden="true">✓</span>
+                        <span>Enterprise systems architecture</span>
                     </li>
-                    <li class="flex items-center text-emerald-300">
-                        <span class="mr-2">✔</span> Telecommunications & Operations Support
+                    <li class="flex items-start gap-3">
+                        <span class="mt-0.5 text-emerald-300" aria-hidden="true">✓</span>
+                        <span>Telecommunications &amp; operations support</span>
                     </li>
-                    <li class="flex items-center text-emerald-300">
-                        <span class="mr-2">✔</span> Specialised IT Recruitment for Niche Skills
+                    <li class="flex items-start gap-3">
+                        <span class="mt-0.5 text-emerald-300" aria-hidden="true">✓</span>
+                        <span>Specialised IT recruitment for niche skills</span>
                     </li>
-                    <li class="flex items-center text-slate-400">
-                        <span class="mr-2 text-blue-400">⚡</span> Retail Platform Expansion (Launching Soon)
+                    <li class="flex items-start gap-3 text-slate-300">
+                        <span class="mt-0.5 text-blue-300" aria-hidden="true">→</span>
+                        <span>Retail platform expansion <span class="text-slate-400">(in development)</span></span>
                     </li>
                 </ul>
             </div>
@@ -714,26 +720,22 @@
                 <h2 class="mb-4 font-bold">IT Consulting Services</h2>
                 <p class="text-slate-600">Strategic technology consulting and specialist talent for complex enterprise environments.</p>
             </div>
-            <div class="service-grid grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-                <div class="p-8 bg-slate-50 border border-slate-200 rounded-2xl">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center font-bold text-xl mb-6">01</div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Quality Engineering</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Comprehensive test management, automated testing frameworks, and high-performance quality assurance transformations.</p>
+            <div class="service-grid grid items-stretch gap-6 md:grid-cols-2 xl:grid-cols-4 xl:gap-8">
+                <div class="h-full rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+                    <h3 class="mb-3 text-xl font-bold text-slate-900">Quality Engineering</h3>
+                    <p class="text-sm leading-relaxed text-slate-600">Comprehensive test management, automated testing frameworks, and high-performance quality assurance transformations.</p>
                 </div>
-                <div class="p-8 bg-slate-50 border border-slate-200 rounded-2xl">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center font-bold text-xl mb-6">02</div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Systems Integration</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Expert guidance in telecommunications operations support systems (OSS) and enterprise-wide technical frameworks.</p>
+                <div class="h-full rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+                    <h3 class="mb-3 text-xl font-bold text-slate-900">Systems Integration</h3>
+                    <p class="text-sm leading-relaxed text-slate-600">Expert guidance in telecommunications operations support systems (OSS) and enterprise-wide technical frameworks.</p>
                 </div>
-                <div class="p-8 bg-slate-50 border border-slate-200 rounded-2xl">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center font-bold text-xl mb-6">03</div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Specialised IT Recruitment</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Connecting organisations with hard-to-find talent in quality engineering, test automation, OSS/BSS, telecommunications, and enterprise architecture.</p>
+                <div class="h-full rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+                    <h3 class="mb-3 text-xl font-bold text-slate-900">Specialised IT Recruitment</h3>
+                    <p class="text-sm leading-relaxed text-slate-600">Connecting organisations with hard-to-find talent in quality engineering, test automation, OSS/BSS, telecommunications, and enterprise architecture.</p>
                 </div>
-                <div class="p-8 bg-slate-50 border border-slate-200 rounded-2xl">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center font-bold text-xl mb-6">04</div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Digital Strategy</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">End-to-end IT roadmapping, vendor evaluation, and modern technology adoption roadmaps designed for resilience.</p>
+                <div class="h-full rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+                    <h3 class="mb-3 text-xl font-bold text-slate-900">Digital Strategy</h3>
+                    <p class="text-sm leading-relaxed text-slate-600">End-to-end IT roadmapping, vendor evaluation, and modern technology adoption roadmaps designed for resilience.</p>
                 </div>
             </div>
         </div>
@@ -744,7 +746,7 @@
         <div class="max-w-3xl mx-auto px-6 text-center">
             <span class="section-kicker mb-5 inline-block rounded-full px-3 py-1.5 text-[0.65rem] font-bold uppercase">Established in 2017</span>
             <h2 class="mb-5 font-bold">About Mahven</h2>
-            <p class="text-lg text-slate-600 leading-relaxed">Mahven delivers IT consulting, quality engineering, and specialised recruitment to connect businesses with hard-to-find technology talent.</p>
+            <p class="text-lg leading-relaxed text-slate-600">Mahven connects businesses with specialist technology talent through IT consulting, quality engineering and recruitment.</p>
         </div>
     </section>
 
@@ -811,33 +813,34 @@
         </div>
     </section>
 
-    <!-- Guided customer chat -->
+    <!-- Free, locally running FAQ assistant -->
     <div class="fixed bottom-5 right-5 z-50">
-        <section id="chat-panel" class="hidden mb-4 w-[calc(100vw-2.5rem)] max-w-sm overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl" role="dialog" aria-labelledby="chat-title" aria-modal="false">
+        <section id="chat-panel" class="hidden mb-4 max-h-[calc(100vh-6rem)] w-[calc(100vw-2.5rem)] max-w-sm overflow-y-auto rounded-2xl border border-slate-200 bg-white shadow-2xl" role="dialog" aria-labelledby="chat-title" aria-modal="false">
             <div class="flex items-start justify-between bg-slate-900 p-5 text-white">
                 <div>
-                    <h2 id="chat-title" class="font-bold">Mahven Chat Assistant</h2>
-                    <p class="mt-1 text-xs text-slate-300">Guided help, with enquiries by email</p>
+                    <h2 id="chat-title" class="font-bold">Mahven FAQ Assistant</h2>
+                    <p class="mt-1 text-xs text-slate-300">Quick answers about Mahven</p>
                 </div>
                 <button id="chat-close" type="button" class="rounded-lg p-1 text-slate-300 hover:bg-slate-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-white" aria-label="Close chat">
                     <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M4.293 4.293a1 1 0 0 1 1.414 0L10 8.586l4.293-4.293a1 1 0 1 1 1.414 1.414L11.414 10l4.293 4.293a1 1 0 0 1-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L8.586 10 4.293 5.707a1 1 0 0 1 0-1.414Z"/></svg>
                 </button>
             </div>
             <div class="p-5">
-                <p class="mb-4 text-sm leading-relaxed text-slate-700" aria-live="polite">Hi! What can we help you with today?</p>
+                <p id="chat-greeting" class="mb-4 text-sm leading-relaxed text-slate-700" aria-live="polite">Hi! Choose a topic to find out more.</p>
                 <div id="chat-topics" class="space-y-2">
-                    <button type="button" data-topic="IT consulting" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-600">IT consulting</button>
-                    <button type="button" data-topic="Quality engineering" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Quality engineering</button>
-                    <button type="button" data-topic="Specialised IT recruitment" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Specialised IT recruitment</button>
-                    <button type="button" data-topic="Retail updates" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Retail updates</button>
-                    <button type="button" data-topic="General enquiry" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Something else</button>
+                    <button type="button" data-topic="consulting" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">IT consulting</button>
+                    <button type="button" data-topic="quality" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Quality engineering</button>
+                    <button type="button" data-topic="recruitment" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">IT recruitment</button>
+                    <button type="button" data-topic="retail" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Retail updates</button>
+                    <button type="button" data-topic="about" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">About Mahven</button>
+                    <button type="button" data-topic="contact" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Contact the team</button>
                 </div>
                 <div id="chat-response" class="hidden" aria-live="polite">
                     <p id="chat-response-text" class="mb-4 text-sm leading-relaxed text-slate-700"></p>
                     <a id="chat-email-link" class="btn-enquiry block w-full text-center focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2" href="mailto:support@mahven.com.au">Email our team</a>
                     <button id="chat-back" type="button" class="mt-3 w-full rounded-xl px-4 py-2 text-sm font-medium text-blue-700 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Choose another topic</button>
                 </div>
-                <p class="mt-4 border-t border-slate-100 pt-3 text-xs text-slate-500">This guided assistant doesn't use AI or collect messages. Your email app will open so you can contact support@mahven.com.au.</p>
+                <p class="mt-4 border-t border-slate-100 pt-3 text-xs text-slate-500">Free FAQ helper — answers are prewritten, and nothing you type is collected or sent to an AI service.</p>
             </div>
         </section>
         <button id="chat-toggle" type="button" class="ml-auto flex items-center gap-2 rounded-full border border-blue-500/30 bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-slate-900/20 transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2" aria-expanded="false" aria-controls="chat-panel">
@@ -850,10 +853,10 @@
     <footer class="site-footer border-t py-12 text-slate-400">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
             <p>&copy; 2026 Mahven Australia. All rights reserved.</p>
-            <div class="flex space-x-6">
-                <a href="#services" class="hover:text-white transition">IT Consulting</a>
-                <a href="#retail" class="hover:text-white transition">Retail</a>
-                <a href="#contact" class="hover:text-white transition">Contact</a>
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-3">
+                <a href="#services" class="rounded-sm transition hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-slate-900">IT Consulting</a>
+                <a href="#retail" class="rounded-sm transition hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-slate-900">Retail</a>
+                <a href="#contact" class="rounded-sm transition hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-slate-900">Contact</a>
             </div>
         </div>
     </footer>
@@ -931,6 +934,7 @@
         const chatTopics = document.getElementById("chat-topics");
         const chatResponse = document.getElementById("chat-response");
         const chatResponseText = document.getElementById("chat-response-text");
+        const chatGreeting = document.getElementById("chat-greeting");
         const chatEmailLink = document.getElementById("chat-email-link");
         const chatClose = document.getElementById("chat-close");
         const chatBack = document.getElementById("chat-back");
@@ -939,6 +943,39 @@
         function buildSupportEmailLink(subject, body) {
             return `mailto:${supportEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         }
+
+        const chatAnswers = {
+            consulting: {
+                label: "IT consulting",
+                answer: "Mahven provides technology consulting across systems integration, telecommunications operations support, enterprise architecture and digital strategy. The team can help with IT roadmaps, vendor evaluation and technology adoption.",
+                subject: "IT consulting enquiry"
+            },
+            quality: {
+                label: "quality engineering",
+                answer: "Mahven supports quality engineering through test management, automated testing frameworks and quality assurance transformations. Get in touch to discuss the needs of your team or project.",
+                subject: "Quality engineering enquiry"
+            },
+            recruitment: {
+                label: "specialised IT recruitment",
+                answer: "Mahven connects organisations with specialist talent in quality engineering, test automation, OSS/BSS, telecommunications and enterprise architecture.",
+                subject: "IT recruitment enquiry"
+            },
+            retail: {
+                label: "retail updates",
+                answer: "Mahven's retail portal is in development. The upcoming storefront is planned to feature curated consumer goods and tech-backed retail options. Contact the team to register your interest.",
+                subject: "Retail updates"
+            },
+            about: {
+                label: "Mahven",
+                answer: "Mahven Australia has been established since 2017 and delivers IT consulting, quality engineering and specialised recruitment.",
+                subject: "General enquiry"
+            },
+            contact: {
+                label: "the Mahven team",
+                answer: "Email support@mahven.com.au to discuss a project, consulting or recruitment needs, or the upcoming retail division.",
+                subject: "General enquiry"
+            }
+        };
 
         const retailNotifyForm = document.getElementById("retail-notify-form");
         const retailNotifyStatus = document.getElementById("retail-notify-status");
@@ -991,16 +1028,22 @@
                 return;
             }
 
-            const topic = topicButton.dataset.topic;
-            chatResponseText.textContent = `Thanks for your interest in ${topic.toLowerCase()}. Email our team and we'll help with your enquiry.`;
-            chatEmailLink.href = buildSupportEmailLink(`Mahven enquiry: ${topic}`, `Hello Mahven team,\n\nI'm interested in ${topic.toLowerCase()}.\n\nName:\nCompany:\nHow can you help?\n`);
+            const topic = chatAnswers[topicButton.dataset.topic];
+            if (!topic) {
+                return;
+            }
+
+            chatResponseText.textContent = topic.answer;
+            chatEmailLink.href = buildSupportEmailLink(`Mahven enquiry: ${topic.subject}`, `Hello Mahven team,\n\nI'm interested in ${topic.label}.\n\nName:\nCompany:\nHow can you help?\n`);
             chatTopics.classList.add("hidden");
+            chatGreeting.classList.add("hidden");
             chatResponse.classList.remove("hidden");
             chatBack.focus();
         });
 
         chatBack.addEventListener("click", () => {
             chatResponse.classList.add("hidden");
+            chatGreeting.classList.remove("hidden");
             chatTopics.classList.remove("hidden");
             chatTopics.querySelector("button").focus();
         });
