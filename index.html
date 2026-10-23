@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahven | IT Consulting & Retail Solutions</title>
+    <title>Mavenix | IT Consulting, Systems Integration & Talent</title>
+    <meta name="description" content="Mavenix Australia brings together IT consulting, quality engineering, systems integration and specialist technology recruitment.">
+    <meta name="theme-color" content="#0b0d0f">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="assets/tailwind.css">
     <style>
@@ -26,7 +28,7 @@
         body {
             background: #fff;
             color: var(--ink);
-            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-family: Bahnschrift, "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
         }
 
         a,
@@ -51,7 +53,7 @@
 
         .brand-name {
             color: #fff;
-            font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+            font-family: Bahnschrift, "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
             font-size: 1.45rem;
             font-weight: 600;
             letter-spacing: 0.16em;
@@ -119,20 +121,6 @@
             color: #fff;
         }
 
-        .header-cta,
-        .hero-primary {
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: linear-gradient(115deg, #597cff, #8261ff);
-            box-shadow: 0 10px 30px rgba(79, 106, 255, 0.28);
-        }
-
-        .header-cta:hover,
-        .hero-primary:hover {
-            background: linear-gradient(115deg, #6b8aff, #9477ff);
-            box-shadow: 0 14px 34px rgba(79, 106, 255, 0.38);
-            transform: translateY(-1px);
-        }
-
         .hero-section {
             position: relative;
             isolation: isolate;
@@ -145,68 +133,12 @@
                 linear-gradient(128deg, #080f23 0%, #101a3a 54%, #121633 100%);
         }
 
-        .section-spotlight {
-            position: relative;
-            isolation: isolate;
-        }
-
-        .section-spotlight::after {
-            position: absolute;
-            z-index: 0;
-            inset: 0;
-            border-radius: inherit;
-            background: radial-gradient(
-                520px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
-                rgba(102, 122, 255, 0.13),
-                transparent 76%
-            );
-            content: "";
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 220ms ease;
-        }
-
-        .section-spotlight:hover::after,
-        .section-spotlight:focus-within::after {
-            opacity: 1;
-        }
-
-        .section-spotlight:hover,
-        .section-spotlight:focus-within {
-            box-shadow: inset 0 0 0 1px rgba(116, 137, 255, 0.22);
-        }
-
-        .section-spotlight > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-section.section-spotlight::after {
-            background: radial-gradient(
-                560px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
-                rgba(98, 230, 229, 0.11),
-                transparent 76%
-            );
-        }
-
-        .about-section.section-spotlight::after {
-            background: radial-gradient(
-                520px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
-                rgba(138, 105, 255, 0.2),
-                transparent 76%
-            );
-        }
-
         .hero-section::before {
             position: absolute;
             z-index: -1;
             inset: 0;
-            background-image:
-                linear-gradient(rgba(190, 204, 255, 0.035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(190, 204, 255, 0.035) 1px, transparent 1px);
-            background-size: 52px 52px;
             content: "";
-            mask-image: linear-gradient(to bottom, black, transparent 92%);
+            display: none;
         }
 
         .hero-layout {
@@ -439,6 +371,22 @@
             min-width: 0;
         }
 
+        #retail button[type="submit"] {
+            border: 1px solid var(--green);
+            border-radius: 2px;
+            background: var(--green);
+            color: #07100a;
+            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        #retail button[type="submit"]:hover {
+            background: #a1ffb5;
+        }
+
         #contact {
             background:
                 radial-gradient(ellipse at 50% 0%, rgba(113, 127, 255, 0.1), transparent 40%),
@@ -624,9 +572,851 @@
             }
         }
 
-        @media (hover: none) {
-            .section-spotlight::after {
+        :root {
+            color-scheme: dark;
+            --ink: #f2f5f5;
+            --muted: #adb4b4;
+            --navy: #0b0d0f;
+            --blue: #7cff9e;
+            --violet: #7cff9e;
+            --cyan: #7cff9e;
+            --line: #303536;
+            --surface: #111516;
+            --signal: #ffb000;
+            --screen: #0b0d0f;
+            --plate: #171b1c;
+            --instrument-line: #424849;
+            --green: #7cff9e;
+            --amber: #ffb000;
+        }
+
+        html {
+            background: var(--screen);
+            scroll-padding-top: 5.5rem;
+        }
+
+        body {
+            background: var(--screen) !important;
+            color: var(--ink) !important;
+            font-family: Bahnschrift, "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--green);
+            outline-offset: 4px;
+        }
+
+        .site-header {
+            border-color: var(--instrument-line);
+            background: rgba(11, 13, 15, 0.98);
+            box-shadow: none;
+            backdrop-filter: none;
+        }
+
+        .site-header-inner {
+            height: 72px;
+        }
+
+        .brand-name {
+            color: #f2f5f5;
+            font-family: Bahnschrift, "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+        }
+
+        .brand-mark {
+            width: 38px;
+            height: 38px;
+        }
+
+        .brand-region {
+            border-color: #56615a;
+            background: transparent;
+            color: var(--green);
+            border-radius: 2px;
+        }
+
+        .site-nav {
+            gap: 0;
+            color: #c8cecb;
+        }
+
+        .site-nav a {
+            border-left: 1px solid var(--instrument-line);
+            padding: 0.72rem 1.05rem;
+            color: inherit;
+            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+            font-size: 0.67rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .site-nav a:last-child {
+            border-right: 1px solid var(--instrument-line);
+        }
+
+        .site-nav a:hover,
+        .site-nav a[aria-current="location"] {
+            color: var(--green);
+            background: #151a18;
+        }
+
+        .site-nav a[aria-current="location"]::after {
+            display: none;
+        }
+
+        .site-nav a span {
+            border: 1px solid #7b6126;
+            border-radius: 2px;
+            background: #211b0d;
+            color: var(--amber);
+        }
+
+        .menu-toggle {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--instrument-line);
+            border-radius: 2px;
+            background: #111516;
+            color: var(--green);
+        }
+
+        .header-cta,
+        .hero-primary,
+        .contact-submit,
+        .btn-enquiry {
+            border: 1px solid var(--green);
+            border-radius: 2px !important;
+            background: var(--green);
+            box-shadow: none;
+            color: #07100a !important;
+            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .header-cta:hover,
+        .hero-primary:hover,
+        .contact-submit:hover,
+        .btn-enquiry:hover {
+            transform: translateY(-1px);
+            background: #a1ffb5;
+            box-shadow: none;
+        }
+
+        .hero-section {
+            min-height: 650px;
+            padding-top: 4.5rem;
+            padding-bottom: 4.5rem;
+            background: var(--screen);
+        }
+
+        .hero-section::before {
+            z-index: -1;
+            content: "";
+            display: none;
+        }
+
+        .hero-layout {
+            gap: 3rem;
+            text-align: left;
+        }
+
+        .hero-copy {
+            max-width: 610px;
+        }
+
+        .hero-label,
+        .section-kicker {
+            border: 0;
+            background: transparent;
+            color: var(--green);
+            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+            font-size: 0.68rem;
+            letter-spacing: 0.16em;
+        }
+
+        .hero-title {
+            max-width: 11ch;
+            color: #f2f5f5;
+            font-size: clamp(3.3rem, 6vw, 5.8rem);
+            font-weight: 600;
+            line-height: 0.98;
+            letter-spacing: -0.055em;
+            text-transform: uppercase;
+        }
+
+        .hero-title span {
+            background: none;
+            color: var(--green);
+            -webkit-text-fill-color: currentColor;
+        }
+
+        .hero-description {
+            max-width: 58ch;
+            color: #b8c0bd;
+            font-size: 1.04rem;
+            line-height: 1.75;
+        }
+
+        .hero-secondary {
+            border: 1px solid var(--instrument-line);
+            border-radius: 2px !important;
+            background: #111516;
+            color: #e7ece9;
+            backdrop-filter: none;
+        }
+
+        .hero-secondary:hover {
+            border-color: var(--green);
+            background: #151a18;
+            color: var(--green);
+        }
+
+        .hero-console {
+            border: 1px solid var(--instrument-line);
+            border-radius: 3px !important;
+            background: #101314;
+            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.26), inset 0 1px rgba(255, 255, 255, 0.045);
+            backdrop-filter: none;
+        }
+
+        .hero-console h2 {
+            color: #f2f5f5;
+            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .hero-console p {
+            color: #9ca6a1;
+        }
+
+        .hero-console li {
+            min-height: auto;
+            border: 0;
+            border-bottom: 1px solid #303536;
+            border-radius: 0;
+            background: transparent;
+            padding: 0.78rem 0;
+            color: #d5dbd7;
+        }
+
+        .hero-console li:last-child {
+            border-bottom: 0;
+        }
+
+        #services,
+        #about,
+        #retail,
+        #contact {
+            scroll-margin-top: 5rem;
+        }
+
+        #services,
+        #retail,
+        #contact {
+            border-top: 1px solid var(--instrument-line);
+            background: #0e1112;
+        }
+
+        .services-heading h2,
+        .about-section h2,
+        .contact-section h2,
+        .retail-heading h2 {
+            color: #f2f5f5;
+            font-size: clamp(2rem, 3.6vw, 3.4rem);
+            font-weight: 600;
+            letter-spacing: -0.045em;
+            line-height: 1.08;
+        }
+
+        .services-heading p,
+        .about-section p,
+        .contact-section > div > p,
+        .retail-heading p {
+            color: #aeb7b2;
+            line-height: 1.8;
+        }
+
+        .service-grid {
+            gap: 0;
+            border-top: 1px solid var(--instrument-line);
+            border-left: 1px solid var(--instrument-line);
+        }
+
+        .service-grid > div {
+            border: 0;
+            border-right: 1px solid var(--instrument-line);
+            border-bottom: 1px solid var(--instrument-line);
+            border-radius: 0;
+            background: #111516;
+            box-shadow: none;
+            transition: background 180ms ease, color 180ms ease;
+        }
+
+        .service-grid > div:hover,
+        .service-grid > div:focus-within {
+            transform: none;
+            border-color: var(--instrument-line);
+            background: #171d1a;
+            box-shadow: inset 0 0 0 1px rgba(124, 255, 158, 0.25);
+        }
+
+        .service-grid h3 {
+            color: #edf2ef;
+            font-size: 1.16rem;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+
+        .service-grid p {
+            color: #aeb7b2;
+            font-size: 0.9rem;
+            line-height: 1.72;
+        }
+
+        .service-grid > div > div:first-child {
+            border: 1px solid #435249;
+            border-radius: 2px;
+            background: #121916;
+            color: var(--green);
+        }
+
+        .about-section {
+            border-top: 1px solid var(--instrument-line);
+            background: #15191a;
+        }
+
+        .about-section h2 {
+            color: #f2f5f5;
+        }
+
+        .about-section p {
+            color: #c4ccc8;
+            font-size: 1.12rem;
+        }
+
+        .about-section .section-kicker {
+            color: var(--green);
+        }
+
+        #retail {
+            border-color: var(--instrument-line);
+        }
+
+        .retail-heading h2 {
+            color: #f2f5f5;
+        }
+
+        .retail-heading p {
+            color: #b8c0bd;
+        }
+
+        .retail-heading .section-kicker {
+            color: var(--amber);
+        }
+
+        .retail-benefits {
+            color: #d5dbd7;
+        }
+
+        .retail-benefits > div > span {
+            background: #aeb7b2 !important;
+        }
+
+        .retail-card,
+        .contact-card {
+            border: 1px solid var(--instrument-line);
+            border-radius: 3px !important;
+            background: #111516;
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.2);
+        }
+
+        .retail-card:hover,
+        .retail-card:focus-within,
+        .contact-card:hover,
+        .contact-card:focus-within {
+            transform: none;
+            border-color: #56615a;
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.2);
+        }
+
+        .retail-card > p:first-child {
+            color: var(--amber) !important;
+            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+        }
+
+        .retail-card > p:nth-child(2) {
+            color: #f2f5f5 !important;
+        }
+
+        .retail-card > p:nth-child(3),
+        .retail-card #retail-notify-status {
+            color: #aeb7b2 !important;
+        }
+
+        #contact-form-status {
+            color: #aeb7b2;
+        }
+
+        #contact-form-status a,
+        #retail-notify-status a {
+            color: var(--green);
+        }
+
+        #contact-form-status a:hover,
+        #retail-notify-status a:hover {
+            color: #c2ffcf;
+        }
+
+        .contact-section {
+            border-color: var(--instrument-line);
+            background: #0e1112 !important;
+        }
+
+        .contact-card label {
+            color: #aeb7b2;
+        }
+
+        .contact-card input,
+        .contact-card textarea,
+        .retail-card input {
+            border: 1px solid #444b4b;
+            border-radius: 2px;
+            background: #0b0d0f;
+            color: #f2f5f5;
+        }
+
+        .contact-card input::placeholder,
+        .contact-card textarea::placeholder,
+        .retail-card input::placeholder {
+            color: #848f89;
+        }
+
+        .contact-card input:focus,
+        .contact-card textarea:focus,
+        .retail-card input:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 2px rgba(124, 255, 158, 0.16);
+        }
+
+        .site-footer {
+            border-color: var(--instrument-line);
+            background: #090b0c;
+            color: #aeb7b2;
+        }
+
+        .site-footer a:hover {
+            color: var(--green);
+        }
+
+        .services-heading .section-kicker,
+        .contact-section .section-kicker,
+        .about-section .section-kicker,
+        .retail-heading .section-kicker {
+            border: 0;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .services-heading .section-kicker,
+        .contact-section .section-kicker {
+            color: var(--green);
+        }
+
+        #chat-panel {
+            border: 1px solid var(--instrument-line);
+            border-radius: 3px;
+            background: #111516;
+            color: #e9eeeb;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.48);
+        }
+
+        #chat-panel > div:first-child {
+            border-bottom: 1px solid var(--instrument-line);
+            background: #171b1c;
+        }
+
+        #chat-greeting,
+        #chat-response-text {
+            color: #c3cbc6;
+        }
+
+        #chat-topics button,
+        #chat-back {
+            border-color: #404747;
+            border-radius: 2px;
+            background: #0e1112;
+            color: #e5ebe7;
+        }
+
+        #chat-topics button:hover,
+        #chat-back:hover {
+            border-color: var(--green);
+            background: #151a18;
+        }
+
+        #chat-panel .border-slate-100 {
+            border-color: #303536;
+        }
+
+        #chat-panel .text-slate-500 {
+            color: #9ca6a1;
+        }
+
+        #chat-toggle {
+            border: 1px solid var(--green);
+            border-radius: 2px;
+            background: #101614;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        #chat-toggle:hover {
+            background: #18221b;
+        }
+
+        #chat-toggle svg {
+            color: var(--green);
+        }
+
+        .instrument-panel {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #424849;
+            border-radius: 3px;
+            background:
+                linear-gradient(90deg, transparent 49.8%, rgba(255, 255, 255, 0.025) 50%, transparent 50.2%),
+                linear-gradient(0deg, transparent 49.8%, rgba(255, 255, 255, 0.025) 50%, transparent 50.2%),
+                #111516;
+            padding: clamp(1rem, 2.4vw, 2rem);
+            box-shadow: inset 0 1px rgba(255, 255, 255, 0.04), 0 28px 64px rgba(0, 0, 0, 0.3);
+        }
+
+        .instrument-panel-header,
+        .instrument-panel-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border-bottom: 1px solid #3b4242;
+            padding-bottom: 0.9rem;
+            color: #9da8a1;
+            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+            font-size: 0.63rem;
+            font-weight: 600;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+        }
+
+        .instrument-panel-footer {
+            border-top: 1px solid #3b4242;
+            border-bottom: 0;
+            padding: 0.9rem 0 0;
+        }
+
+        .instrument-state {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--green);
+        }
+
+        .instrument-state::before {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: currentColor;
+            content: "";
+            box-shadow: 0 0 9px rgba(124, 255, 158, 0.7);
+        }
+
+        .route-instruments {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: clamp(0.5rem, 2vw, 1.5rem);
+            padding: 2rem 0 1.8rem;
+        }
+
+        .route-instruments::before {
+            position: absolute;
+            top: 42%;
+            right: 9%;
+            left: 9%;
+            height: 1px;
+            background: #53605a;
+            content: "";
+        }
+
+        .route-instrument {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            min-width: 0;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            color: #dfe5e1;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .route-instrument:hover,
+        .route-instrument:focus-visible {
+            color: var(--green);
+        }
+
+        .route-dial {
+            display: grid;
+            width: clamp(76px, 8vw, 112px);
+            aspect-ratio: 1;
+            place-items: center;
+            border: 1px solid #707a75;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle, #171c1a 0 45%, transparent 46%),
+                repeating-conic-gradient(from 0deg, #b8c0bd 0 1deg, transparent 1deg 15deg);
+            box-shadow: inset 0 0 0 7px #151a18, inset 0 0 0 8px #414a45;
+            transition: border-color 180ms ease, box-shadow 180ms ease;
+        }
+
+        .route-instrument:hover .route-dial,
+        .route-instrument:focus-visible .route-dial {
+            border-color: var(--green);
+            box-shadow: inset 0 0 0 7px #151a18, inset 0 0 0 8px var(--green), 0 0 18px rgba(124, 255, 158, 0.13);
+        }
+
+        .route-needle {
+            width: 2px;
+            height: 38%;
+            background: linear-gradient(to top, #5f6963 50%, var(--green) 50%);
+            transform: rotate(var(--needle-angle, 25deg));
+            transform-origin: center;
+        }
+
+        .route-label {
+            max-width: 14ch;
+            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+            font-size: clamp(0.57rem, 1vw, 0.7rem);
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            line-height: 1.45;
+            text-transform: uppercase;
+        }
+
+        .route-index {
+            color: #87918b;
+            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+            font-size: 0.58rem;
+            letter-spacing: 0.1em;
+        }
+
+        .panel-link {
+            color: var(--green);
+            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .panel-link:hover {
+            color: #c2ffcf;
+        }
+
+        .service-row-meta {
+            color: var(--green);
+            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+            font-size: 0.62rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .service-signal {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border: 1px solid var(--green);
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            vertical-align: 0;
+        }
+
+        .about-system {
+            display: grid;
+            grid-template-columns: 1fr minmax(220px, 0.7fr);
+            align-items: center;
+            gap: 3rem;
+            border-top: 1px solid #414849;
+            border-bottom: 1px solid #414849;
+            padding: 2rem 0;
+        }
+
+        .about-readout {
+            border-left: 1px solid #49524d;
+            padding-left: 1.5rem;
+            color: #aeb7b2;
+            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+            font-size: 0.7rem;
+            line-height: 1.8;
+            letter-spacing: 0.04em;
+        }
+
+        .about-readout strong {
+            display: block;
+            margin-bottom: 0.35rem;
+            color: var(--green);
+            font-size: 0.64rem;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+        }
+
+        .retail-status-line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border-top: 1px solid #414849;
+            border-bottom: 1px solid #414849;
+            margin: 0 0 1.5rem;
+            padding: 1rem 0;
+            color: #e5ebe7;
+            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .status-amber {
+            color: var(--amber);
+        }
+
+        @media (max-width: 767px) {
+            .site-header-inner {
+                height: 66px;
+            }
+
+            .header-cta {
                 display: none;
+            }
+
+            .site-nav {
+                top: 66px;
+                right: 1rem;
+                left: 1rem;
+                border: 1px solid var(--instrument-line);
+                border-radius: 2px;
+                background: #0d1011;
+                padding: 0;
+                box-shadow: 0 20px 42px rgba(0, 0, 0, 0.45);
+            }
+
+            .site-nav a,
+            .site-nav a:last-child {
+                border: 0;
+                border-bottom: 1px solid #303536;
+                padding: 0.95rem 1rem;
+            }
+
+            .site-nav a:last-child {
+                border-bottom: 0;
+            }
+
+            .hero-section {
+                min-height: 0;
+                padding-top: 2.5rem;
+                padding-bottom: 2.5rem;
+            }
+
+            .hero-layout {
+                gap: 1.5rem;
+            }
+
+            .hero-title {
+                max-width: none;
+                font-size: clamp(2.25rem, 9.6vw, 3.2rem);
+            }
+
+            .hero-description {
+                margin-bottom: 1.25rem;
+            }
+
+            .hero-actions {
+                flex-direction: row;
+                gap: 0.5rem;
+            }
+
+            .hero-actions > a {
+                flex: 1;
+                padding: 0.85rem 0.5rem;
+                font-size: 0.68rem;
+            }
+
+            .hero-console {
+                padding: 1.25rem;
+            }
+
+            #retail > .max-w-7xl {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            #retail .retail-heading,
+            #retail .retail-card {
+                min-width: 0;
+            }
+
+            .about-system {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .about-readout {
+                border-top: 1px solid #49524d;
+                border-left: 0;
+                padding: 1rem 0 0;
+            }
+
+            .route-instruments {
+                gap: 0.25rem;
+            }
+
+            .route-dial {
+                width: clamp(68px, 20vw, 92px);
+            }
+
+            .route-instruments::before {
+                top: 39%;
+            }
+
+            #chat-toggle {
+                width: 44px;
+                height: 44px;
+                justify-content: center;
+                padding: 0;
+            }
+
+            #chat-widget {
+                right: 0.25rem;
+            }
+
+            .chat-toggle-label {
+                display: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .route-dial,
+            .route-instrument,
+            .site-nav a,
+            .service-grid > div {
+                transition: none;
             }
         }
     </style>
@@ -638,14 +1428,14 @@
         <div class="site-header-inner relative mx-auto flex max-w-7xl items-center justify-between px-6">
             <div class="flex items-center gap-3">
                 <img class="brand-mark" src="logo.svg" alt="" width="42" height="42">
-                <span class="brand-name">MAHVEN</span>
+                <span class="brand-name">MAVENIX</span>
                 <span class="brand-region rounded px-2 py-0.5 text-xs font-semibold uppercase">AU</span>
             </div>
             <nav id="site-nav" class="site-nav text-sm font-medium">
-                <a href="#services" class="hover:text-blue-600 transition">IT Consulting</a>
-                <a href="#retail" class="hover:text-blue-600 transition">Retail Store <span class="text-xs bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded ml-1">Coming Soon</span></a>
+                <a href="#services" class="hover:text-blue-600 transition">Services</a>
+                <a href="#recruitment" class="hover:text-blue-600 transition">Candidates</a>
+                <a href="#retail" class="hover:text-blue-600 transition">Retail <span class="text-xs bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded ml-1">In Development</span></a>
                 <a href="#about" class="hover:text-blue-600 transition">About</a>
-                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
             </nav>
             <div class="flex items-center gap-3">
                 <a href="#contact" class="header-cta rounded-lg px-5 py-2.5 text-sm font-medium text-white transition">Get in Touch</a>
@@ -656,122 +1446,138 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section section-spotlight">
-        <div class="hero-layout mx-auto grid max-w-7xl items-center gap-14 px-6 text-center lg:grid-cols-2 lg:text-left">
+    <!--
+    THESIS: Mavenix connects systems and people; it refuses the category-default stack of generic service cards.
+    OWN-WORLD: A night-flight instrument panel in panel black, matte charcoal, luminous white, radium green, and caution amber; fine rules, engraved labels, calibrated dials, and active-state lights.
+    STORY: Businesses find consulting and integration, IT candidates find specialist recruitment, and retail visitors can register interest.
+    FIRST VIEWPORT: An oversized left-aligned proposition and contact action share the opening with one right-side instrument panel whose three labeled dials route to services, recruitment, and retail.
+    FORM: Persuade; night-flight instrument systems, assigned challenger, seed dd30d396; use the source grammar for information and navigation without importing aviation claims.
+    -->
+    <section class="hero-section">
+        <div class="hero-layout mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
             <div class="hero-copy">
-                <span class="hero-label mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-[0.68rem] font-bold uppercase">
-                    <span class="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_14px_rgba(98,230,229,0.9)]"></span>
-                    Enterprise Quality & Engineering
+                <span class="hero-label mb-5 inline-flex items-center gap-2 font-bold uppercase">
+                    <span class="instrument-state" aria-hidden="true"></span>
+                    Mavenix Australia · Established 2017
                 </span>
-                <h1 class="hero-title mb-7 font-extrabold">
-                    Engineering Excellence. <span class="text-blue-600">Digital Transformation.</span>
+                <h1 class="hero-title mb-7">
+                    Complex IT. <span>Clear direction.</span>
                 </h1>
-                <p class="hero-description mb-9">
-                    Mahven delivers IT consulting, quality engineering, and specialised recruitment to connect businesses with hard-to-find technology talent.
+                <p class="hero-description mb-8">
+                    IT consulting, quality engineering, systems integration and specialist technology recruitment for organisations navigating change.
                 </p>
-                <div class="hero-actions flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
-                    <a href="#contact" class="hero-primary rounded-xl px-7 py-4 text-center font-semibold text-white transition">Consult Our Experts <span aria-hidden="true">→</span></a>
-                    <a href="#retail" class="hero-secondary rounded-xl border px-7 py-4 text-center font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900">See Retail Plans <span aria-hidden="true">→</span></a>
+                <div class="hero-actions flex flex-col gap-3 sm:flex-row">
+                    <a href="#contact" class="hero-primary px-6 py-4 text-center transition">Talk to our team <span aria-hidden="true">↗</span></a>
+                    <a href="#services" class="hero-secondary border px-6 py-4 text-center font-semibold transition">Explore services <span aria-hidden="true">↓</span></a>
                 </div>
             </div>
-            <div class="hero-console rounded-3xl p-6 text-slate-200 sm:p-8">
-                <div class="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
-                    <div class="flex items-center gap-2" aria-hidden="true">
-                        <span class="h-3 w-3 rounded-full bg-red-500"></span>
-                        <span class="h-3 w-3 rounded-full bg-yellow-500"></span>
-                        <span class="h-3 w-3 rounded-full bg-green-500"></span>
-                    </div>
-                    <span class="rounded-full border border-emerald-300/20 bg-emerald-300/10 px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-wider text-emerald-200">Capabilities</span>
+            <div class="instrument-panel" aria-label="Choose a Mavenix pathway">
+                <div class="instrument-panel-header">
+                    <span>Pathway selector / MVX-01</span>
+                    <span class="instrument-state">Ready</span>
                 </div>
-                <h2 class="mb-4 text-lg font-semibold text-white">How Mahven Helps</h2>
-                <p class="mb-5 text-sm text-slate-300">Consulting, engineering and specialist talent</p>
-                <ul class="space-y-3 text-left text-sm">
-                    <li class="flex items-start gap-3">
-                        <span class="mt-0.5 text-emerald-300" aria-hidden="true">✓</span>
-                        <span>Test management &amp; automation transformation</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="mt-0.5 text-emerald-300" aria-hidden="true">✓</span>
-                        <span>Enterprise systems architecture</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="mt-0.5 text-emerald-300" aria-hidden="true">✓</span>
-                        <span>Telecommunications &amp; operations support</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="mt-0.5 text-emerald-300" aria-hidden="true">✓</span>
-                        <span>Specialised IT recruitment for niche skills</span>
-                    </li>
-                    <li class="flex items-start gap-3 text-slate-300">
-                        <span class="mt-0.5 text-blue-300" aria-hidden="true">→</span>
-                        <span>Retail platform expansion <span class="text-slate-400">(in development)</span></span>
-                    </li>
-                </ul>
+                <div class="route-instruments">
+                    <a class="route-instrument" href="#services">
+                        <span class="route-index">01 · BUSINESS</span>
+                        <span class="route-dial" aria-hidden="true"><span class="route-needle" style="--needle-angle: 24deg"></span></span>
+                        <span class="route-label">Consulting &amp; integration</span>
+                    </a>
+                    <a class="route-instrument" href="#recruitment">
+                        <span class="route-index">02 · CANDIDATES</span>
+                        <span class="route-dial" aria-hidden="true"><span class="route-needle" style="--needle-angle: -22deg"></span></span>
+                        <span class="route-label">Technology talent</span>
+                    </a>
+                    <a class="route-instrument" href="#retail">
+                        <span class="route-index">03 · RETAIL</span>
+                        <span class="route-dial" aria-hidden="true"><span class="route-needle" style="--needle-angle: 8deg"></span></span>
+                        <span class="route-label">Store launch updates</span>
+                    </a>
+                </div>
+                <div class="instrument-panel-footer">
+                    <span>Independent pathways</span>
+                    <a class="panel-link" href="#contact">Open contact channel ↗</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- IT Consulting Services -->
-    <section id="services" class="section-spotlight py-24">
+    <section id="services" class="py-24">
         <div class="max-w-7xl mx-auto px-6">
             <div class="services-heading mx-auto mb-14 max-w-2xl text-center">
-                <span class="section-kicker mb-4 inline-block rounded-full px-3 py-1.5 text-[0.65rem] font-bold uppercase">What we do</span>
-                <h2 class="mb-4 font-bold">IT Consulting Services</h2>
-                <p class="text-slate-600">Strategic technology consulting and specialist talent for complex enterprise environments.</p>
+                <span class="section-kicker mb-4 inline-block font-bold uppercase">Service systems / Available disciplines</span>
+                <h2 class="mb-4 font-bold">Bring the right pieces together.</h2>
+                <p>Practical technology expertise across the systems, quality and people that keep change moving.</p>
             </div>
-            <div class="service-grid grid items-stretch gap-6 md:grid-cols-2 xl:grid-cols-4 xl:gap-8">
-                <div class="h-full rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
-                    <h3 class="mb-3 text-xl font-bold text-slate-900">Quality Engineering</h3>
-                    <p class="text-sm leading-relaxed text-slate-600">Comprehensive test management, automated testing frameworks, and high-performance quality assurance transformations.</p>
+            <div class="service-grid grid items-stretch md:grid-cols-2">
+                <div class="h-full p-6 sm:p-8">
+                    <span class="service-row-meta"><span class="service-signal"></span>Quality / Reliability</span>
+                    <h3 class="mb-3 mt-4">Quality Engineering</h3>
+                    <p>Test management, automated testing frameworks and quality assurance transformations built around your delivery environment.</p>
                 </div>
-                <div class="h-full rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
-                    <h3 class="mb-3 text-xl font-bold text-slate-900">Systems Integration</h3>
-                    <p class="text-sm leading-relaxed text-slate-600">We integrate enterprise applications, data platforms and industry systems across IT domains, helping organisations connect workflows and improve interoperability across sectors.</p>
+                <div class="h-full p-6 sm:p-8">
+                    <span class="service-row-meta"><span class="service-signal"></span>Architecture / Connection</span>
+                    <h3 class="mb-3 mt-4">Systems Integration</h3>
+                    <p>Connect enterprise applications, data platforms and industry systems to improve workflows and interoperability across sectors.</p>
                 </div>
-                <div class="h-full rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
-                    <h3 class="mb-3 text-xl font-bold text-slate-900">Specialised IT Recruitment</h3>
-                    <p class="text-sm leading-relaxed text-slate-600">Connecting organisations with hard-to-find technology talent across software engineering, data, cloud, cybersecurity, business systems and other IT specialisations.</p>
+                <div id="recruitment" class="h-full p-6 sm:p-8">
+                    <span class="service-row-meta"><span class="service-signal"></span>People / Opportunity</span>
+                    <h3 class="mb-3 mt-4">Specialist IT Recruitment</h3>
+                    <p>We connect organisations with hard-to-reach technology talent across software engineering, data, cloud, cybersecurity and business systems. Candidates can contact us to discuss specialist opportunities.</p>
                 </div>
-                <div class="h-full rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
-                    <h3 class="mb-3 text-xl font-bold text-slate-900">Digital Strategy</h3>
-                    <p class="text-sm leading-relaxed text-slate-600">End-to-end IT roadmapping, vendor evaluation, and modern technology adoption roadmaps designed for resilience.</p>
+                <div class="h-full p-6 sm:p-8">
+                    <span class="service-row-meta"><span class="service-signal"></span>Strategy / Direction</span>
+                    <h3 class="mb-3 mt-4">Digital Strategy</h3>
+                    <p>IT roadmapping, vendor evaluation and technology adoption planning to help build resilient environments.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Mahven -->
-    <section id="about" class="about-section section-spotlight py-24">
-        <div class="max-w-3xl mx-auto px-6 text-center">
-            <span class="section-kicker mb-5 inline-block rounded-full px-3 py-1.5 text-[0.65rem] font-bold uppercase">Established in 2017</span>
-            <h2 class="mb-5 font-bold">About Mahven</h2>
-            <p class="text-lg leading-relaxed text-slate-600">Mahven connects businesses with specialist technology talent through IT consulting, quality engineering and recruitment.</p>
+    <!-- About Mavenix -->
+    <section id="about" class="about-section py-24">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="about-system">
+                <div>
+                    <span class="section-kicker mb-4 inline-block font-bold uppercase">Company / Mavenix Australia</span>
+                    <h2 class="mb-5 font-bold">Independent thinking. Connected delivery.</h2>
+                    <p class="max-w-3xl">Since 2017, Mavenix has helped organisations bring technology, systems and specialist people together through consulting, quality engineering and recruitment.</p>
+                </div>
+                <div class="about-readout">
+                    <strong>Operating since</strong>
+                    2017<br>
+                    IT consulting · Quality engineering<br>
+                    Systems integration · Recruitment
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Retail Section Preview -->
-    <section id="retail" class="section-spotlight py-24">
+    <section id="retail" class="py-24">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
             <div class="retail-heading">
-                <span class="section-kicker mb-5 inline-block rounded-full border-amber-300/40 bg-amber-100 px-3 py-1.5 text-[0.65rem] font-bold uppercase text-amber-800">Upcoming Venture</span>
-                <h2 class="mb-4 text-3xl font-extrabold lg:text-4xl">Mahven Retail Division</h2>
+                <span class="section-kicker mb-5 inline-block font-bold uppercase">Retail systems / In development</span>
+                <h2 class="mb-4 text-3xl font-extrabold lg:text-4xl">A new retail pathway is taking shape.</h2>
                 <p class="mb-6 leading-relaxed">
-                    We are expanding our capabilities into the retail sector. Our upcoming storefront will feature curated consumer goods and tech-backed retail options tailored to modern demands. Stay tuned for our official launch.
+                    Mavenix is planning a retail storefront for curated consumer goods and technology-enabled retail options. Register your interest to hear when more information is available.
                 </p>
                 <div class="retail-benefits flex items-center text-sm font-medium">
                     <div class="flex items-center"><span class="w-2 h-2 bg-amber-500 rounded-full mr-2"></span> Curated Products</div>
-                    <div class="flex items-center"><span class="w-2 h-2 bg-amber-500 rounded-full mr-2"></span> Seamless Checkout</div>
+                    <div class="flex items-center"><span class="w-2 h-2 bg-amber-500 rounded-full mr-2"></span> Launch updates by email</div>
                 </div>
             </div>
             <div class="retail-card rounded-2xl border bg-white p-8 text-center">
-                <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-slate-400">Launch Status</p>
-                <p class="text-2xl font-bold text-slate-900 mb-4">Retail Portal In Development</p>
-                <p class="mb-6 text-sm text-slate-600">Register your interest to get early access when our retail marketplace goes live.</p>
+                <div class="retail-status-line">
+                    <span>Storefront status</span>
+                    <span class="status-amber">● In development</span>
+                </div>
+                <p class="text-2xl font-bold mb-4">Register for launch updates</p>
+                <p class="mb-6 text-sm">Share your email to prepare a message to the Mavenix team. No details are sent to or stored by this website.</p>
                 <form id="retail-notify-form" class="flex gap-2">
                     <label class="sr-only" for="retail-notify-email">Email address for retail updates</label>
                     <input id="retail-notify-email" name="email" type="email" autocomplete="email" required placeholder="Enter your email" class="min-w-0 flex-1 bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
-                    <button type="submit" class="rounded-xl bg-slate-900 px-6 py-2.5 text-sm font-medium text-white transition hover:bg-slate-800">Notify Me</button>
+                    <button type="submit" class="rounded-xl bg-slate-900 px-6 py-2.5 text-sm font-medium text-white transition hover:bg-slate-800">Email me</button>
                 </form>
                 <p id="retail-notify-status" class="hidden mt-4 text-left text-xs text-slate-600" aria-live="polite">
                     Your email app should open with the request ready. Please send it there; nothing is sent to the website.
@@ -782,11 +1588,11 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section section-spotlight border-t py-24">
+    <section id="contact" class="contact-section border-t py-24">
         <div class="max-w-3xl mx-auto px-6 text-center">
-            <span class="section-kicker mb-4 inline-block rounded-full px-3 py-1.5 text-[0.65rem] font-bold uppercase">Let’s build what’s next</span>
-            <h2 class="mb-4 font-bold">Start a Conversation</h2>
-            <p class="mb-10">Whether you need senior IT consulting or want to inquire about our upcoming retail division, get in touch with us.</p>
+            <span class="section-kicker mb-4 inline-block font-bold uppercase">Contact / Mavenix Australia</span>
+            <h2 class="mb-4 font-bold">Set a direction.</h2>
+            <p class="mb-10">Tell us whether you are exploring consulting, systems integration, quality engineering, specialist talent or the planned retail offering.</p>
             <div class="contact-card rounded-2xl border p-8 text-left">
                 <form id="contact-form" class="space-y-6">
                     <div class="grid sm:grid-cols-2 gap-6">
@@ -803,7 +1609,7 @@
                         <label for="contact-message" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Message</label>
                         <textarea id="contact-message" name="message" rows="4" required class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="Tell us about your project or inquiry..."></textarea>
                     </div>
-                    <button type="submit" class="contact-submit w-full rounded-xl py-3.5 font-semibold text-white transition">Send Message</button>
+                    <button type="submit" class="contact-submit w-full rounded-xl py-3.5 font-semibold text-white transition">Prepare email enquiry ↗</button>
                 </form>
                 <p id="contact-form-status" class="hidden mt-4 text-sm text-slate-600" aria-live="polite">
                     Your email app should open with your message ready. Please send it there; nothing is sent to the website.
@@ -813,13 +1619,13 @@
         </div>
     </section>
 
-    <!-- Free, locally running FAQ assistant -->
-    <div class="fixed bottom-5 right-5 z-50">
+    <!-- Free, locally running Mavenix FAQ guide -->
+    <div id="chat-widget" class="fixed bottom-5 right-5 z-50">
         <section id="chat-panel" class="hidden mb-4 max-h-[calc(100vh-6rem)] w-[calc(100vw-2.5rem)] max-w-sm overflow-y-auto rounded-2xl border border-slate-200 bg-white shadow-2xl" role="dialog" aria-labelledby="chat-title" aria-modal="false">
             <div class="flex items-start justify-between bg-slate-900 p-5 text-white">
                 <div>
-                    <h2 id="chat-title" class="font-bold">Mahven FAQ Assistant</h2>
-                    <p class="mt-1 text-xs text-slate-300">Quick answers about Mahven</p>
+                    <h2 id="chat-title" class="font-bold">Mavenix Quick Guide</h2>
+                    <p class="mt-1 text-xs text-slate-300">Information / Contact channels</p>
                 </div>
                 <button id="chat-close" type="button" class="rounded-lg p-1 text-slate-300 hover:bg-slate-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-white" aria-label="Close chat">
                     <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M4.293 4.293a1 1 0 0 1 1.414 0L10 8.586l4.293-4.293a1 1 0 1 1 1.414 1.414L11.414 10l4.293 4.293a1 1 0 0 1-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L8.586 10 4.293 5.707a1 1 0 0 1 0-1.414Z"/></svg>
@@ -832,7 +1638,7 @@
                     <button type="button" data-topic="quality" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Quality engineering</button>
                     <button type="button" data-topic="recruitment" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">IT recruitment</button>
                     <button type="button" data-topic="retail" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Retail updates</button>
-                    <button type="button" data-topic="about" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">About Mahven</button>
+                    <button type="button" data-topic="about" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">About Mavenix</button>
                     <button type="button" data-topic="contact" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Contact the team</button>
                 </div>
                 <div id="chat-response" class="hidden" aria-live="polite">
@@ -843,16 +1649,16 @@
                 <p class="mt-4 border-t border-slate-100 pt-3 text-xs text-slate-500">Free FAQ helper — answers are prewritten, and nothing you type is collected or sent to an AI service.</p>
             </div>
         </section>
-        <button id="chat-toggle" type="button" class="ml-auto flex items-center gap-2 rounded-full border border-blue-500/30 bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-slate-900/20 transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2" aria-expanded="false" aria-controls="chat-panel">
+        <button id="chat-toggle" type="button" class="ml-auto flex items-center gap-2 rounded-full border border-blue-500/30 bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-slate-900/20 transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2" aria-label="Open Mavenix guide" aria-expanded="false" aria-controls="chat-panel">
             <svg class="h-4 w-4 text-blue-300" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M2 4.75A2.75 2.75 0 0 1 4.75 2h10.5A2.75 2.75 0 0 1 18 4.75v6.5A2.75 2.75 0 0 1 15.25 14H9.56l-4.9 3.5A1 1 0 0 1 3 16.68V14.7a2.75 2.75 0 0 1-1-2.1v-7.85Zm4 2.25a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2H6Zm0 4a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2H6Z" clip-rule="evenodd"/></svg>
-            Chat with Mahven
+            <span class="chat-toggle-label">Open Mavenix guide</span>
         </button>
     </div>
 
     <!-- Footer -->
     <footer class="site-footer border-t py-12 text-slate-400">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
-            <p>&copy; 2026 Mahven Australia. All rights reserved.</p>
+            <p>&copy; 2026 Mavenix Australia. All rights reserved.</p>
             <div class="flex flex-wrap justify-center gap-x-6 gap-y-3">
                 <a href="#services" class="rounded-sm transition hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-slate-900">IT Consulting</a>
                 <a href="#retail" class="rounded-sm transition hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-slate-900">Retail</a>
@@ -881,7 +1687,6 @@
             }
         });
 
-        const spotlightSections = document.querySelectorAll(".section-spotlight");
         const navigableSections = [...siteNav.querySelectorAll("a[href^='#']")]
             .map((link) => ({
                 link,
@@ -889,17 +1694,6 @@
             }))
             .filter(({ section }) => section);
         let sectionUpdatePending = false;
-
-        spotlightSections.forEach((section) => {
-            section.addEventListener("pointermove", (event) => {
-                if (event.pointerType === "touch") {
-                    return;
-                }
-                const bounds = section.getBoundingClientRect();
-                section.style.setProperty("--spotlight-x", `${event.clientX - bounds.left}px`);
-                section.style.setProperty("--spotlight-y", `${event.clientY - bounds.top}px`);
-            });
-        });
 
         function updateActiveNavigation() {
             const focusLine = window.innerHeight * 0.42;
@@ -947,32 +1741,32 @@
         const chatAnswers = {
             consulting: {
                 label: "IT consulting",
-                answer: "Mahven provides technology consulting across enterprise applications, data platforms and industry systems integration, alongside enterprise architecture and digital strategy. The team can help connect systems and workflows across IT domains and industry sectors.",
+                answer: "Mavenix provides technology consulting across enterprise applications, data platforms and industry systems integration, alongside enterprise architecture and digital strategy. The team can help connect systems and workflows across IT domains and industry sectors.",
                 subject: "IT consulting enquiry"
             },
             quality: {
                 label: "quality engineering",
-                answer: "Mahven supports quality engineering through test management, automated testing frameworks and quality assurance transformations. Get in touch to discuss the needs of your team or project.",
+                answer: "Mavenix supports quality engineering through test management, automated testing frameworks and quality assurance transformations. Get in touch to discuss the needs of your team or project.",
                 subject: "Quality engineering enquiry"
             },
             recruitment: {
                 label: "specialised IT recruitment",
-                answer: "Mahven connects organisations with hard-to-find technology talent across software engineering, data, cloud, cybersecurity, business systems and other IT specialisations.",
+                answer: "Mavenix connects organisations with hard-to-find technology talent across software engineering, data, cloud, cybersecurity and business systems. IT candidates can contact the team to discuss specialist opportunities.",
                 subject: "IT recruitment enquiry"
             },
             retail: {
                 label: "retail updates",
-                answer: "Mahven's retail portal is in development. The upcoming storefront is planned to feature curated consumer goods and tech-backed retail options. Contact the team to register your interest.",
+                answer: "Mavenix's retail portal is in development. The planned storefront will feature curated consumer goods and technology-enabled retail options. Contact the team to register your interest.",
                 subject: "Retail updates"
             },
             about: {
-                label: "Mahven",
-                answer: "Mahven Australia has been established since 2017 and delivers IT consulting, quality engineering and specialised recruitment.",
+                label: "Mavenix",
+                answer: "Mavenix Australia has been established since 2017 and delivers IT consulting, quality engineering, systems integration and specialist recruitment.",
                 subject: "General enquiry"
             },
             contact: {
-                label: "the Mahven team",
-                answer: "Email support@mahven.com.au to discuss a project, consulting or recruitment needs, or the upcoming retail division.",
+                label: "the Mavenix team",
+                answer: "Email support@mahven.com.au to discuss a project, consulting or recruitment needs, or the planned retail offering.",
                 subject: "General enquiry"
             }
         };
@@ -984,8 +1778,8 @@
         retailNotifyForm.addEventListener("submit", (event) => {
             event.preventDefault();
             const email = new FormData(retailNotifyForm).get("email");
-            const subject = "Retail early access request";
-            const body = `Hello Mahven team,\n\nPlease let me know when the retail marketplace launches.\n\nEmail address: ${email}\n`;
+            const subject = "Retail launch interest";
+            const body = `Hello Mavenix team,\n\nPlease let me know when the retail marketplace launches.\n\nEmail address: ${email}\n`;
             retailNotifyEmailLink.href = buildSupportEmailLink(subject, body);
             retailNotifyStatus.classList.remove("hidden");
             retailNotifyEmailLink.click();
@@ -998,8 +1792,8 @@
         contactForm.addEventListener("submit", (event) => {
             event.preventDefault();
             const formData = new FormData(contactForm);
-            const subject = "Mahven website enquiry";
-            const body = `Hello Mahven team,\n\nName: ${formData.get("name")}\nEmail: ${formData.get("email")}\n\nMessage:\n${formData.get("message")}\n`;
+            const subject = "Mavenix website enquiry";
+            const body = `Hello Mavenix team,\n\nName: ${formData.get("name")}\nEmail: ${formData.get("email")}\n\nMessage:\n${formData.get("message")}\n`;
             contactEmailLink.href = buildSupportEmailLink(subject, body);
             contactFormStatus.classList.remove("hidden");
             contactEmailLink.click();
@@ -1034,7 +1828,7 @@
             }
 
             chatResponseText.textContent = topic.answer;
-            chatEmailLink.href = buildSupportEmailLink(`Mahven enquiry: ${topic.subject}`, `Hello Mahven team,\n\nI'm interested in ${topic.label}.\n\nName:\nCompany:\nHow can you help?\n`);
+            chatEmailLink.href = buildSupportEmailLink(`Mavenix enquiry: ${topic.subject}`, `Hello Mavenix team,\n\nI'm interested in ${topic.label}.\n\nName:\nCompany:\nHow can you help?\n`);
             chatTopics.classList.add("hidden");
             chatGreeting.classList.add("hidden");
             chatResponse.classList.remove("hidden");
