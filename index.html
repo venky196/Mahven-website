@@ -1,1669 +1,496 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mavenix | IT Consulting, Systems Integration & Talent</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mavenix | IT Consulting, Systems Integration &amp; Talent</title>
     <meta name="description" content="Mavenix Australia brings together IT consulting, quality engineering, systems integration and specialist technology recruitment.">
-    <meta name="theme-color" content="#0b0d0f">
+    <meta name="theme-color" content="#f1efe7">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="assets/tailwind.css">
     <style>
         :root {
             color-scheme: light;
-            --ink: #0a1020;
-            --muted: #65718a;
-            --navy: #081126;
-            --blue: #4778ff;
-            --violet: #8a69ff;
-            --cyan: #62e6e5;
-            --line: #e4e9f2;
-            --surface: #f5f7fc;
+            --paper: #f1efe7;
+            --paper-light: #faf9f4;
+            --paper-deep: #e7e4d9;
+            --ink: #17251f;
+            --ink-soft: #405049;
+            --muted: #56645d;
+            --line: #c9cec4;
+            --blue: #2349c7;
+            --blue-dark: #173ba9;
+            --blue-pale: #dce4fa;
+            --citron: #d9e56a;
+            --white: #fffefa;
+            --display: "Space Grotesk", "Arial", sans-serif;
+            --body: "Aptos", "Segoe UI", system-ui, sans-serif;
+            --content: 76rem;
         }
 
-        html {
-            scroll-padding-top: 6rem;
-        }
-
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
         body {
-            background: #fff;
+            margin: 0;
+            background: var(--paper-light);
             color: var(--ink);
-            font-family: Bahnschrift, "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
+            font-family: var(--body);
+            font-size: 1rem;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
         }
-
-        a,
-        button {
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        :focus-visible {
-            outline: 3px solid rgba(98, 230, 229, 0.85);
-            outline-offset: 3px;
-        }
-
+        img, svg { display: block; max-width: 100%; }
+        a { color: inherit; text-decoration: none; }
+        button, input, textarea { font: inherit; }
+        button, a { -webkit-tap-highlight-color: transparent; }
+        :focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+        section[id] { scroll-margin-top: 6rem; }
+        .wrap { width: min(var(--content), calc(100% - 3rem)); margin-inline: auto; }
         .site-header {
-            border-color: rgba(255, 255, 255, 0.1);
-            background: rgba(8, 17, 38, 0.88);
-            box-shadow: 0 12px 40px rgba(3, 8, 23, 0.12);
+            position: sticky;
+            z-index: 10;
+            top: 0;
+            border-bottom: 1px solid rgba(23, 37, 31, .12);
+            background: rgba(250, 249, 244, .96);
         }
-
-        .site-header-inner {
-            height: 76px;
-        }
-
-        .brand-name {
-            color: #fff;
-            font-family: Bahnschrift, "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
-            font-size: 1.45rem;
-            font-weight: 600;
-            letter-spacing: 0.16em;
-            line-height: 1;
-        }
-
-        .brand-mark {
-            width: 42px;
-            height: 42px;
-            flex: none;
-        }
-
-        .brand-region {
-            border: 1px solid rgba(98, 230, 229, 0.35);
-            background: rgba(98, 230, 229, 0.08);
-            color: var(--cyan);
-            letter-spacing: 0.12em;
-        }
-
-        .site-nav {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            color: #c4ccdc;
-        }
-
-        .site-nav a {
-            transition: color 180ms ease;
-        }
-
-        .site-nav a:hover {
-            color: var(--cyan);
-        }
-
-        .site-nav a[aria-current="location"] {
-            position: relative;
-            color: #fff;
-        }
-
-        .site-nav a[aria-current="location"]::after {
-            position: absolute;
-            right: 0;
-            bottom: -0.65rem;
-            left: 0;
-            height: 2px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, var(--cyan), #a78bfa);
-            content: "";
-        }
-
-        .site-nav a span {
-            background: rgba(98, 230, 229, 0.12);
-            color: var(--cyan);
-        }
-
-        .menu-toggle {
-            display: none;
+        .header-inner { position: relative; min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+        .brand { display: inline-flex; align-items: center; gap: .7rem; flex: none; }
+        .brand-mark { width: 38px; height: 38px; }
+        .brand-name { font: 700 1.03rem/1 var(--display); letter-spacing: .13em; }
+        .brand-region { margin-left: .15rem; color: var(--muted); font-size: .67rem; font-weight: 700; letter-spacing: .1em; }
+        .site-nav { display: flex; align-items: center; gap: clamp(1.1rem, 2.5vw, 2.3rem); }
+        .site-nav a { color: var(--ink-soft); font-size: .88rem; font-weight: 600; transition: color .18s ease; }
+        .site-nav a:hover, .site-nav a[aria-current="location"] { color: var(--blue); }
+        .nav-retail { display: inline-flex; align-items: center; gap: .5rem; }
+        .nav-retail span { border-radius: 2px; background: var(--citron); padding: .12rem .4rem; color: var(--ink); font-size: .62rem; font-weight: 700; letter-spacing: .03em; }
+        .header-actions { display: flex; align-items: center; gap: .65rem; }
+        .header-cta, .button-primary {
+            display: inline-flex;
+            min-height: 46px;
             align-items: center;
             justify-content: center;
-            width: 42px;
-            height: 42px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 0.8rem;
-            background: rgba(255, 255, 255, 0.06);
-            color: #fff;
+            gap: .65rem;
+            border: 1px solid var(--blue);
+            border-radius: 3px;
+            background: var(--blue);
+            padding: .75rem 1.15rem;
+            color: var(--white);
+            font-size: .86rem;
+            font-weight: 700;
+            transition: background .18s ease, transform .18s ease;
         }
+        .header-cta:hover, .button-primary:hover { transform: translateY(-2px); background: var(--blue-dark); }
+        .menu-toggle { display: none; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 3px; background: transparent; color: var(--ink); }
 
-        .hero-section {
-            position: relative;
-            isolation: isolate;
-            overflow: hidden;
-            padding-top: 7rem;
-            padding-bottom: 7rem;
-            background:
-                radial-gradient(ellipse at 72% 35%, rgba(97, 71, 221, 0.25), transparent 34%),
-                radial-gradient(ellipse at 92% 80%, rgba(44, 188, 206, 0.12), transparent 28%),
-                linear-gradient(128deg, #080f23 0%, #101a3a 54%, #121633 100%);
-        }
-
-        .hero-section::before {
-            position: absolute;
-            z-index: -1;
-            inset: 0;
-            content: "";
-            display: none;
-        }
-
-        .hero-layout {
-            position: relative;
-        }
-
-        @media (min-width: 1024px) {
-            .hero-layout {
-                grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-                gap: 4rem;
-            }
-        }
-
-        .hero-copy {
-            max-width: 680px;
-        }
-
-        .hero-label,
-        .section-kicker {
-            border: 1px solid rgba(98, 230, 229, 0.25);
-            background: rgba(98, 230, 229, 0.08);
-            color: #85f0eb;
-            letter-spacing: 0.15em;
-        }
-
-        .hero-title {
-            color: #f7f8ff;
-            font-size: clamp(3rem, 4.4vw, 4.1rem);
-            line-height: 1.04;
-            letter-spacing: -0.065em;
+        .hero { overflow: hidden; padding: clamp(4.5rem, 9vw, 8rem) 0 clamp(5rem, 9vw, 8rem); background: var(--paper); }
+        .hero-layout { display: grid; grid-template-columns: minmax(0, 1.03fr) minmax(340px, .97fr); align-items: center; gap: clamp(3rem, 7vw, 7.5rem); }
+        .hero-copy { max-width: 670px; }
+        .hero h1, .section-title, .about-title, .contact-title {
+            margin: 0;
+            font-family: var(--display);
+            font-weight: 600;
+            letter-spacing: -.055em;
             text-wrap: balance;
         }
-
-        .hero-title span {
-            background: linear-gradient(105deg, #75e9e4 5%, #9e8cff 60%, #d5a5ff 100%);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-description {
-            max-width: 580px;
-            color: #b7c1d7;
-            font-size: 1.125rem;
-            line-height: 1.8;
-        }
-
-        .hero-secondary {
-            border-color: rgba(255, 255, 255, 0.18);
-            background: rgba(255, 255, 255, 0.06);
-            color: #ecf0fb;
-            backdrop-filter: blur(12px);
-        }
-
-        .hero-secondary:hover {
-            border-color: rgba(98, 230, 229, 0.55);
-            background: rgba(98, 230, 229, 0.1);
-            color: #fff;
-        }
-
-        .hero-console {
+        .hero h1 { max-width: 11ch; font-size: clamp(3.4rem, 7vw, 6rem); line-height: .99; }
+        .hero h1 span { color: var(--blue); }
+        .hero-copy > p { max-width: 54ch; margin: 1.7rem 0 2rem; color: var(--ink-soft); font-size: clamp(1.02rem, 1.4vw, 1.2rem); line-height: 1.75; }
+        .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
+        .text-link { display: inline-flex; align-items: center; gap: .5rem; color: var(--ink); font-size: .9rem; font-weight: 700; }
+        .text-link:hover { color: var(--blue); }
+        .hero-note { display: flex; align-items: center; gap: .7rem; margin-top: 2.7rem; color: var(--muted); font-size: .82rem; }
+        .hero-note::before { width: 24px; height: 1px; background: var(--blue); content: ""; }
+        .pathway-art {
             position: relative;
-            border: 1px solid rgba(197, 205, 255, 0.18);
-            background:
-                radial-gradient(ellipse at 100% 0%, rgba(99, 84, 213, 0.24), transparent 45%),
-                linear-gradient(145deg, rgba(25, 34, 67, 0.92), rgba(9, 17, 37, 0.94));
-            box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32), inset 0 1px rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(18px);
-        }
-
-        .hero-console ul {
-            font-family: inherit;
-        }
-
-        .hero-console li {
-            min-height: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 0.9rem;
-            background: rgba(255, 255, 255, 0.035);
-            padding: 0.8rem 0.9rem;
-            line-height: 1.45;
-        }
-
-        #services,
-        #about,
-        #retail,
-        #contact {
-            scroll-margin-top: 5rem;
-        }
-
-        #services {
-            background:
-                radial-gradient(ellipse at 50% 0%, rgba(117, 139, 255, 0.08), transparent 42%),
-                #f7f8fc;
-        }
-
-        .services-heading h2,
-        .about-section h2,
-        .contact-section h2 {
-            color: var(--ink);
-            font-size: clamp(2rem, 3.4vw, 3rem);
-            letter-spacing: -0.045em;
-        }
-
-        .contact-section .section-kicker,
-        .services-heading .section-kicker {
-            border-color: rgba(234, 88, 12, 0.3);
-            background: linear-gradient(110deg, #fff7ed, #ffedd5);
-            color: #c2410c;
-            box-shadow: 0 5px 18px rgba(234, 88, 12, 0.12);
-            letter-spacing: 0.13em;
-        }
-
-        .services-heading p,
-        .about-section p,
-        .contact-section > div > p {
-            color: var(--muted);
-            line-height: 1.8;
-        }
-
-        .service-grid > div {
-            position: relative;
+            min-height: 470px;
             overflow: hidden;
-            border-color: #e5e9f3;
-            border-radius: 1.25rem;
-            background: rgba(255, 255, 255, 0.88);
-            box-shadow: 0 8px 28px rgba(18, 31, 65, 0.045);
-            transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
-        }
-
-        .service-grid > div:hover {
-            transform: translateY(-5px);
-            border-color: #c9d4ff;
-            box-shadow: 0 20px 48px rgba(48, 62, 126, 0.12);
-        }
-
-        .service-grid > div:focus-within {
-            border-color: #c9d4ff;
-            box-shadow: 0 20px 48px rgba(48, 62, 126, 0.12);
-        }
-
-        .service-grid > div > div:first-child {
-            border: 1px solid #dee5ff;
-            background: linear-gradient(145deg, #edf1ff, #f5eefe);
-            color: #5c62dc;
-        }
-
-        .service-grid h3 {
-            color: #141c34;
-            letter-spacing: -0.025em;
-        }
-
-        .service-grid p {
-            color: #68738b;
-            font-size: 0.92rem;
-            line-height: 1.75;
-        }
-
-        .about-section {
-            position: relative;
-            overflow: hidden;
-            border: 0;
-            background:
-                radial-gradient(ellipse at 12% 50%, rgba(87, 117, 255, 0.15), transparent 34%),
-                linear-gradient(120deg, #0b1531, #111a38 70%, #182044);
-        }
-
-        .about-section > div {
-            position: relative;
-            z-index: 1;
-        }
-
-        .about-section h2 {
-            color: #fff;
-        }
-
-        .about-section p {
-            color: #c0c9df;
-            font-size: 1.15rem;
-        }
-
-        .about-section .section-kicker {
-            border-color: rgba(163, 151, 255, 0.3);
-            background: rgba(137, 116, 255, 0.12);
-            color: #c7b9ff;
-        }
-
-        #retail {
-            border-color: var(--line);
-            background: linear-gradient(145deg, #f5f7fc, #edf2fb);
-        }
-
-        .retail-heading h2 {
-            color: #111a33;
-            letter-spacing: -0.05em;
-        }
-
-        .retail-heading p {
-            color: #65718a;
-            line-height: 1.8;
-        }
-
-        .retail-heading .section-kicker {
-            border-color: rgba(217, 119, 6, 0.22);
-            background: rgba(251, 191, 36, 0.16);
-            color: #a65a08;
-            letter-spacing: 0.12em;
-        }
-
-        .retail-benefits {
-            flex-wrap: wrap;
-            gap: 0.75rem 1.25rem;
-            color: #394765;
-        }
-
-        .retail-card {
-            border-color: #e3e8f3;
-            border-radius: 1.5rem;
-            box-shadow: 0 24px 60px rgba(25, 39, 79, 0.09);
-            transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
-        }
-
-        .retail-card:hover,
-        .retail-card:focus-within {
-            transform: translateY(-4px);
-            border-color: #c9d4ff;
-            box-shadow: 0 28px 68px rgba(48, 62, 126, 0.15);
-        }
-
-        .retail-card input {
-            min-width: 0;
-        }
-
-        #retail button[type="submit"] {
-            border: 1px solid var(--green);
-            border-radius: 2px;
-            background: var(--green);
-            color: #07100a;
-            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
-            font-size: 0.68rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        #retail button[type="submit"]:hover {
-            background: #a1ffb5;
-        }
-
-        #contact {
-            background:
-                radial-gradient(ellipse at 50% 0%, rgba(113, 127, 255, 0.1), transparent 40%),
-                #fff;
-        }
-
-        .contact-card {
-            border-color: #e4e8f2;
-            border-radius: 1.5rem;
-            background: #f8f9fd;
-            box-shadow: 0 24px 60px rgba(25, 39, 79, 0.07);
-            transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
-        }
-
-        .contact-card:hover,
-        .contact-card:focus-within {
-            transform: translateY(-4px);
-            border-color: #c9d4ff;
-            box-shadow: 0 28px 68px rgba(48, 62, 126, 0.13);
-        }
-
-        .contact-card label {
-            color: #34415c;
-        }
-
-        .contact-card input,
-        .contact-card textarea,
-        .retail-card input {
-            border-color: #dce2ef;
-            border-radius: 0.9rem;
-            background: #fff;
-        }
-
-        .contact-card input:focus,
-        .contact-card textarea:focus,
-        .retail-card input:focus {
-            border-color: #8292ff;
-            box-shadow: 0 0 0 3px rgba(100, 116, 255, 0.15);
-        }
-
-        .contact-submit {
-            background: linear-gradient(110deg, #566fff, #805bfa);
-            box-shadow: 0 12px 30px rgba(91, 100, 230, 0.22);
-        }
-
-        .contact-submit:hover {
-            background: linear-gradient(110deg, #6d82ff, #9274ff);
-        }
-
-        .site-footer {
-            border-color: rgba(255, 255, 255, 0.08);
-            background:
-                radial-gradient(ellipse at 50% 0%, rgba(80, 90, 180, 0.12), transparent 55%),
-                #080f20;
-        }
-
-        .site-footer a:hover {
-            color: var(--cyan);
-        }
-
-        .btn-enquiry {
-            display: inline-block;
-            padding: 14px 28px;
-            background: #0a2540;
-            color: #ffffff;
-            font-weight: 600;
-            border-radius: 0.9rem;
-            text-decoration: none;
-            transition: 0.25s ease;
-        }
-
-        .btn-enquiry:hover {
-            background: #163A63;
-            transform: translateY(-1px);
-            box-shadow: 0 12px 25px rgba(10, 37, 64, 0.18);
-        }
-
-        #chat-panel {
-            border-color: #dce3f1;
-            box-shadow: 0 24px 70px rgba(12, 21, 47, 0.24);
-        }
-
-        #chat-panel > div:first-child {
-            background: linear-gradient(120deg, #101a38, #25204b);
-        }
-
-        #chat-toggle {
-            border-color: rgba(142, 124, 255, 0.42);
-            background: linear-gradient(115deg, #111a36, #25214d);
-            box-shadow: 0 12px 35px rgba(20, 22, 57, 0.28);
-        }
-
-        #chat-toggle:hover {
-            background: linear-gradient(115deg, #1a2750, #342b6e);
-        }
-
-        @media (max-width: 767px) {
-            .site-header-inner {
-                height: 68px;
-            }
-
-            .brand-mark {
-                width: 38px;
-                height: 38px;
-            }
-
-            .brand-name {
-                font-size: 1.25rem;
-                letter-spacing: 0.13em;
-            }
-
-            .brand-region {
-                font-size: 0.6rem;
-            }
-
-            .site-nav {
-                display: none;
-                position: absolute;
-                top: 68px;
-                right: 1rem;
-                left: 1rem;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0;
-                border: 1px solid rgba(255, 255, 255, 0.12);
-                border-radius: 1rem;
-                background: rgba(11, 20, 43, 0.98);
-                padding: 0.5rem;
-                box-shadow: 0 24px 55px rgba(0, 0, 0, 0.3);
-            }
-
-            .site-nav.is-open {
-                display: flex;
-            }
-
-            .site-nav a {
-                position: relative;
-                border-radius: 0.65rem;
-                padding: 0.85rem 1rem;
-            }
-
-            .site-nav a[aria-current="location"]::after {
-                right: auto;
-                bottom: 0.45rem;
-                left: 1rem;
-                width: 1.5rem;
-            }
-
-            .site-nav a:hover {
-                background: rgba(255, 255, 255, 0.06);
-            }
-
-            .menu-toggle {
-                display: inline-flex;
-            }
-
-            .header-cta {
-                padding: 0.65rem;
-                font-size: 0.75rem;
-                white-space: nowrap;
-            }
-
-            .hero-section {
-                padding-top: 5rem;
-                padding-bottom: 5rem;
-            }
-
-            .hero-title {
-                font-size: clamp(3rem, 14vw, 4.5rem);
-            }
-
-            .hero-console {
-                padding: 1.25rem;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                scroll-behavior: auto !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        :root {
-            color-scheme: dark;
-            --ink: #f2f5f5;
-            --muted: #adb4b4;
-            --navy: #0b0d0f;
-            --blue: #7cff9e;
-            --violet: #7cff9e;
-            --cyan: #7cff9e;
-            --line: #303536;
-            --surface: #111516;
-            --signal: #ffb000;
-            --screen: #0b0d0f;
-            --plate: #171b1c;
-            --instrument-line: #424849;
-            --green: #7cff9e;
-            --amber: #ffb000;
-        }
-
-        html {
-            background: var(--screen);
-            scroll-padding-top: 5.5rem;
-        }
-
-        body {
-            background: var(--screen) !important;
-            color: var(--ink) !important;
-            font-family: Bahnschrift, "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
-        }
-
-        :focus-visible {
-            outline: 2px solid var(--green);
-            outline-offset: 4px;
-        }
-
-        .site-header {
-            border-color: var(--instrument-line);
-            background: rgba(11, 13, 15, 0.98);
-            box-shadow: none;
-            backdrop-filter: none;
-        }
-
-        .site-header-inner {
-            height: 72px;
-        }
-
-        .brand-name {
-            color: #f2f5f5;
-            font-family: Bahnschrift, "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: 0.22em;
-        }
-
-        .brand-mark {
-            width: 38px;
-            height: 38px;
-        }
-
-        .brand-region {
-            border-color: #56615a;
-            background: transparent;
-            color: var(--green);
-            border-radius: 2px;
-        }
-
-        .site-nav {
-            gap: 0;
-            color: #c8cecb;
-        }
-
-        .site-nav a {
-            border-left: 1px solid var(--instrument-line);
-            padding: 0.72rem 1.05rem;
-            color: inherit;
-            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
-            font-size: 0.67rem;
-            font-weight: 600;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-        }
-
-        .site-nav a:last-child {
-            border-right: 1px solid var(--instrument-line);
-        }
-
-        .site-nav a:hover,
-        .site-nav a[aria-current="location"] {
-            color: var(--green);
-            background: #151a18;
-        }
-
-        .site-nav a[aria-current="location"]::after {
-            display: none;
-        }
-
-        .site-nav a span {
-            border: 1px solid #7b6126;
-            border-radius: 2px;
-            background: #211b0d;
-            color: var(--amber);
-        }
-
-        .menu-toggle {
-            width: 40px;
-            height: 40px;
-            border: 1px solid var(--instrument-line);
-            border-radius: 2px;
-            background: #111516;
-            color: var(--green);
-        }
-
-        .header-cta,
-        .hero-primary,
-        .contact-submit,
-        .btn-enquiry {
-            border: 1px solid var(--green);
-            border-radius: 2px !important;
-            background: var(--green);
-            box-shadow: none;
-            color: #07100a !important;
-            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        .header-cta:hover,
-        .hero-primary:hover,
-        .contact-submit:hover,
-        .btn-enquiry:hover {
-            transform: translateY(-1px);
-            background: #a1ffb5;
-            box-shadow: none;
-        }
-
-        .hero-section {
-            min-height: 650px;
-            padding-top: 4.5rem;
-            padding-bottom: 4.5rem;
-            background: var(--screen);
-        }
-
-        .hero-section::before {
-            z-index: -1;
-            content: "";
-            display: none;
-        }
-
-        .hero-layout {
-            gap: 3rem;
-            text-align: left;
-        }
-
-        .hero-copy {
-            max-width: 610px;
-        }
-
-        .hero-label,
-        .section-kicker {
-            border: 0;
-            background: transparent;
-            color: var(--green);
-            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
-            font-size: 0.68rem;
-            letter-spacing: 0.16em;
-        }
-
-        .hero-title {
-            max-width: 11ch;
-            color: #f2f5f5;
-            font-size: clamp(3.3rem, 6vw, 5.8rem);
-            font-weight: 600;
-            line-height: 0.98;
-            letter-spacing: -0.055em;
-            text-transform: uppercase;
-        }
-
-        .hero-title span {
-            background: none;
-            color: var(--green);
-            -webkit-text-fill-color: currentColor;
-        }
-
-        .hero-description {
-            max-width: 58ch;
-            color: #b8c0bd;
-            font-size: 1.04rem;
-            line-height: 1.75;
-        }
-
-        .hero-secondary {
-            border: 1px solid var(--instrument-line);
-            border-radius: 2px !important;
-            background: #111516;
-            color: #e7ece9;
-            backdrop-filter: none;
-        }
-
-        .hero-secondary:hover {
-            border-color: var(--green);
-            background: #151a18;
-            color: var(--green);
-        }
-
-        .hero-console {
-            border: 1px solid var(--instrument-line);
-            border-radius: 3px !important;
-            background: #101314;
-            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.26), inset 0 1px rgba(255, 255, 255, 0.045);
-            backdrop-filter: none;
-        }
-
-        .hero-console h2 {
-            color: #f2f5f5;
-            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
-            font-size: 0.72rem;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-        }
-
-        .hero-console p {
-            color: #9ca6a1;
-        }
-
-        .hero-console li {
-            min-height: auto;
-            border: 0;
-            border-bottom: 1px solid #303536;
-            border-radius: 0;
-            background: transparent;
-            padding: 0.78rem 0;
-            color: #d5dbd7;
-        }
-
-        .hero-console li:last-child {
-            border-bottom: 0;
-        }
-
-        #services,
-        #about,
-        #retail,
-        #contact {
-            scroll-margin-top: 5rem;
-        }
-
-        #services,
-        #retail,
-        #contact {
-            border-top: 1px solid var(--instrument-line);
-            background: #0e1112;
-        }
-
-        .services-heading h2,
-        .about-section h2,
-        .contact-section h2,
-        .retail-heading h2 {
-            color: #f2f5f5;
-            font-size: clamp(2rem, 3.6vw, 3.4rem);
-            font-weight: 600;
-            letter-spacing: -0.045em;
-            line-height: 1.08;
-        }
-
-        .services-heading p,
-        .about-section p,
-        .contact-section > div > p,
-        .retail-heading p {
-            color: #aeb7b2;
-            line-height: 1.8;
-        }
-
-        .service-grid {
-            gap: 0;
-            border-top: 1px solid var(--instrument-line);
-            border-left: 1px solid var(--instrument-line);
-        }
-
-        .service-grid > div {
-            border: 0;
-            border-right: 1px solid var(--instrument-line);
-            border-bottom: 1px solid var(--instrument-line);
-            border-radius: 0;
-            background: #111516;
-            box-shadow: none;
-            transition: background 180ms ease, color 180ms ease;
-        }
-
-        .service-grid > div:hover,
-        .service-grid > div:focus-within {
-            transform: none;
-            border-color: var(--instrument-line);
-            background: #171d1a;
-            box-shadow: inset 0 0 0 1px rgba(124, 255, 158, 0.25);
-        }
-
-        .service-grid h3 {
-            color: #edf2ef;
-            font-size: 1.16rem;
-            font-weight: 600;
-            letter-spacing: -0.025em;
-        }
-
-        .service-grid p {
-            color: #aeb7b2;
-            font-size: 0.9rem;
-            line-height: 1.72;
-        }
-
-        .service-grid > div > div:first-child {
-            border: 1px solid #435249;
-            border-radius: 2px;
-            background: #121916;
-            color: var(--green);
-        }
-
-        .about-section {
-            border-top: 1px solid var(--instrument-line);
-            background: #15191a;
-        }
-
-        .about-section h2 {
-            color: #f2f5f5;
-        }
-
-        .about-section p {
-            color: #c4ccc8;
-            font-size: 1.12rem;
-        }
-
-        .about-section .section-kicker {
-            color: var(--green);
-        }
-
-        #retail {
-            border-color: var(--instrument-line);
-        }
-
-        .retail-heading h2 {
-            color: #f2f5f5;
-        }
-
-        .retail-heading p {
-            color: #b8c0bd;
-        }
-
-        .retail-heading .section-kicker {
-            color: var(--amber);
-        }
-
-        .retail-benefits {
-            color: #d5dbd7;
-        }
-
-        .retail-benefits > div > span {
-            background: #aeb7b2 !important;
-        }
-
-        .retail-card,
-        .contact-card {
-            border: 1px solid var(--instrument-line);
-            border-radius: 3px !important;
-            background: #111516;
-            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.2);
-        }
-
-        .retail-card:hover,
-        .retail-card:focus-within,
-        .contact-card:hover,
-        .contact-card:focus-within {
-            transform: none;
-            border-color: #56615a;
-            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.2);
-        }
-
-        .retail-card > p:first-child {
-            color: var(--amber) !important;
-            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
-        }
-
-        .retail-card > p:nth-child(2) {
-            color: #f2f5f5 !important;
-        }
-
-        .retail-card > p:nth-child(3),
-        .retail-card #retail-notify-status {
-            color: #aeb7b2 !important;
-        }
-
-        #contact-form-status {
-            color: #aeb7b2;
-        }
-
-        #contact-form-status a,
-        #retail-notify-status a {
-            color: var(--green);
-        }
-
-        #contact-form-status a:hover,
-        #retail-notify-status a:hover {
-            color: #c2ffcf;
-        }
-
-        .contact-section {
-            border-color: var(--instrument-line);
-            background: #0e1112 !important;
-        }
-
-        .contact-card label {
-            color: #aeb7b2;
-        }
-
-        .contact-card input,
-        .contact-card textarea,
-        .retail-card input {
-            border: 1px solid #444b4b;
-            border-radius: 2px;
-            background: #0b0d0f;
-            color: #f2f5f5;
-        }
-
-        .contact-card input::placeholder,
-        .contact-card textarea::placeholder,
-        .retail-card input::placeholder {
-            color: #848f89;
-        }
-
-        .contact-card input:focus,
-        .contact-card textarea:focus,
-        .retail-card input:focus {
-            border-color: var(--green);
-            box-shadow: 0 0 0 2px rgba(124, 255, 158, 0.16);
-        }
-
-        .site-footer {
-            border-color: var(--instrument-line);
-            background: #090b0c;
-            color: #aeb7b2;
-        }
-
-        .site-footer a:hover {
-            color: var(--green);
-        }
-
-        .services-heading .section-kicker,
-        .contact-section .section-kicker,
-        .about-section .section-kicker,
-        .retail-heading .section-kicker {
-            border: 0;
-            background: transparent;
-            box-shadow: none;
-        }
-
-        .services-heading .section-kicker,
-        .contact-section .section-kicker {
-            color: var(--green);
-        }
-
-        #chat-panel {
-            border: 1px solid var(--instrument-line);
-            border-radius: 3px;
-            background: #111516;
-            color: #e9eeeb;
-            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.48);
-        }
-
-        #chat-panel > div:first-child {
-            border-bottom: 1px solid var(--instrument-line);
-            background: #171b1c;
-        }
-
-        #chat-greeting,
-        #chat-response-text {
-            color: #c3cbc6;
-        }
-
-        #chat-topics button,
-        #chat-back {
-            border-color: #404747;
-            border-radius: 2px;
-            background: #0e1112;
-            color: #e5ebe7;
-        }
-
-        #chat-topics button:hover,
-        #chat-back:hover {
-            border-color: var(--green);
-            background: #151a18;
-        }
-
-        #chat-panel .border-slate-100 {
-            border-color: #303536;
-        }
-
-        #chat-panel .text-slate-500 {
-            color: #9ca6a1;
-        }
-
-        #chat-toggle {
-            border: 1px solid var(--green);
-            border-radius: 2px;
-            background: #101614;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-        }
-
-        #chat-toggle:hover {
-            background: #18221b;
-        }
-
-        #chat-toggle svg {
-            color: var(--green);
-        }
-
-        .instrument-panel {
-            position: relative;
-            overflow: hidden;
-            border: 1px solid #424849;
-            border-radius: 3px;
-            background:
-                linear-gradient(90deg, transparent 49.8%, rgba(255, 255, 255, 0.025) 50%, transparent 50.2%),
-                linear-gradient(0deg, transparent 49.8%, rgba(255, 255, 255, 0.025) 50%, transparent 50.2%),
-                #111516;
-            padding: clamp(1rem, 2.4vw, 2rem);
-            box-shadow: inset 0 1px rgba(255, 255, 255, 0.04), 0 28px 64px rgba(0, 0, 0, 0.3);
-        }
-
-        .instrument-panel-header,
-        .instrument-panel-footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            border-bottom: 1px solid #3b4242;
-            padding-bottom: 0.9rem;
-            color: #9da8a1;
-            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
-            font-size: 0.63rem;
-            font-weight: 600;
-            letter-spacing: 0.13em;
-            text-transform: uppercase;
-        }
-
-        .instrument-panel-footer {
-            border-top: 1px solid #3b4242;
-            border-bottom: 0;
-            padding: 0.9rem 0 0;
-        }
-
-        .instrument-state {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--green);
-        }
-
-        .instrument-state::before {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: currentColor;
-            content: "";
-            box-shadow: 0 0 9px rgba(124, 255, 158, 0.7);
-        }
-
-        .route-instruments {
-            position: relative;
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: clamp(0.5rem, 2vw, 1.5rem);
-            padding: 2rem 0 1.8rem;
-        }
-
-        .route-instruments::before {
+            background: var(--blue);
+            padding: 1.45rem;
+            color: var(--white);
+        }
+        .pathway-art::before {
             position: absolute;
-            top: 42%;
-            right: 9%;
-            left: 9%;
-            height: 1px;
-            background: #53605a;
+            top: 9%;
+            right: -12%;
+            width: 76%;
+            aspect-ratio: 1;
+            border: 1px solid rgba(255, 255, 255, .22);
+            border-radius: 50%;
             content: "";
         }
-
-        .route-instrument {
+        .pathway-art::after {
+            position: absolute;
+            right: -3%;
+            bottom: -35%;
+            width: 72%;
+            aspect-ratio: 1;
+            border: 1px solid rgba(255, 255, 255, .2);
+            border-radius: 50%;
+            content: "";
+        }
+        .art-topline, .art-bottomline { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 1rem; font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+        .art-topline { border-bottom: 1px solid rgba(255, 255, 255, .34); padding-bottom: .85rem; }
+        .art-bottomline { align-items: flex-end; border-top: 1px solid rgba(255, 255, 255, .34); padding-top: .9rem; }
+        .art-canvas { position: relative; z-index: 1; display: grid; min-height: 350px; place-items: center; padding: 2rem .2rem; }
+        .art-lines { position: absolute; inset: 2% 0; width: 100%; height: 96%; }
+        .art-center {
             position: relative;
-            z-index: 1;
-            display: flex;
-            min-width: 0;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.8rem;
-            color: #dfe5e1;
-            text-align: center;
-            text-decoration: none;
-        }
-
-        .route-instrument:hover,
-        .route-instrument:focus-visible {
-            color: var(--green);
-        }
-
-        .route-dial {
+            z-index: 2;
             display: grid;
-            width: clamp(76px, 8vw, 112px);
+            width: 142px;
             aspect-ratio: 1;
             place-items: center;
-            border: 1px solid #707a75;
             border-radius: 50%;
-            background:
-                radial-gradient(circle, #171c1a 0 45%, transparent 46%),
-                repeating-conic-gradient(from 0deg, #b8c0bd 0 1deg, transparent 1deg 15deg);
-            box-shadow: inset 0 0 0 7px #151a18, inset 0 0 0 8px #414a45;
-            transition: border-color 180ms ease, box-shadow 180ms ease;
+            background: var(--citron);
+            color: var(--ink);
+            font: 600 1.2rem/1.1 var(--display);
+            letter-spacing: -.04em;
+            text-align: center;
         }
+        .art-node { position: absolute; z-index: 2; max-width: 150px; color: var(--white); font: 600 .78rem/1.3 var(--body); }
+        .art-node::before { display: block; width: 9px; height: 9px; margin-bottom: .45rem; border: 2px solid var(--citron); border-radius: 50%; content: ""; }
+        .art-node--one { top: 9%; left: 4%; }
+        .art-node--two { top: 14%; right: 4%; text-align: right; }
+        .art-node--two::before, .art-node--four::before { margin-left: auto; }
+        .art-node--three { bottom: 10%; left: 4%; }
+        .art-node--four { right: 4%; bottom: 9%; text-align: right; }
+        .art-bottomline span:last-child { color: var(--citron); }
 
-        .route-instrument:hover .route-dial,
-        .route-instrument:focus-visible .route-dial {
-            border-color: var(--green);
-            box-shadow: inset 0 0 0 7px #151a18, inset 0 0 0 8px var(--green), 0 0 18px rgba(124, 255, 158, 0.13);
+        .services { padding: clamp(5rem, 10vw, 9rem) 0; background: var(--paper-light); }
+        .section-intro { display: grid; grid-template-columns: minmax(0, .8fr) minmax(250px, .6fr); align-items: end; gap: 3rem; margin-bottom: 3.2rem; }
+        .section-title { max-width: 13ch; font-size: clamp(2.6rem, 5vw, 4.4rem); line-height: 1.03; }
+        .section-intro p { max-width: 48ch; margin: 0 0 .45rem; color: var(--muted); line-height: 1.8; }
+        .service-list { border-top: 1px solid var(--line); }
+        .service-row { display: grid; grid-template-columns: minmax(220px, .78fr) minmax(280px, 1fr) auto; align-items: center; gap: 2rem; border-bottom: 1px solid var(--line); padding: 1.75rem .25rem; transition: background .2s ease, transform .2s ease; }
+        .service-row:hover { transform: translateX(4px); background: var(--paper); }
+        .service-row h3 { margin: 0; font: 600 clamp(1.25rem, 2vw, 1.7rem)/1.2 var(--display); letter-spacing: -.035em; }
+        .service-row p { max-width: 55ch; margin: 0; color: var(--muted); font-size: .94rem; line-height: 1.75; }
+        .service-arrow { display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--blue); font-size: 1.1rem; transition: color .18s ease, background .18s ease, border-color .18s ease; }
+        .service-row:hover .service-arrow { border-color: var(--blue); background: var(--blue); color: white; }
+
+        .about { position: relative; overflow: hidden; background: var(--ink); color: var(--white); }
+        .about::after { position: absolute; top: -25%; right: 8%; width: min(34vw, 410px); aspect-ratio: 1; border: 1px solid rgba(217, 229, 106, .32); border-radius: 50%; content: ""; }
+        .about-inner { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, .52fr); align-items: end; gap: 5rem; padding-block: clamp(5rem, 10vw, 9rem); }
+        .about-title { max-width: 14ch; font-size: clamp(2.7rem, 5.4vw, 5rem); line-height: 1.02; }
+        .about-copy p { max-width: 58ch; margin: 1.5rem 0 0; color: var(--paper-deep); font-size: 1.05rem; line-height: 1.8; }
+        .about-side { position: relative; z-index: 1; border-top: 1px solid rgba(255, 255, 255, .35); padding-top: 1rem; color: var(--paper-deep); font-size: .9rem; }
+        .about-side strong { display: block; margin: .2rem 0 .8rem; color: var(--citron); font: 600 2.6rem/1 var(--display); letter-spacing: -.05em; }
+
+        .retail { padding: clamp(5rem, 9vw, 8rem) 0; background: var(--blue-pale); }
+        .retail-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(340px, .75fr); align-items: center; gap: clamp(3rem, 9vw, 9rem); }
+        .retail-copy h2 { max-width: 11ch; margin: 0; font: 600 clamp(2.8rem, 5.3vw, 4.8rem)/1.02 var(--display); letter-spacing: -.055em; }
+        .retail-copy p { max-width: 55ch; margin: 1.5rem 0 0; color: var(--ink-soft); line-height: 1.8; }
+        .retail-status { display: inline-flex; align-items: center; gap: .5rem; margin-top: 1.4rem; color: var(--ink); font-size: .8rem; font-weight: 700; }
+        .retail-status::before { width: 9px; height: 9px; border-radius: 50%; background: var(--ink); content: ""; }
+        .retail-form-wrap { border-top: 1px solid rgba(23, 37, 31, .26); border-bottom: 1px solid rgba(23, 37, 31, .26); padding: 1.5rem 0; }
+        .retail-form-wrap h3 { margin: 0; font: 600 1.35rem/1.25 var(--display); letter-spacing: -.03em; }
+        .retail-form-wrap > p { margin: .65rem 0 1.25rem; color: var(--ink-soft); font-size: .9rem; }
+        .inline-form { display: flex; align-items: stretch; gap: .65rem; }
+        .inline-form input { min-width: 0; flex: 1; }
+        .form-status { margin: .9rem 0 0; color: var(--ink-soft); font-size: .85rem; }
+        .form-status a { color: var(--blue-dark); font-weight: 700; text-decoration: underline; text-underline-offset: .15em; }
+
+        .contact { padding: clamp(5rem, 10vw, 9rem) 0; background: var(--paper); }
+        .contact-layout { display: grid; grid-template-columns: minmax(260px, .75fr) minmax(0, 1fr); gap: clamp(3rem, 9vw, 8rem); }
+        .contact-title { max-width: 9ch; font-size: clamp(3rem, 6vw, 5.7rem); line-height: 1; }
+        .contact-copy > p { max-width: 42ch; margin: 1.4rem 0; color: var(--muted); line-height: 1.8; }
+        .contact-email { color: var(--blue-dark); font-weight: 700; text-decoration: underline; text-underline-offset: .18em; }
+        .contact-form { display: grid; gap: 1.2rem; }
+        .form-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+        .field { display: grid; gap: .45rem; }
+        .field label { color: var(--ink-soft); font-size: .82rem; font-weight: 700; }
+        input, textarea { width: 100%; border: 1px solid var(--line); border-radius: 2px; background: var(--paper-light); padding: .85rem .9rem; color: var(--ink); }
+        input::placeholder, textarea::placeholder { color: #65716a; opacity: 1; }
+        input:focus, textarea:focus { border-color: var(--blue); outline: 3px solid rgba(35, 73, 199, .16); }
+        textarea { min-height: 135px; resize: vertical; }
+        .contact-submit { width: 100%; cursor: pointer; }
+        .site-footer { background: var(--ink); color: #d4dbd3; }
+        .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding-block: 1.8rem; font-size: .82rem; }
+        .footer-links { display: flex; flex-wrap: wrap; gap: 1.3rem; }
+        .site-footer a:hover { color: var(--citron); }
+
+        .chat-widget { position: fixed; z-index: 20; right: 1.5rem; bottom: 1.5rem; }
+        .chat-panel { width: min(23rem, calc(100vw - 2rem)); max-height: min(38rem, calc(100vh - 6rem)); overflow-y: auto; margin-bottom: .8rem; border: 1px solid var(--line); background: var(--paper-light); box-shadow: 0 18px 48px rgba(23, 37, 31, .22); }
+        .chat-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; background: var(--ink); padding: 1.1rem 1.2rem; color: var(--white); }
+        .chat-header h2 { margin: 0; font: 600 1.08rem/1.3 var(--display); }
+        .chat-header p { margin: .2rem 0 0; color: var(--paper-deep); font-size: .75rem; }
+        .chat-close { display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; background: transparent; color: white; cursor: pointer; }
+        .chat-content { padding: 1.15rem; }
+        .chat-greeting, .chat-response-text { margin: 0 0 1rem; color: var(--ink-soft); font-size: .9rem; line-height: 1.7; }
+        .chat-topics { display: grid; gap: .5rem; }
+        .chat-topics button, .chat-back { border: 1px solid var(--line); border-radius: 2px; background: transparent; padding: .7rem .8rem; color: var(--ink); cursor: pointer; text-align: left; transition: border-color .18s ease, background .18s ease; }
+        .chat-topics button:hover, .chat-back:hover { border-color: var(--blue); background: var(--blue-pale); }
+        .chat-response { display: grid; gap: .7rem; }
+        .chat-email { justify-content: center; }
+        .chat-back { text-align: center; }
+        .chat-note { margin: 1rem 0 0; border-top: 1px solid var(--line); padding-top: .8rem; color: var(--muted); font-size: .72rem; line-height: 1.6; }
+        .quick-guide { margin-top: 1rem; border: 0; background: transparent; padding: 0; color: var(--blue-dark); cursor: pointer; font-size: .88rem; font-weight: 700; }
+        .quick-guide:hover { text-decoration: underline; text-underline-offset: .18em; }
+        .header-cta-small { display: none; }
+
+        @media (max-width: 850px) {
+            .hero-layout { grid-template-columns: minmax(0, 1fr) minmax(280px, .86fr); gap: 2rem; }
+            .pathway-art { min-height: 410px; padding: 1.1rem; }
+            .art-canvas { min-height: 300px; }
+            .art-center { width: 120px; }
+            .service-row { grid-template-columns: minmax(190px, .7fr) minmax(0, 1fr) auto; gap: 1.2rem; }
         }
-
-        .route-needle {
-            width: 2px;
-            height: 38%;
-            background: linear-gradient(to top, #5f6963 50%, var(--green) 50%);
-            transform: rotate(var(--needle-angle, 25deg));
-            transform-origin: center;
+        @media (max-width: 700px) {
+            html { scroll-padding-top: 5rem; }
+            .wrap { width: min(var(--content), calc(100% - 2rem)); }
+            .header-inner { min-height: 68px; gap: .6rem; }
+            .brand-mark { width: 34px; height: 34px; }
+            .brand-name { font-size: .94rem; }
+            .brand-region { display: none; }
+            .header-cta { min-height: 42px; padding: .6rem .75rem; font-size: .78rem; }
+            .header-cta-wide { display: none; }
+            .header-cta-small { display: inline; }
+            .menu-toggle { display: grid; place-items: center; }
+            .menu-toggle svg { width: 20px; height: 20px; }
+            .site-nav { position: absolute; top: calc(100% + 1px); right: 0; left: 0; display: none; align-items: stretch; gap: 0; border-bottom: 1px solid var(--line); background: var(--paper-light); padding: .5rem 1rem 1rem; }
+            .site-nav.is-open { display: grid; }
+            .site-nav a { border-bottom: 1px solid var(--line); padding: .8rem .1rem; font-size: .95rem; }
+            .site-nav a:last-child { border-bottom: 0; }
+            .hero { padding: 4.2rem 0 4.5rem; }
+            .hero-layout { grid-template-columns: minmax(0, 1fr); gap: 2.8rem; }
+            .hero h1 { max-width: 10ch; font-size: clamp(3.35rem, 14vw, 5.6rem); }
+            .hero-copy > p { margin-block: 1.2rem 1.5rem; }
+            .hero-note { margin-top: 1.8rem; }
+            .pathway-art { min-height: 380px; }
+            .art-canvas { min-height: 285px; }
+            .section-intro, .about-inner, .retail-layout, .contact-layout { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+            .section-intro { margin-bottom: 2rem; }
+            .service-row { grid-template-columns: minmax(0, 1fr) auto; gap: .6rem 1rem; padding-block: 1.35rem; }
+            .service-row p { grid-column: 1; grid-row: 2; }
+            .service-arrow { grid-column: 2; grid-row: 1 / span 2; }
+            .about-inner { align-items: start; }
+            .about-side { max-width: 320px; }
+            .retail-layout { gap: 2.6rem; }
+            .retail-copy h2 { max-width: 12ch; }
+            .contact-layout { gap: 2.5rem; }
+            .contact-title { max-width: 11ch; }
+            .footer-inner { align-items: flex-start; flex-direction: column; gap: 1rem; padding-block: 1.5rem; }
+            .chat-widget { right: .75rem; bottom: .75rem; }
         }
-
-        .route-label {
-            max-width: 14ch;
-            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
-            font-size: clamp(0.57rem, 1vw, 0.7rem);
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            line-height: 1.45;
-            text-transform: uppercase;
+        @media (max-width: 420px) {
+            .hero-actions { align-items: stretch; flex-direction: column; }
+            .hero-actions .text-link { justify-content: center; min-height: 44px; }
+            .pathway-art { min-height: 350px; padding: .9rem; }
+            .art-canvas { min-height: 260px; }
+            .art-center { width: 104px; font-size: 1.05rem; }
+            .art-node { max-width: 110px; font-size: .7rem; }
+            .art-node--one, .art-node--three { left: 1%; }
+            .art-node--two, .art-node--four { right: 1%; }
+            .inline-form, .form-pair { grid-template-columns: minmax(0, 1fr); flex-direction: column; }
+            .inline-form .button-primary { width: 100%; }
         }
-
-        .route-index {
-            color: #87918b;
-            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
-            font-size: 0.58rem;
-            letter-spacing: 0.1em;
-        }
-
-        .panel-link {
-            color: var(--green);
-            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
-            font-size: 0.68rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .panel-link:hover {
-            color: #c2ffcf;
-        }
-
-        .service-row-meta {
-            color: var(--green);
-            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
-            font-size: 0.62rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        .service-signal {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border: 1px solid var(--green);
-            border-radius: 50%;
-            margin-right: 0.5rem;
-            vertical-align: 0;
-        }
-
-        .about-system {
-            display: grid;
-            grid-template-columns: 1fr minmax(220px, 0.7fr);
-            align-items: center;
-            gap: 3rem;
-            border-top: 1px solid #414849;
-            border-bottom: 1px solid #414849;
-            padding: 2rem 0;
-        }
-
-        .about-readout {
-            border-left: 1px solid #49524d;
-            padding-left: 1.5rem;
-            color: #aeb7b2;
-            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
-            font-size: 0.7rem;
-            line-height: 1.8;
-            letter-spacing: 0.04em;
-        }
-
-        .about-readout strong {
-            display: block;
-            margin-bottom: 0.35rem;
-            color: var(--green);
-            font-size: 0.64rem;
-            letter-spacing: 0.13em;
-            text-transform: uppercase;
-        }
-
-        .retail-status-line {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            border-top: 1px solid #414849;
-            border-bottom: 1px solid #414849;
-            margin: 0 0 1.5rem;
-            padding: 1rem 0;
-            color: #e5ebe7;
-            font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
-            font-size: 0.7rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .status-amber {
-            color: var(--amber);
-        }
-
-        @media (max-width: 767px) {
-            .site-header-inner {
-                height: 66px;
-            }
-
-            .header-cta {
-                display: none;
-            }
-
-            .site-nav {
-                top: 66px;
-                right: 1rem;
-                left: 1rem;
-                border: 1px solid var(--instrument-line);
-                border-radius: 2px;
-                background: #0d1011;
-                padding: 0;
-                box-shadow: 0 20px 42px rgba(0, 0, 0, 0.45);
-            }
-
-            .site-nav a,
-            .site-nav a:last-child {
-                border: 0;
-                border-bottom: 1px solid #303536;
-                padding: 0.95rem 1rem;
-            }
-
-            .site-nav a:last-child {
-                border-bottom: 0;
-            }
-
-            .hero-section {
-                min-height: 0;
-                padding-top: 2.5rem;
-                padding-bottom: 2.5rem;
-            }
-
-            .hero-layout {
-                gap: 1.5rem;
-            }
-
-            .hero-title {
-                max-width: none;
-                font-size: clamp(2.25rem, 9.6vw, 3.2rem);
-            }
-
-            .hero-description {
-                margin-bottom: 1.25rem;
-            }
-
-            .hero-actions {
-                flex-direction: row;
-                gap: 0.5rem;
-            }
-
-            .hero-actions > a {
-                flex: 1;
-                padding: 0.85rem 0.5rem;
-                font-size: 0.68rem;
-            }
-
-            .hero-console {
-                padding: 1.25rem;
-            }
-
-            #retail > .max-w-7xl {
-                grid-template-columns: minmax(0, 1fr);
-            }
-
-            #retail .retail-heading,
-            #retail .retail-card {
-                min-width: 0;
-            }
-
-            .about-system {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .about-readout {
-                border-top: 1px solid #49524d;
-                border-left: 0;
-                padding: 1rem 0 0;
-            }
-
-            .route-instruments {
-                gap: 0.25rem;
-            }
-
-            .route-dial {
-                width: clamp(68px, 20vw, 92px);
-            }
-
-            .route-instruments::before {
-                top: 39%;
-            }
-
-            #chat-toggle {
-                width: 44px;
-                height: 44px;
-                justify-content: center;
-                padding: 0;
-            }
-
-            #chat-widget {
-                right: 0.25rem;
-            }
-
-            .chat-toggle-label {
-                display: none;
-            }
-        }
-
         @media (prefers-reduced-motion: reduce) {
-            .route-dial,
-            .route-instrument,
-            .site-nav a,
-            .service-grid > div {
-                transition: none;
-            }
+            *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
-
-    <!-- Header / Navigation -->
-    <header class="site-header sticky top-0 z-50 border-b backdrop-blur-md">
-        <div class="site-header-inner relative mx-auto flex max-w-7xl items-center justify-between px-6">
-            <div class="flex items-center gap-3">
-                <img class="brand-mark" src="logo.svg" alt="" width="42" height="42">
+<body>
+    <!--
+    THESIS: Mavenix connects technology and specialist people; the page refuses a generic grid of service cards.
+    OWN-WORLD: Warm mineral paper, deep green-black ink, confident grotesk typography, cobalt-blue pathways, citron wayfinding, crisp rules and open editorial spacing.
+    STORY: Visitors understand the consulting, integration, quality engineering and recruitment offer, then choose a conversation or explore the planned retail store.
+    FIRST VIEWPORT: A large human-centered proposition and contact action sit left; a locally drawn pathway illustration connecting four real disciplines anchors the right.
+    FORM: Persuade; an editorial pathway folio (candidate 7 of the grounded staging set, seed 14233854) carries one connected reading path without invented evidence.
+    -->
+    <header class="site-header">
+        <div class="header-inner wrap">
+            <a class="brand" href="#top" aria-label="Mavenix home">
+                <img class="brand-mark" src="logo.svg" alt="" width="38" height="38">
                 <span class="brand-name">MAVENIX</span>
-                <span class="brand-region rounded px-2 py-0.5 text-xs font-semibold uppercase">AU</span>
-            </div>
-            <nav id="site-nav" class="site-nav text-sm font-medium">
-                <a href="#services" class="hover:text-blue-600 transition">Services</a>
-                <a href="#recruitment" class="hover:text-blue-600 transition">Candidates</a>
-                <a href="#retail" class="hover:text-blue-600 transition">Retail <span class="text-xs bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded ml-1">In Development</span></a>
-                <a href="#about" class="hover:text-blue-600 transition">About</a>
+                <span class="brand-region">AUSTRALIA</span>
+            </a>
+            <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+                <a href="#services">What we do</a>
+                <a href="#recruitment">For candidates</a>
+                <a class="nav-retail" href="#retail">Retail <span>In development</span></a>
+                <a href="#about">About</a>
             </nav>
-            <div class="flex items-center gap-3">
-                <a href="#contact" class="header-cta rounded-lg px-5 py-2.5 text-sm font-medium text-white transition">Get in Touch</a>
+            <div class="header-actions">
+                <a class="header-cta" href="#contact" aria-label="Start a conversation"><span class="header-cta-wide">Start a conversation</span><span class="header-cta-small" aria-hidden="true">Contact</span> <span aria-hidden="true">↗</span></a>
                 <button id="menu-toggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
-                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 5a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1Zm0 5a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1Zm0 5a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1Z" clip-rule="evenodd"/></svg>
+                    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
                 </button>
             </div>
         </div>
     </header>
+    <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-layout wrap">
+                <div class="hero-copy">
+                    <h1 id="hero-title">Technology, brought back to <span>people.</span></h1>
+                    <p>IT consulting, quality engineering, systems integration and specialist technology recruitment for organisations navigating change.</p>
+                    <div class="hero-actions">
+                        <a class="button-primary" href="#contact">Talk to our team <span aria-hidden="true">↗</span></a>
+                        <a class="text-link" href="#services">Explore what we do <span aria-hidden="true">↓</span></a>
+                    </div>
+                    <button id="chat-toggle" class="text-link quick-guide" type="button" aria-label="Open Mavenix guide" aria-expanded="false" aria-controls="chat-panel">Need a quick answer? <span aria-hidden="true">↗</span></button>
+                    <p class="hero-note">Mavenix Australia · Established 2017</p>
+                </div>
+                <div class="pathway-art" role="img" aria-label="Mavenix brings people, quality engineering, connected systems and specialist talent together.">
+                    <div class="art-topline"><span>One connected offer</span><span>People first</span></div>
+                    <div class="art-canvas" aria-hidden="true">
+                        <svg class="art-lines" viewBox="0 0 560 390" fill="none" preserveAspectRatio="none">
+                            <path d="M82 80C165 80 181 185 280 195S397 83 483 83M82 308C165 308 180 204 280 195s119 113 203 113" stroke="rgba(255,255,255,.76)" stroke-width="1.5"/>
+                            <path d="M82 80c56 71 56 157 0 228m401-225c-56 71-56 157 0 228" stroke="rgba(255,255,255,.28)" stroke-width="1"/>
+                            <circle cx="82" cy="80" r="5" fill="#d9e56a"/><circle cx="483" cy="83" r="5" fill="#d9e56a"/>
+                            <circle cx="82" cy="308" r="5" fill="#d9e56a"/><circle cx="483" cy="308" r="5" fill="#d9e56a"/>
+                        </svg>
+                        <span class="art-node art-node--one">Quality engineering</span>
+                        <span class="art-node art-node--two">Systems integration</span>
+                        <span class="art-node art-node--three">Specialist talent</span>
+                        <span class="art-node art-node--four">Digital strategy</span>
+                        <span class="art-center">People<br>&amp; systems</span>
+                    </div>
+                    <div class="art-bottomline"><span>Connected thinking</span><span>Since 2017</span></div>
+                </div>
+            </div>
+        </section>
 
-    <!--
-    THESIS: Mavenix connects systems and people; it refuses the category-default stack of generic service cards.
-    OWN-WORLD: A night-flight instrument panel in panel black, matte charcoal, luminous white, radium green, and caution amber; fine rules, engraved labels, calibrated dials, and active-state lights.
-    STORY: Businesses find consulting and integration, IT candidates find specialist recruitment, and retail visitors can register interest.
-    FIRST VIEWPORT: An oversized left-aligned proposition and contact action share the opening with one right-side instrument panel whose three labeled dials route to services, recruitment, and retail.
-    FORM: Persuade; night-flight instrument systems, assigned challenger, seed dd30d396; use the source grammar for information and navigation without importing aviation claims.
-    -->
-    <section class="hero-section">
-        <div class="hero-layout mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
-            <div class="hero-copy">
-                <span class="hero-label mb-5 inline-flex items-center gap-2 font-bold uppercase">
-                    <span class="instrument-state" aria-hidden="true"></span>
-                    Mavenix Australia · Established 2017
-                </span>
-                <h1 class="hero-title mb-7">
-                    Complex IT. <span>Clear direction.</span>
-                </h1>
-                <p class="hero-description mb-8">
-                    IT consulting, quality engineering, systems integration and specialist technology recruitment for organisations navigating change.
-                </p>
-                <div class="hero-actions flex flex-col gap-3 sm:flex-row">
-                    <a href="#contact" class="hero-primary px-6 py-4 text-center transition">Talk to our team <span aria-hidden="true">↗</span></a>
-                    <a href="#services" class="hero-secondary border px-6 py-4 text-center font-semibold transition">Explore services <span aria-hidden="true">↓</span></a>
+        <section id="services" class="services" aria-labelledby="services-title">
+            <div class="wrap">
+                <div class="section-intro">
+                    <h2 id="services-title" class="section-title">Bring the right pieces together.</h2>
+                    <p>Practical technology expertise across the systems, quality and people that keep change moving.</p>
+                </div>
+                <div class="service-list">
+                    <article class="service-row">
+                        <h3>Quality Engineering</h3>
+                        <p>Test management, automated testing frameworks and quality assurance transformations built around your delivery environment.</p>
+                        <a class="service-arrow" href="#contact" aria-label="Ask about quality engineering">↗</a>
+                    </article>
+                    <article class="service-row">
+                        <h3>Systems Integration</h3>
+                        <p>Connect enterprise applications, data platforms and industry systems to improve workflows and interoperability across sectors.</p>
+                        <a class="service-arrow" href="#contact" aria-label="Ask about systems integration">↗</a>
+                    </article>
+                    <article id="recruitment" class="service-row">
+                        <h3>Specialist IT Recruitment</h3>
+                        <p>We connect organisations with hard-to-reach technology talent across software engineering, data, cloud, cybersecurity and business systems. Candidates can contact us to discuss specialist opportunities.</p>
+                        <a class="service-arrow" href="#contact" aria-label="Ask about specialist IT recruitment">↗</a>
+                    </article>
+                    <article class="service-row">
+                        <h3>Digital Strategy</h3>
+                        <p>IT roadmapping, vendor evaluation and technology adoption planning to help build resilient environments.</p>
+                        <a class="service-arrow" href="#contact" aria-label="Ask about digital strategy">↗</a>
+                    </article>
                 </div>
             </div>
-            <div class="instrument-panel" aria-label="Choose a Mavenix pathway">
-                <div class="instrument-panel-header">
-                    <span>Pathway selector / MVX-01</span>
-                    <span class="instrument-state">Ready</span>
-                </div>
-                <div class="route-instruments">
-                    <a class="route-instrument" href="#services">
-                        <span class="route-index">01 · BUSINESS</span>
-                        <span class="route-dial" aria-hidden="true"><span class="route-needle" style="--needle-angle: 24deg"></span></span>
-                        <span class="route-label">Consulting &amp; integration</span>
-                    </a>
-                    <a class="route-instrument" href="#recruitment">
-                        <span class="route-index">02 · CANDIDATES</span>
-                        <span class="route-dial" aria-hidden="true"><span class="route-needle" style="--needle-angle: -22deg"></span></span>
-                        <span class="route-label">Technology talent</span>
-                    </a>
-                    <a class="route-instrument" href="#retail">
-                        <span class="route-index">03 · RETAIL</span>
-                        <span class="route-dial" aria-hidden="true"><span class="route-needle" style="--needle-angle: 8deg"></span></span>
-                        <span class="route-label">Store launch updates</span>
-                    </a>
-                </div>
-                <div class="instrument-panel-footer">
-                    <span>Independent pathways</span>
-                    <a class="panel-link" href="#contact">Open contact channel ↗</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- IT Consulting Services -->
-    <section id="services" class="py-24">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="services-heading mx-auto mb-14 max-w-2xl text-center">
-                <span class="section-kicker mb-4 inline-block font-bold uppercase">Service systems / Available disciplines</span>
-                <h2 class="mb-4 font-bold">Bring the right pieces together.</h2>
-                <p>Practical technology expertise across the systems, quality and people that keep change moving.</p>
-            </div>
-            <div class="service-grid grid items-stretch md:grid-cols-2">
-                <div class="h-full p-6 sm:p-8">
-                    <span class="service-row-meta"><span class="service-signal"></span>Quality / Reliability</span>
-                    <h3 class="mb-3 mt-4">Quality Engineering</h3>
-                    <p>Test management, automated testing frameworks and quality assurance transformations built around your delivery environment.</p>
+        <section id="about" class="about" aria-labelledby="about-title">
+            <div class="about-inner wrap">
+                <div class="about-copy">
+                    <h2 id="about-title" class="about-title">Independent thinking. Connected delivery.</h2>
+                    <p>Since 2017, Mavenix has helped organisations bring technology, systems and specialist people together through consulting, quality engineering and recruitment.</p>
                 </div>
-                <div class="h-full p-6 sm:p-8">
-                    <span class="service-row-meta"><span class="service-signal"></span>Architecture / Connection</span>
-                    <h3 class="mb-3 mt-4">Systems Integration</h3>
-                    <p>Connect enterprise applications, data platforms and industry systems to improve workflows and interoperability across sectors.</p>
-                </div>
-                <div id="recruitment" class="h-full p-6 sm:p-8">
-                    <span class="service-row-meta"><span class="service-signal"></span>People / Opportunity</span>
-                    <h3 class="mb-3 mt-4">Specialist IT Recruitment</h3>
-                    <p>We connect organisations with hard-to-reach technology talent across software engineering, data, cloud, cybersecurity and business systems. Candidates can contact us to discuss specialist opportunities.</p>
-                </div>
-                <div class="h-full p-6 sm:p-8">
-                    <span class="service-row-meta"><span class="service-signal"></span>Strategy / Direction</span>
-                    <h3 class="mb-3 mt-4">Digital Strategy</h3>
-                    <p>IT roadmapping, vendor evaluation and technology adoption planning to help build resilient environments.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Mavenix -->
-    <section id="about" class="about-section py-24">
-        <div class="mx-auto max-w-7xl px-6">
-            <div class="about-system">
-                <div>
-                    <span class="section-kicker mb-4 inline-block font-bold uppercase">Company / Mavenix Australia</span>
-                    <h2 class="mb-5 font-bold">Independent thinking. Connected delivery.</h2>
-                    <p class="max-w-3xl">Since 2017, Mavenix has helped organisations bring technology, systems and specialist people together through consulting, quality engineering and recruitment.</p>
-                </div>
-                <div class="about-readout">
-                    <strong>Operating since</strong>
-                    2017<br>
+                <div class="about-side">
+                    <strong>Since 2017</strong>
+                    Mavenix Australia<br>
                     IT consulting · Quality engineering<br>
                     Systems integration · Recruitment
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Retail Section Preview -->
-    <section id="retail" class="py-24">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-            <div class="retail-heading">
-                <span class="section-kicker mb-5 inline-block font-bold uppercase">Retail systems / In development</span>
-                <h2 class="mb-4 text-3xl font-extrabold lg:text-4xl">A new retail pathway is taking shape.</h2>
-                <p class="mb-6 leading-relaxed">
-                    Mavenix is planning a retail storefront for curated consumer goods and technology-enabled retail options. Register your interest to hear when more information is available.
-                </p>
-                <div class="retail-benefits flex items-center text-sm font-medium">
-                    <div class="flex items-center"><span class="w-2 h-2 bg-amber-500 rounded-full mr-2"></span> Curated Products</div>
-                    <div class="flex items-center"><span class="w-2 h-2 bg-amber-500 rounded-full mr-2"></span> Launch updates by email</div>
+        <section id="retail" class="retail" aria-labelledby="retail-title">
+            <div class="retail-layout wrap">
+                <div class="retail-copy">
+                    <h2 id="retail-title">A new retail pathway is taking shape.</h2>
+                    <p>Mavenix is planning a retail storefront for curated consumer goods and technology-enabled retail options. Register your interest to hear when more information is available.</p>
+                    <span class="retail-status">In development</span>
                 </div>
-            </div>
-            <div class="retail-card rounded-2xl border bg-white p-8 text-center">
-                <div class="retail-status-line">
-                    <span>Storefront status</span>
-                    <span class="status-amber">● In development</span>
+                <div class="retail-form-wrap">
+                    <h3>Register for launch updates</h3>
+                    <p>Prepare an email to the Mavenix team. This website does not collect or store your details.</p>
+                    <form id="retail-notify-form" class="inline-form">
+                        <label class="sr-only" for="retail-notify-email">Email address for retail updates</label>
+                        <input id="retail-notify-email" name="email" type="email" autocomplete="email" required placeholder="Your email address">
+                        <button class="button-primary" type="submit">Prepare email <span aria-hidden="true">↗</span></button>
+                    </form>
+                    <p id="retail-notify-status" class="form-status hidden" aria-live="polite">
+                        Your email app should open with the request ready. Please send it there; nothing is sent to the website.
+                        If it doesn't open, <a id="retail-notify-email-link" href="mailto:support@mahven.com.au">open your email app</a>.
+                    </p>
                 </div>
-                <p class="text-2xl font-bold mb-4">Register for launch updates</p>
-                <p class="mb-6 text-sm">Share your email to prepare a message to the Mavenix team. No details are sent to or stored by this website.</p>
-                <form id="retail-notify-form" class="flex gap-2">
-                    <label class="sr-only" for="retail-notify-email">Email address for retail updates</label>
-                    <input id="retail-notify-email" name="email" type="email" autocomplete="email" required placeholder="Enter your email" class="min-w-0 flex-1 bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
-                    <button type="submit" class="rounded-xl bg-slate-900 px-6 py-2.5 text-sm font-medium text-white transition hover:bg-slate-800">Email me</button>
-                </form>
-                <p id="retail-notify-status" class="hidden mt-4 text-left text-xs text-slate-600" aria-live="polite">
-                    Your email app should open with the request ready. Please send it there; nothing is sent to the website.
-                    If it doesn't open, <a id="retail-notify-email-link" class="font-semibold text-blue-700" href="mailto:support@mahven.com.au">open your email app</a>.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section border-t py-24">
-        <div class="max-w-3xl mx-auto px-6 text-center">
-            <span class="section-kicker mb-4 inline-block font-bold uppercase">Contact / Mavenix Australia</span>
-            <h2 class="mb-4 font-bold">Set a direction.</h2>
-            <p class="mb-10">Tell us whether you are exploring consulting, systems integration, quality engineering, specialist talent or the planned retail offering.</p>
-            <div class="contact-card rounded-2xl border p-8 text-left">
-                <form id="contact-form" class="space-y-6">
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div>
-                            <label for="contact-name" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Your Name</label>
-                            <input id="contact-name" name="name" type="text" autocomplete="name" required class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="John Doe">
-                        </div>
-                        <div>
-                            <label for="contact-email" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Email Address</label>
-                            <input id="contact-email" name="email" type="email" autocomplete="email" required class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="john@example.com">
-                        </div>
-                    </div>
-                    <div>
-                        <label for="contact-message" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Message</label>
-                        <textarea id="contact-message" name="message" rows="4" required class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="Tell us about your project or inquiry..."></textarea>
-                    </div>
-                    <button type="submit" class="contact-submit w-full rounded-xl py-3.5 font-semibold text-white transition">Prepare email enquiry ↗</button>
-                </form>
-                <p id="contact-form-status" class="hidden mt-4 text-sm text-slate-600" aria-live="polite">
-                    Your email app should open with your message ready. Please send it there; nothing is sent to the website.
-                    If it doesn't open, <a id="contact-email-link" class="font-semibold text-blue-700" href="mailto:support@mahven.com.au">open your email app</a>.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Free, locally running Mavenix FAQ guide -->
-    <div id="chat-widget" class="fixed bottom-5 right-5 z-50">
-        <section id="chat-panel" class="hidden mb-4 max-h-[calc(100vh-6rem)] w-[calc(100vw-2.5rem)] max-w-sm overflow-y-auto rounded-2xl border border-slate-200 bg-white shadow-2xl" role="dialog" aria-labelledby="chat-title" aria-modal="false">
-            <div class="flex items-start justify-between bg-slate-900 p-5 text-white">
-                <div>
-                    <h2 id="chat-title" class="font-bold">Mavenix Quick Guide</h2>
-                    <p class="mt-1 text-xs text-slate-300">Information / Contact channels</p>
-                </div>
-                <button id="chat-close" type="button" class="rounded-lg p-1 text-slate-300 hover:bg-slate-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-white" aria-label="Close chat">
-                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M4.293 4.293a1 1 0 0 1 1.414 0L10 8.586l4.293-4.293a1 1 0 1 1 1.414 1.414L11.414 10l4.293 4.293a1 1 0 0 1-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L8.586 10 4.293 5.707a1 1 0 0 1 0-1.414Z"/></svg>
-                </button>
-            </div>
-            <div class="p-5">
-                <p id="chat-greeting" class="mb-4 text-sm leading-relaxed text-slate-700" aria-live="polite">Hi! Choose a topic to find out more.</p>
-                <div id="chat-topics" class="space-y-2">
-                    <button type="button" data-topic="consulting" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">IT consulting</button>
-                    <button type="button" data-topic="quality" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Quality engineering</button>
-                    <button type="button" data-topic="recruitment" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">IT recruitment</button>
-                    <button type="button" data-topic="retail" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Retail updates</button>
-                    <button type="button" data-topic="about" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">About Mavenix</button>
-                    <button type="button" data-topic="contact" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-blue-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Contact the team</button>
-                </div>
-                <div id="chat-response" class="hidden" aria-live="polite">
-                    <p id="chat-response-text" class="mb-4 text-sm leading-relaxed text-slate-700"></p>
-                    <a id="chat-email-link" class="btn-enquiry block w-full text-center focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2" href="mailto:support@mahven.com.au">Email our team</a>
-                    <button id="chat-back" type="button" class="mt-3 w-full rounded-xl px-4 py-2 text-sm font-medium text-blue-700 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-600">Choose another topic</button>
-                </div>
-                <p class="mt-4 border-t border-slate-100 pt-3 text-xs text-slate-500">Free FAQ helper — answers are prewritten, and nothing you type is collected or sent to an AI service.</p>
             </div>
         </section>
-        <button id="chat-toggle" type="button" class="ml-auto flex items-center gap-2 rounded-full border border-blue-500/30 bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-slate-900/20 transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2" aria-label="Open Mavenix guide" aria-expanded="false" aria-controls="chat-panel">
-            <svg class="h-4 w-4 text-blue-300" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M2 4.75A2.75 2.75 0 0 1 4.75 2h10.5A2.75 2.75 0 0 1 18 4.75v6.5A2.75 2.75 0 0 1 15.25 14H9.56l-4.9 3.5A1 1 0 0 1 3 16.68V14.7a2.75 2.75 0 0 1-1-2.1v-7.85Zm4 2.25a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2H6Zm0 4a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2H6Z" clip-rule="evenodd"/></svg>
-            <span class="chat-toggle-label">Open Mavenix guide</span>
-        </button>
+
+        <section id="contact" class="contact" aria-labelledby="contact-title">
+            <div class="contact-layout wrap">
+                <div class="contact-copy">
+                    <h2 id="contact-title" class="contact-title">Let's make the next step clearer.</h2>
+                    <p>Tell us whether you are exploring consulting, systems integration, quality engineering, specialist talent or the planned retail offering.</p>
+                    <p>Prefer email? <a class="contact-email" href="mailto:support@mahven.com.au">support@mahven.com.au</a></p>
+                </div>
+                <div>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-pair">
+                            <div class="field">
+                                <label for="contact-name">Your name</label>
+                                <input id="contact-name" name="name" type="text" autocomplete="name" required placeholder="Name">
+                            </div>
+                            <div class="field">
+                                <label for="contact-email">Email address</label>
+                                <input id="contact-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="contact-message">What would you like to discuss?</label>
+                            <textarea id="contact-message" name="message" rows="4" required placeholder="Tell us about your project or enquiry"></textarea>
+                        </div>
+                        <button class="button-primary contact-submit" type="submit">Prepare email enquiry <span aria-hidden="true">↗</span></button>
+                    </form>
+                    <p id="contact-form-status" class="form-status hidden" aria-live="polite">
+                        Your email app should open with your message ready. Please send it there; nothing is sent to the website.
+                        If it doesn't open, <a id="contact-email-link" href="mailto:support@mahven.com.au">open your email app</a>.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="chat-widget" class="chat-widget">
+        <section id="chat-panel" class="chat-panel hidden" role="dialog" aria-labelledby="chat-title" aria-modal="false">
+            <div class="chat-header">
+                <div>
+                    <h2 id="chat-title">Mavenix Quick Guide</h2>
+                    <p>Information and contact channels</p>
+                </div>
+                <button id="chat-close" class="chat-close" type="button" aria-label="Close guide">×</button>
+            </div>
+            <div class="chat-content">
+                <p id="chat-greeting" class="chat-greeting" aria-live="polite">Hi! Choose a topic to find out more.</p>
+                <div id="chat-topics" class="chat-topics">
+                    <button type="button" data-topic="consulting">IT consulting</button>
+                    <button type="button" data-topic="quality">Quality engineering</button>
+                    <button type="button" data-topic="recruitment">IT recruitment</button>
+                    <button type="button" data-topic="retail">Retail updates</button>
+                    <button type="button" data-topic="about">About Mavenix</button>
+                    <button type="button" data-topic="contact">Contact the team</button>
+                </div>
+                <div id="chat-response" class="chat-response hidden" aria-live="polite">
+                    <p id="chat-response-text" class="chat-response-text"></p>
+                    <a id="chat-email-link" class="button-primary chat-email" href="mailto:support@mahven.com.au">Email our team</a>
+                    <button id="chat-back" class="chat-back" type="button">Choose another topic</button>
+                </div>
+                <p class="chat-note">Answers are prewritten and shown on this page. Nothing you type is collected or sent to an AI service.</p>
+            </div>
+        </section>
     </div>
 
-    <!-- Footer -->
-    <footer class="site-footer border-t py-12 text-slate-400">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
+    <footer class="site-footer">
+        <div class="footer-inner wrap">
             <p>&copy; 2026 Mavenix Australia. All rights reserved.</p>
-            <div class="flex flex-wrap justify-center gap-x-6 gap-y-3">
-                <a href="#services" class="rounded-sm transition hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-slate-900">IT Consulting</a>
-                <a href="#retail" class="rounded-sm transition hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-slate-900">Retail</a>
-                <a href="#contact" class="rounded-sm transition hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-slate-900">Contact</a>
-            </div>
+            <nav class="footer-links" aria-label="Footer navigation">
+                <a href="#services">Services</a>
+                <a href="#retail">Retail</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
     </footer>
 
@@ -1688,10 +515,7 @@
         });
 
         const navigableSections = [...siteNav.querySelectorAll("a[href^='#']")]
-            .map((link) => ({
-                link,
-                section: document.querySelector(link.getAttribute("href"))
-            }))
+            .map((link) => ({ link, section: document.querySelector(link.getAttribute("href")) }))
             .filter(({ section }) => section);
         let sectionUpdatePending = false;
 
@@ -1815,17 +639,11 @@
         });
 
         chatClose.addEventListener("click", closeChat);
-
         chatTopics.addEventListener("click", (event) => {
             const topicButton = event.target.closest("[data-topic]");
-            if (!topicButton) {
-                return;
-            }
-
+            if (!topicButton) return;
             const topic = chatAnswers[topicButton.dataset.topic];
-            if (!topic) {
-                return;
-            }
+            if (!topic) return;
 
             chatResponseText.textContent = topic.answer;
             chatEmailLink.href = buildSupportEmailLink(`Mavenix enquiry: ${topic.subject}`, `Hello Mavenix team,\n\nI'm interested in ${topic.label}.\n\nName:\nCompany:\nHow can you help?\n`);
@@ -1843,9 +661,7 @@
         });
 
         document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape" && !chatPanel.classList.contains("hidden")) {
-                closeChat();
-            }
+            if (event.key === "Escape" && !chatPanel.classList.contains("hidden")) closeChat();
             if (event.key === "Escape" && siteNav.classList.contains("is-open")) {
                 setMenuOpen(false);
                 menuToggle.focus();

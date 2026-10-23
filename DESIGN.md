@@ -1,208 +1,196 @@
 ---
 name: Mavenix
-description: A night-flight instrument system connecting business services, specialist talent, and retail interest.
+description: A warm editorial consultancy identity connecting technology, systems, and specialist people.
 colors:
-  panel-black: "#0b0d0f"
-  panel-charcoal: "#111516"
-  instrument-plate: "#171b1c"
-  instrument-rule: "#424849"
-  luminous-white: "#f2f5f5"
-  muted-readout: "#aeb7b2"
-  control-ink: "#07100a"
-  radium-green: "#7cff9e"
-  caution-amber: "#ffb000"
+  paper: "#f1efe7"
+  paper-light: "#faf9f4"
+  paper-deep: "#e7e4d9"
+  ink: "#17251f"
+  ink-soft: "#405049"
+  muted: "#56645d"
+  line: "#c9cec4"
+  cobalt: "#2349c7"
+  cobalt-dark: "#173ba9"
+  cobalt-pale: "#dce4fa"
+  citron: "#d9e56a"
+  white: "#fffefa"
 typography:
   display:
-    fontFamily: 'Bahnschrift, "Arial Narrow", ui-sans-serif, system-ui, sans-serif'
-    fontSize: "clamp(3.3rem, 6vw, 5.8rem)"
+    fontFamily: '"Space Grotesk", "Arial", sans-serif'
+    fontSize: "clamp(3.4rem, 7vw, 6rem)"
     fontWeight: 600
-    lineHeight: 0.98
+    lineHeight: 0.99
     letterSpacing: "-0.055em"
   headline:
-    fontFamily: 'Bahnschrift, "Arial Narrow", ui-sans-serif, system-ui, sans-serif'
-    fontSize: "clamp(2rem, 3.6vw, 3.4rem)"
+    fontFamily: '"Space Grotesk", "Arial", sans-serif'
+    fontSize: "clamp(2.6rem, 5vw, 4.4rem)"
     fontWeight: 600
-    lineHeight: 1.08
-    letterSpacing: "-0.045em"
+    lineHeight: 1.03
+    letterSpacing: "-0.055em"
   title:
-    fontFamily: 'Bahnschrift, "Arial Narrow", ui-sans-serif, system-ui, sans-serif'
-    fontSize: "1.16rem"
+    fontFamily: '"Space Grotesk", "Arial", sans-serif'
+    fontSize: "clamp(1.25rem, 2vw, 1.7rem)"
     fontWeight: 600
+    lineHeight: 1.2
   body:
-    fontFamily: 'Bahnschrift, "Arial Narrow", ui-sans-serif, system-ui, sans-serif'
-    fontSize: "1.04rem"
-    lineHeight: 1.75
-  label:
-    fontFamily: 'ui-monospace, "Cascadia Mono", Consolas, monospace'
-    fontSize: "0.68rem"
-    fontWeight: 700
-    letterSpacing: "0.1em"
+    fontFamily: '"Aptos", "Segoe UI", system-ui, sans-serif'
+    fontSize: "1rem"
+    lineHeight: 1.65
 rounded:
-  control: "2px"
-  panel: "3px"
-  dial: "50%"
+  field: "2px"
+  action: "3px"
 spacing:
   unit: "4px"
-  content-gutter: "24px"
-  section-block: "96px"
+  content: "76rem"
+  desktop-gutter: "24px"
+  mobile-gutter: "16px"
 components:
   button-primary:
-    backgroundColor: "{colors.radium-green}"
-    textColor: "{colors.control-ink}"
-    typography: "{typography.label}"
-    rounded: "{rounded.control}"
-    padding: "16px 24px"
-  button-secondary:
-    backgroundColor: "{colors.panel-charcoal}"
-    textColor: "#e7ece9"
-    rounded: "{rounded.control}"
-    padding: "16px 24px"
+    backgroundColor: "{colors.cobalt}"
+    textColor: "{colors.white}"
+    rounded: "{rounded.action}"
+    padding: "0.75rem 1.15rem"
+    height: "46px"
   input-text:
-    backgroundColor: "{colors.panel-black}"
-    textColor: "{colors.luminous-white}"
-    rounded: "{rounded.control}"
-    padding: "12px 16px"
-  navigation-current:
-    backgroundColor: "#151a18"
-    textColor: "{colors.radium-green}"
-    typography: "{typography.label}"
-  service-grid-cell:
-    backgroundColor: "{colors.panel-charcoal}"
-    textColor: "{colors.luminous-white}"
-  instrument-panel:
-    backgroundColor: "{colors.panel-charcoal}"
-    textColor: "{colors.luminous-white}"
-    rounded: "{rounded.panel}"
-  route-dial:
-    backgroundColor: "#171c1a"
-    textColor: "{colors.luminous-white}"
-    rounded: "{rounded.dial}"
+    backgroundColor: "{colors.paper-light}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.field}"
+    padding: "0.85rem 0.9rem"
+  navigation-link:
+    textColor: "{colors.ink-soft}"
+    typography: "{typography.body}"
+  service-row:
+    padding: "1.75rem 0.25rem"
+  pathway-art:
+    backgroundColor: "{colors.cobalt}"
+    textColor: "{colors.white}"
   retail-status:
-    textColor: "{colors.caution-amber}"
-    typography: "{typography.label}"
+    textColor: "{colors.ink}"
+  quick-guide-trigger:
+    textColor: "{colors.cobalt-dark}"
+    padding: "0"
 ---
 
 # Design System: Mavenix
 
 ## Overview
 
-**Creative North Star: "Night-Flight Instrument Systems"**
+**Creative North Star: "Warm Editorial Pathways"**
 
-Mavenix presents as a precise, low-light instrument panel: matte dark surfaces, restrained luminous markings, engraved-style labels, and fine rules. Its visual language helps visitors orient between business services, specialist recruitment, and retail interest without turning those routes into generic service cards or suggesting aviation capabilities.
+Mavenix is a warm, mineral-paper editorial consultancy: deep green-black ink, confident contemporary typography, generous open space, and crisp ruled structures. Cobalt creates a bold field for the homepage's pathway illustration; citron marks key points within that composition and small wayfinding details. The overall voice is human-centered and direct without relying on people photography.
 
-The composition favors a direct proposition and contact action beside one distinctive instrument panel. Elsewhere, ruled grids, compact metadata, and understated surface changes keep information readable; green marks active or actionable states, while amber is reserved for the planned retail status.
+The opening pairs an asymmetrical, left-aligned proposition and contact route with a locally authored abstract pathway illustration. It depicts connected disciplines, not customers, staff, or evidence. Elsewhere, open section introductions, ruled service rows, a dark about band, and a pale-blue retail area create distinct reading chapters without turning the page into a stack of floating cards.
 
 **Key Characteristics:**
-- Panel black and charcoal establish the low-light field; luminous white and muted readouts carry content.
-- Radium green is the active signal; caution amber marks development status.
-- Platform system sans-serif carries prose, while platform monospace marks instrument and navigation labels.
-- Fine borders and square controls make the interface feel calibrated rather than ornamental.
+- Mineral ivory and warm off-white ground deep green-black text and surfaces.
+- Cobalt is the main action color and the illustration's uninterrupted field; citron is a sparing signifier.
+- Space Grotesk leads display type; system sans-serif carries navigation, labels, and body copy.
+- Fine rules, small corner radii, circular illustration details, and asymmetrical whitespace keep the page crisp and open.
+
+### Named Rules
+**The Pathway-Not-Proof Rule.** The abstract pathway is a locally authored visual metaphor, not customer or team imagery, a case study, or proof of outcomes.
 
 ## Colors
 
-The palette is a restrained instrument-face neutral range with one vivid active signal and one status-only warning accent.
+The palette moves from warm mineral papers and deep green-black ink to a decisive cobalt field, with citron reserved for small points of emphasis.
 
 ### Primary
-- **Radium Green**: Active states, links, signals, focus outlines, and primary actions.
+- **Cobalt**: Primary calls to action, focused links, and the pathway illustration field.
 
 ### Secondary
-- **Caution Amber**: The in-development retail status only; keep it out of general navigation and primary actions.
+- **Citron**: Small wayfinding highlights, pathway nodes, and the retail navigation marker; never a substitute for the primary action color.
 
 ### Neutral
-- **Panel Black**: The page field, deepest backgrounds, and text-field surfaces.
-- **Panel Charcoal**: Service cells, secondary actions, and dark control surfaces.
-- **Instrument Plate**: Raised panel headers and supporting plate surfaces.
-- **Instrument Rule**: Fine divisions, borders, and panel outlines.
-- **Luminous White**: Primary text and high-contrast instrument labels.
-- **Muted Readout**: Supporting copy, descriptions, and quiet metadata.
-- **Control Ink**: Text on radium-green primary controls.
+- **Mineral Paper**: Warm section backgrounds, especially the hero and contact section.
+- **Soft Paper**: The page canvas, navigation surface, fields, and light content areas.
+- **Pale Paper**: Supporting copy on the deep ink surfaces.
+- **Deep Green-Black Ink**: Main text and the contrasting about and footer bands.
+- **Soft Ink** and **Muted Ink**: Supporting prose, descriptions, and quiet metadata.
+- **Rule Gray**: Fine section, navigation, and form divisions.
+- **Pale Cobalt**: A distinct soft-color field for the planned retail section.
+- **Warm White**: Text against the deep ink and cobalt surfaces.
 
 ### Named Rules
-**The State-Light Rule.** Green signals active or actionable content; amber is reserved for the in-development retail state.
-
-**The Rule-Line Rule.** Use fine borders and ruled divisions to organize the dark surfaces before introducing extra surface colors or card-like elevation.
+**The Cobalt-Action Rule.** Reserve saturated cobalt for clear actions, active navigation, and the illustration field; keep most reading surfaces quiet.
 
 ## Typography
 
-**Display Font:** Bahnschrift (with "Arial Narrow", ui-sans-serif, system-ui, sans-serif fallbacks)
+**Display Font:** Space Grotesk (with Arial, sans-serif fallback)
 
-**Body Font:** Bahnschrift (with "Arial Narrow", ui-sans-serif, system-ui, sans-serif fallbacks)
+**Body Font:** Aptos (with Segoe UI, system-ui, sans-serif fallback)
 
-**Label/Mono Font:** ui-monospace, "Cascadia Mono", Consolas, monospace
-
-**Character:** A condensed system sans gives propositions and section headings a firm, engineered voice; platform monospace makes short labels read like instrument markings. Keep long-form copy in the sans face for legibility.
+**Character:** Space Grotesk's contemporary, weighty forms give the proposition and section titles confidence; the system sans keeps navigation, controls, and longer copy familiar and legible. The implementation does not introduce a separate monospaced label voice.
 
 ### Hierarchy
-- **Display** (600, `clamp(3.3rem, 6vw, 5.8rem)` desktop and `clamp(2.25rem, 9.6vw, 3.2rem)` mobile, 0.98 line-height): The oversized uppercase hero proposition.
-- **Headline** (600, `clamp(2rem, 3.6vw, 3.4rem)`, 1.08 line-height): Section headings.
-- **Title** (600, 1.16rem): Service names.
-- **Body** (400, 1.04rem, 1.75 line-height): Hero description; supporting paragraphs use the same relaxed reading rhythm.
-- **Label** (700, 0.68rem, 0.1em tracking, uppercase): Instrument, navigation, and action labels; compact readouts may step down to 0.58–0.63rem.
+- **Display** (600, `clamp(3.4rem, 7vw, 6rem)`, 0.99 line-height, tight tracking): The large, balanced hero proposition.
+- **Headline** (600, `clamp(2.6rem, 5vw, 4.4rem)`, 1.03 line-height): Section, about, and contact headings, with sizes tuned to each section.
+- **Title** (600, `clamp(1.25rem, 2vw, 1.7rem)`, 1.2 line-height): Service-row titles.
+- **Body** (400, 1rem, 1.65 line-height): Default explanatory copy; section paragraphs open to a relaxed 1.8 line-height.
+- **Navigation and utility copy** (600–700, generally 0.82–0.95rem): Compact, plain-case links, field labels, and status details.
 
 ### Named Rules
-**The Instrument-Label Rule.** Reserve monospace, uppercase, tracked type for short labels and metadata; use the system sans for propositions and explanatory copy.
+**The Two-Voice Rule.** Use Space Grotesk for prominent headings and Aptos/system sans for the supporting interface and prose; do not imply an additional display or mono face.
 
 ## Layout
 
-Use a centered content frame capped at 80rem with a 1.5rem horizontal gutter. Sections use generous 6rem vertical spacing. At wide widths, the hero pairs its left-aligned copy with the right-side instrument panel; the service grid becomes two columns from 48rem, while the hero becomes two columns from 64rem. The three route dials stay in a single row and scale down on narrow screens. The mobile navigation becomes a compact drop-down; the about readout stacks beneath its copy below 48rem.
+The centered frame caps at 76rem, with 1.5rem side gutters at wider sizes and 1rem on mobile. The first view is an open two-column composition: proposition and action beside the cobalt pathway artwork. The hero remains stacked on small screens; section introductions and the about, retail, and contact layouts also collapse to one column. Service content is a continuous ruled list, not a collection of separate cards.
 
-The page's content alternates between full-width dark surfaces, ruled service cells, and compact panels. Preserve the generous section rhythm while keeping the functional instrument labels dense and aligned.
+Use generous, responsive section padding (typically `clamp(5rem, 10vw, 9rem)`), with a slightly more expansive hero. At the implemented 850px, 700px, and 420px media-query steps, the hero and service layout tighten, then stack; mobile navigation becomes a compact drop-down and form rows stack at the narrowest size. Keep the whitespace asymmetrical and content aligned to the shared frame.
 
 ## Elevation & Depth
 
-Depth is restrained rather than absent: thin strokes and small tonal shifts define most surfaces, with dark shadows and a subtle inset highlight reserved for the hero instrument panel, form panels, and floating guide. Active dials may gain a faint green halo; avoid using broad shadows as the default separator between sections.
+The page is primarily flat: background-color changes and crisp rules establish section hierarchy. Small hover translations respond to actions and service rows; a restrained shadow separates the fixed quick-guide panel from page content. Its trigger stays inline with the hero copy.
 
 ### Named Rules
-**The Flat-Plate Rule.** Let borders and surface tone carry the hierarchy; reserve shadows for distinct panels and floating interface elements.
+**The Flat-Field Rule.** Let paper, ink, and rules do the structural work; do not add card-like elevation to ordinary content rows.
 
 ## Shapes
 
-Controls use nearly square corners (2px), panel shells use a subtly eased corner (3px), and the route indicators remain circular. Fine strokes, inset rings, and radial tick marks provide the recurring geometry; avoid pill-shaped controls or rounded-card grids.
+Forms are crisp and nearly square: fields use a 2px radius and primary actions a restrained 3px radius. Thin borders and open rules are more prominent than enclosing outlines. Circular shapes belong to the abstract pathway artwork and small arrow affordances, not to pill-shaped controls.
 
 ## Components
 
 ### Buttons
-- **Character:** Compact, high-contrast instrument controls.
-- **Shape:** Square-edged (2px radius).
-- **Primary:** Radium green with control-ink text, uppercase monospace labels, and 16px 24px padding.
-- **Hover / Focus:** Hover shifts to the lighter green and lifts by 1px; keyboard focus uses a 2px green outline offset 4px.
-- **Secondary:** Charcoal face, luminous text, and an instrument-rule border; hover changes the rule and text to green.
+- **Character:** Clear, cobalt actions that read as part of the editorial flow.
+- **Shape:** Slightly eased corners (3px); primary actions have at least 46px height and compact horizontal padding.
+- **Primary:** Cobalt face, warm-white text, bold system sans; use for the main contact and email-preparation actions.
+- **Hover / Focus:** Darker cobalt and a small upward movement on hover; retain the visible 3px cobalt focus outline with 4px offset.
+- **Text links:** Unboxed, bold ink links; cobalt appears on hover.
 
 ### Cards / Containers
-- **Character:** Ruled plates, not floating service-card stacks.
-- **Corner Style:** Instrument panels use 3px corners; service grid cells remain square.
-- **Background:** Charcoal or instrument plate on a panel-black field.
-- **Shadow Strategy:** Keep shadows subtle and focused on the hero instrument panel and distinct form or floating panels.
-- **Border:** Thin instrument-rule divisions; service cells join into a continuous ruled grid.
-- **Internal Padding:** The instrument panel scales from 16px to 32px; the hero panel uses inset header and footer rules.
+- **Character:** Open ruled rows and section fields rather than floating service cards.
+- **Background:** Paper, soft paper, pale cobalt, and deep ink distinguish content chapters.
+- **Shadow Strategy:** No shadow on ordinary rows; only the floating quick guide is lifted.
+- **Border:** Thin gray rules define service rows, header boundaries, and form details.
 
 ### Inputs / Fields
-- **Character:** Recessed, dark fields with clear labels.
-- **Style:** Panel-black background, instrument-rule stroke, 2px corners, and 12px 16px padding.
-- **Focus:** Green border with a restrained 2px translucent green ring.
+- **Style:** Soft-paper fill, ink text, a clear gray-green border, and a 2px radius; labels sit above fields.
+- **Focus:** Cobalt border with a visible translucent cobalt outline.
+- **Behavior:** Contact and retail-interest forms prepare prefilled email drafts; they do not submit or store data on the site.
 
 ### Navigation
-- **Style:** Uppercase monospace labels in ruled horizontal cells; the current or hovered route uses green text on a subtly lighter charcoal surface.
-- **Mobile:** Collapse into a bordered dark drop-down with full-width rows and fine dividers.
+- **Style:** Plain-case, medium-weight ink links with generous horizontal spacing; hover and current-section states shift to cobalt.
+- **Mobile:** A sticky header opens a compact, ruled drop-down menu.
+- **Retail marker:** A small citron-backed “In development” signifier accompanies the retail link.
 
-### Route Instrument Panel
-- **Character:** One signature selector that routes three visitor intents through calibrated circular dials.
-- **Structure:** Ruled header and footer frame three equal-width links; each dial uses circular tick marks and a directional needle.
-- **State:** Green active light and hover/focus treatment identify readiness and the selected pathway. Keep labels explicit and routes functional.
+### Pathway Illustration
+- **Character:** A locally authored abstract line drawing on a bold cobalt field, with four labeled discipline nodes connected around a citron center.
+- **Use:** The decorative composition reinforces connection; it is not customer/team evidence or a claim of measured outcomes. Preserve its role and text alternative.
 
-### Retail Status
-- **Style:** A ruled status line uses monospace uppercase labels; amber is limited to the “In development” marker.
+### Quick Guide
+- **Character:** An inline hero text link opens a compact paper panel with an ink header and crisp border.
+- **Depth:** Keep the panel's restrained shadow functional and distinct from the flat page sections.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** use the radium-green signal for active states, actionable links, focus, and primary actions.
-- **Do** use thin instrument-rule dividers to define section boundaries, navigation cells, and the service grid.
-- **Do** keep the three route dials labeled and linked to business services, recruitment, and retail.
-- **Do** preserve a visible keyboard-focus outline and honor reduced-motion preferences.
+- **Do** keep the warm mineral-paper, deep ink, cobalt, and citron roles distinct.
+- **Do** preserve the open asymmetrical hero and continuous ruled service rows.
+- **Do** use the local abstract pathway illustration as a metaphor, not as human or customer evidence.
+- **Do** retain visible keyboard focus and reduced-motion support.
 
 ### Don't:
-- **Don't** turn the services into a generic stack of individually floating cards.
-- **Don't** use caution amber for ordinary actions or navigation; it marks the in-development state.
-- **Don't** add aviation claims, invented measurements, or decorative dashboard readouts.
-- **Don't** replace the squared controls and fine ruled geometry with pill buttons or heavily rounded cards.
+- **Don't** revive the superseded dark instrument-panel or aviation styling.
+- **Don't** add customer, employee, or stock-photo proof to the illustration or imply that it represents real people.
+- **Don't** turn the service list into an unrelated stack of floating cards or overuse citron.
+- **Don't** introduce unsupported measurements, claims, or decorative dashboard readouts.
