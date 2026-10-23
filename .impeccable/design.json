@@ -1,208 +1,136 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-23T06:26:22+11:00",
+  "generatedAt": "2026-10-23T22:52:33+11:00",
   "title": "Design System: Mavenix",
   "extensions": {
     "colorMeta": {
-      "panel-black": {
+      "paper": {
         "role": "neutral",
-        "displayName": "Panel Black",
-        "canonical": "#0b0d0f",
-        "tonalRamp": [
-          "oklch(15% 0.005 248.2)",
-          "oklch(25% 0.005 248.2)",
-          "oklch(35% 0.005 248.2)",
-          "oklch(45% 0.005 248.2)",
-          "oklch(55% 0.005 248.2)",
-          "oklch(65% 0.005 248.2)",
-          "oklch(80% 0.005 248.2)",
-          "oklch(95% 0.005 248.2)"
-        ]
+        "displayName": "Mineral Paper",
+        "canonical": "#f1efe7",
+        "tonalRamp": ["oklch(15% 0.02 90)", "oklch(25% 0.02 90)", "oklch(35% 0.02 90)", "oklch(45% 0.02 90)", "oklch(55% 0.02 90)", "oklch(65% 0.02 90)", "oklch(80% 0.02 90)", "oklch(95% 0.02 90)"]
       },
-      "panel-charcoal": {
+      "paper-light": {
         "role": "neutral",
-        "displayName": "Panel Charcoal",
-        "canonical": "#111516",
-        "tonalRamp": [
-          "oklch(15% 0.007 214.5)",
-          "oklch(25% 0.007 214.5)",
-          "oklch(35% 0.007 214.5)",
-          "oklch(45% 0.007 214.5)",
-          "oklch(55% 0.007 214.5)",
-          "oklch(65% 0.007 214.5)",
-          "oklch(80% 0.007 214.5)",
-          "oklch(95% 0.007 214.5)"
-        ]
+        "displayName": "Soft Paper",
+        "canonical": "#faf9f4",
+        "tonalRamp": ["oklch(15% 0.015 90)", "oklch(25% 0.015 90)", "oklch(35% 0.015 90)", "oklch(45% 0.015 90)", "oklch(55% 0.015 90)", "oklch(65% 0.015 90)", "oklch(80% 0.015 90)", "oklch(95% 0.015 90)"]
       },
-      "instrument-plate": {
+      "paper-deep": {
         "role": "neutral",
-        "displayName": "Instrument Plate",
-        "canonical": "#171b1c",
-        "tonalRamp": [
-          "oklch(15% 0.006 214.4)",
-          "oklch(25% 0.006 214.4)",
-          "oklch(35% 0.006 214.4)",
-          "oklch(45% 0.006 214.4)",
-          "oklch(55% 0.006 214.4)",
-          "oklch(65% 0.006 214.4)",
-          "oklch(80% 0.006 214.4)",
-          "oklch(95% 0.006 214.4)"
-        ]
+        "displayName": "Pale Paper",
+        "canonical": "#e7e4d9",
+        "tonalRamp": ["oklch(15% 0.015 90)", "oklch(25% 0.015 90)", "oklch(35% 0.015 90)", "oklch(45% 0.015 90)", "oklch(55% 0.015 90)", "oklch(65% 0.015 90)", "oklch(80% 0.015 90)", "oklch(95% 0.015 90)"]
       },
-      "instrument-rule": {
+      "ink": {
         "role": "neutral",
-        "displayName": "Instrument Rule",
-        "canonical": "#424849",
-        "tonalRamp": [
-          "oklch(15% 0.008 208.8)",
-          "oklch(25% 0.008 208.8)",
-          "oklch(35% 0.008 208.8)",
-          "oklch(45% 0.008 208.8)",
-          "oklch(55% 0.008 208.8)",
-          "oklch(65% 0.008 208.8)",
-          "oklch(80% 0.008 208.8)",
-          "oklch(95% 0.008 208.8)"
-        ]
+        "displayName": "Deep Green-Black Ink",
+        "canonical": "#17251f",
+        "tonalRamp": ["oklch(15% 0.025 160)", "oklch(25% 0.025 160)", "oklch(35% 0.025 160)", "oklch(45% 0.025 160)", "oklch(55% 0.025 160)", "oklch(65% 0.025 160)", "oklch(80% 0.025 160)", "oklch(95% 0.025 160)"]
       },
-      "luminous-white": {
+      "ink-soft": {
         "role": "neutral",
-        "displayName": "Luminous White",
-        "canonical": "#f2f5f5",
-        "tonalRamp": [
-          "oklch(15% 0.003 197.1)",
-          "oklch(25% 0.003 197.1)",
-          "oklch(35% 0.003 197.1)",
-          "oklch(45% 0.003 197.1)",
-          "oklch(55% 0.003 197.1)",
-          "oklch(65% 0.003 197.1)",
-          "oklch(80% 0.003 197.1)",
-          "oklch(95% 0.003 197.1)"
-        ]
+        "displayName": "Soft Ink",
+        "canonical": "#405049",
+        "tonalRamp": ["oklch(15% 0.02 160)", "oklch(25% 0.02 160)", "oklch(35% 0.02 160)", "oklch(45% 0.02 160)", "oklch(55% 0.02 160)", "oklch(65% 0.02 160)", "oklch(80% 0.02 160)", "oklch(95% 0.02 160)"]
       },
-      "muted-readout": {
+      "muted": {
         "role": "neutral",
-        "displayName": "Muted Readout",
-        "canonical": "#aeb7b2",
-        "tonalRamp": [
-          "oklch(15% 0.012 162.0)",
-          "oklch(25% 0.012 162.0)",
-          "oklch(35% 0.012 162.0)",
-          "oklch(45% 0.012 162.0)",
-          "oklch(55% 0.012 162.0)",
-          "oklch(65% 0.012 162.0)",
-          "oklch(80% 0.012 162.0)",
-          "oklch(95% 0.012 162.0)"
-        ]
+        "displayName": "Muted Ink",
+        "canonical": "#56645d",
+        "tonalRamp": ["oklch(15% 0.02 160)", "oklch(25% 0.02 160)", "oklch(35% 0.02 160)", "oklch(45% 0.02 160)", "oklch(55% 0.02 160)", "oklch(65% 0.02 160)", "oklch(80% 0.02 160)", "oklch(95% 0.02 160)"]
       },
-      "control-ink": {
+      "line": {
         "role": "neutral",
-        "displayName": "Control Ink",
-        "canonical": "#07100a",
-        "tonalRamp": [
-          "oklch(15% 0.019 155.4)",
-          "oklch(25% 0.019 155.4)",
-          "oklch(35% 0.019 155.4)",
-          "oklch(45% 0.019 155.4)",
-          "oklch(55% 0.019 155.4)",
-          "oklch(65% 0.019 155.4)",
-          "oklch(80% 0.019 155.4)",
-          "oklch(95% 0.019 155.4)"
-        ]
+        "displayName": "Rule Gray",
+        "canonical": "#c9cec4",
+        "tonalRamp": ["oklch(15% 0.01 145)", "oklch(25% 0.01 145)", "oklch(35% 0.01 145)", "oklch(45% 0.01 145)", "oklch(55% 0.01 145)", "oklch(65% 0.01 145)", "oklch(80% 0.01 145)", "oklch(95% 0.01 145)"]
       },
-      "radium-green": {
+      "cobalt": {
         "role": "primary",
-        "displayName": "Radium Green",
-        "canonical": "#7cff9e",
-        "tonalRamp": [
-          "oklch(15% 0.177 150.0)",
-          "oklch(25% 0.177 150.0)",
-          "oklch(35% 0.177 150.0)",
-          "oklch(45% 0.177 150.0)",
-          "oklch(55% 0.177 150.0)",
-          "oklch(65% 0.177 150.0)",
-          "oklch(80% 0.177 150.0)",
-          "oklch(95% 0.177 150.0)"
-        ]
+        "displayName": "Cobalt",
+        "canonical": "#2349c7",
+        "tonalRamp": ["oklch(15% 0.2 264)", "oklch(25% 0.2 264)", "oklch(35% 0.2 264)", "oklch(45% 0.2 264)", "oklch(55% 0.2 264)", "oklch(65% 0.2 264)", "oklch(80% 0.2 264)", "oklch(95% 0.2 264)"]
       },
-      "caution-amber": {
+      "cobalt-dark": {
+        "role": "primary",
+        "displayName": "Deep Cobalt",
+        "canonical": "#173ba9",
+        "tonalRamp": ["oklch(15% 0.19 264)", "oklch(25% 0.19 264)", "oklch(35% 0.19 264)", "oklch(45% 0.19 264)", "oklch(55% 0.19 264)", "oklch(65% 0.19 264)", "oklch(80% 0.19 264)", "oklch(95% 0.19 264)"]
+      },
+      "cobalt-pale": {
+        "role": "neutral",
+        "displayName": "Pale Cobalt",
+        "canonical": "#dce4fa",
+        "tonalRamp": ["oklch(15% 0.035 264)", "oklch(25% 0.035 264)", "oklch(35% 0.035 264)", "oklch(45% 0.035 264)", "oklch(55% 0.035 264)", "oklch(65% 0.035 264)", "oklch(80% 0.035 264)", "oklch(95% 0.035 264)"]
+      },
+      "citron": {
         "role": "secondary",
-        "displayName": "Caution Amber",
-        "canonical": "#ffb000",
-        "tonalRamp": [
-          "oklch(15% 0.170 76.4)",
-          "oklch(25% 0.170 76.4)",
-          "oklch(35% 0.170 76.4)",
-          "oklch(45% 0.170 76.4)",
-          "oklch(55% 0.170 76.4)",
-          "oklch(65% 0.170 76.4)",
-          "oklch(80% 0.170 76.4)",
-          "oklch(95% 0.170 76.4)"
-        ]
+        "displayName": "Citron",
+        "canonical": "#d9e56a",
+        "tonalRamp": ["oklch(15% 0.13 105)", "oklch(25% 0.13 105)", "oklch(35% 0.13 105)", "oklch(45% 0.13 105)", "oklch(55% 0.13 105)", "oklch(65% 0.13 105)", "oklch(80% 0.13 105)", "oklch(95% 0.13 105)"]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Warm White",
+        "canonical": "#fffefa",
+        "tonalRamp": ["oklch(15% 0.008 90)", "oklch(25% 0.008 90)", "oklch(35% 0.008 90)", "oklch(45% 0.008 90)", "oklch(55% 0.008 90)", "oklch(65% 0.008 90)", "oklch(80% 0.008 90)", "oklch(95% 0.008 90)"]
       }
     },
     "typographyMeta": {
       "display": {
-        "displayName": "Display",
-        "purpose": "Oversized uppercase hero proposition."
+        "displayName": "Space Grotesk Display",
+        "purpose": "Hero, section, about, and contact headings."
       },
       "headline": {
-        "displayName": "Headline",
-        "purpose": "Section headings."
+        "displayName": "Section Headline",
+        "purpose": "Large section headings."
       },
       "title": {
-        "displayName": "Title",
-        "purpose": "Service names."
+        "displayName": "Service Title",
+        "purpose": "Service-row headings."
       },
       "body": {
-        "displayName": "Body",
-        "purpose": "Explanatory copy."
-      },
-      "label": {
-        "displayName": "Instrument Label",
-        "purpose": "Short uppercase instrument, navigation, and action labels."
+        "displayName": "System Body",
+        "purpose": "Navigation, supporting interface, and explanatory copy."
       }
     },
     "shadows": [
       {
-        "name": "instrument-panel",
-        "value": "inset 0 1px rgba(255, 255, 255, 0.04), 0 28px 64px rgba(0, 0, 0, 0.3)",
-        "purpose": "Subtle inset highlight and separation for the hero instrument panel."
-      },
-      {
-        "name": "form-panel",
-        "value": "0 18px 36px rgba(0, 0, 0, 0.2)",
-        "purpose": "Low dark lift for retail and contact form panels."
-      },
-      {
-        "name": "floating-guide",
-        "value": "0 24px 60px rgba(0, 0, 0, 0.48)",
-        "purpose": "Separate the floating FAQ guide from page content."
+        "name": "quick-guide-panel",
+        "value": "0 18px 48px rgba(23, 37, 31, .22)",
+        "purpose": "Separate the fixed paper FAQ panel from page content."
       }
     ],
     "motion": [
       {
         "name": "navigation-state",
         "value": "180ms ease",
-        "purpose": "Color and background response for navigation and instrument controls."
+        "purpose": "Color and background response for links and primary actions."
       },
       {
-        "name": "surface-state",
-        "value": "220ms ease",
-        "purpose": "Service and form panel state transitions; reduced-motion preferences disable transitions."
+        "name": "service-row",
+        "value": "200ms ease",
+        "purpose": "Subtle background and horizontal shift on service-row hover."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Minimize transitions and disable smooth scrolling when requested."
       }
     ],
     "breakpoints": [
       {
-        "name": "sm",
-        "value": "640px"
+        "name": "layout-tightening",
+        "value": "850px"
       },
       {
-        "name": "md",
-        "value": "768px"
+        "name": "mobile-layout",
+        "value": "700px"
       },
       {
-        "name": "lg",
-        "value": "1024px"
+        "name": "narrow-forms",
+        "value": "420px"
       }
     ]
   },
@@ -211,109 +139,101 @@
       "name": "Primary Action",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "High-contrast contact or submission action.",
-      "html": "<a class=\"ds-action\" href=\"#\">TALK TO OUR TEAM ↗</a>",
-      "css": ".ds-action { display: inline-block; border: 1px solid #7cff9e; border-radius: 2px; background: #7cff9e; color: #07100a; padding: 16px 24px; font-family: ui-monospace, \"Cascadia Mono\", Consolas, monospace; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-align: center; text-decoration: none; text-transform: uppercase; transition: transform 180ms ease, background-color 180ms ease; } .ds-action:hover { transform: translateY(-1px); background: #a1ffb5; } .ds-action:focus-visible { outline: 2px solid #7cff9e; outline-offset: 4px; }"
-    },
-    {
-      "name": "Secondary Action",
-      "kind": "button",
-      "refersTo": "button-secondary",
-      "description": "Quiet navigation action beside the primary contact route.",
-      "html": "<a class=\"ds-action-secondary\" href=\"#\">EXPLORE SERVICES ↓</a>",
-      "css": ".ds-action-secondary { display: inline-block; border: 1px solid #424849; border-radius: 2px; background: #111516; color: #e7ece9; padding: 16px 24px; font-family: Bahnschrift, \"Arial Narrow\", ui-sans-serif, system-ui, sans-serif; font-weight: 600; text-align: center; text-decoration: none; transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease; } .ds-action-secondary:hover { border-color: #7cff9e; background: #151a18; color: #7cff9e; } .ds-action-secondary:focus-visible { outline: 2px solid #7cff9e; outline-offset: 4px; }"
+      "description": "Cobalt contact or email-preparation action.",
+      "html": "<a class=\"ds-action\" href=\"#contact\">Talk to our team ↗</a>",
+      "css": ".ds-action { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; gap: .65rem; border: 1px solid #2349c7; border-radius: 3px; background: #2349c7; padding: .75rem 1.15rem; color: #fffefa; font: 700 .86rem/1.2 \"Aptos\", \"Segoe UI\", system-ui, sans-serif; text-decoration: none; transition: background .18s ease, transform .18s ease; } .ds-action:hover { transform: translateY(-2px); background: #173ba9; } .ds-action:focus-visible { outline: 3px solid #2349c7; outline-offset: 4px; }"
     },
     {
       "name": "Text Field",
       "kind": "input",
       "refersTo": "input-text",
-      "description": "Recessed field for contact and retail interest forms.",
-      "html": "<label class=\"ds-field-label\" for=\"ds-email\">EMAIL ADDRESS</label><input class=\"ds-field\" id=\"ds-email\" type=\"email\" placeholder=\"Enter your email\">",
-      "css": ".ds-field-label { display: block; margin-bottom: 8px; color: #aeb7b2; font-family: ui-monospace, \"Cascadia Mono\", Consolas, monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; } .ds-field { display: block; width: 100%; border: 1px solid #444b4b; border-radius: 2px; background: #0b0d0f; color: #f2f5f5; padding: 12px 16px; font: inherit; } .ds-field::placeholder { color: #848f89; } .ds-field:focus { border-color: #7cff9e; outline: none; box-shadow: 0 0 0 2px rgba(124, 255, 158, 0.16); }"
+      "description": "Labeled field used in the email-draft forms.",
+      "html": "<label class=\"ds-field-label\" for=\"ds-email\">Email address</label><input class=\"ds-field\" id=\"ds-email\" type=\"email\" placeholder=\"Your email address\">",
+      "css": ".ds-field-label { display: block; margin-bottom: .45rem; color: #405049; font: 700 .82rem/1.4 \"Aptos\", \"Segoe UI\", system-ui, sans-serif; } .ds-field { display: block; width: 100%; border: 1px solid #aab4aa; border-radius: 2px; background: #faf9f4; padding: .85rem .9rem; color: #17251f; font: inherit; } .ds-field::placeholder { color: #65716a; opacity: 1; } .ds-field:focus { border-color: #2349c7; outline: 3px solid rgba(35, 73, 199, .16); }"
     },
     {
-      "name": "Navigation Link",
+      "name": "Navigation",
       "kind": "nav",
-      "refersTo": "navigation-current",
-      "description": "Ruled monospace route link with a clear active state.",
-      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#services\">SERVICES</a><a class=\"ds-nav-link\" href=\"#retail\" aria-current=\"location\">RETAIL</a></nav>",
-      "css": ".ds-nav { display: flex; color: #c8cecb; font-family: ui-monospace, \"Cascadia Mono\", Consolas, monospace; } .ds-nav-link { border-left: 1px solid #424849; color: inherit; padding: 0.72rem 1.05rem; font-size: 0.67rem; font-weight: 600; letter-spacing: 0.14em; text-decoration: none; text-transform: uppercase; transition: color 180ms ease, background-color 180ms ease; } .ds-nav-link:last-child { border-right: 1px solid #424849; } .ds-nav-link:hover, .ds-nav-link[aria-current=\"location\"] { background: #151a18; color: #7cff9e; } .ds-nav-link:focus-visible { outline: 2px solid #7cff9e; outline-offset: 4px; }"
+      "refersTo": "navigation-link",
+      "description": "Plain-case links with cobalt hover and current-section states.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#services\">What we do</a><a href=\"#retail\" aria-current=\"location\">Retail <span>In development</span></a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: clamp(1.1rem, 2.5vw, 2.3rem); color: #405049; font: 600 .88rem/1.4 \"Aptos\", \"Segoe UI\", system-ui, sans-serif; } .ds-nav a { color: inherit; text-decoration: none; transition: color .18s ease; } .ds-nav a:hover, .ds-nav a[aria-current=\"location\"] { color: #2349c7; } .ds-nav span { margin-left: .25rem; border-radius: 2px; background: #d9e56a; padding: .12rem .4rem; color: #17251f; font-size: .62rem; font-weight: 700; } .ds-nav a:focus-visible { outline: 3px solid #2349c7; outline-offset: 4px; } @media (max-width: 700px) { .ds-nav { align-items: stretch; flex-direction: column; gap: 0; } .ds-nav a { border-bottom: 1px solid #c9cec4; padding: .8rem .1rem; } }"
     },
     {
-      "name": "Service Grid Cell",
+      "name": "Service Row",
       "kind": "card",
-      "refersTo": "service-grid-cell",
-      "description": "One square cell within the continuous ruled service grid.",
-      "html": "<article class=\"ds-service\"><span class=\"ds-service-meta\">QUALITY / RELIABILITY</span><h3>Quality Engineering</h3><p>Test management and quality assurance transformations.</p></article>",
-      "css": ".ds-service { border-right: 1px solid #424849; border-bottom: 1px solid #424849; background: #111516; padding: 24px; transition: background-color 180ms ease; } @media (min-width: 640px) { .ds-service { padding: 32px; } } .ds-service:hover, .ds-service:focus-within { background: #171d1a; box-shadow: inset 0 0 0 1px rgba(124, 255, 158, 0.25); } .ds-service-meta { color: #7cff9e; font-family: ui-monospace, \"Cascadia Mono\", Consolas, monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; } .ds-service h3 { margin: 1rem 0 0.75rem; color: #edf2ef; font-family: Bahnschrift, \"Arial Narrow\", ui-sans-serif, system-ui, sans-serif; font-size: 1.16rem; font-weight: 600; } .ds-service p { color: #aeb7b2; font: 0.9rem/1.72 Bahnschrift, \"Arial Narrow\", ui-sans-serif, system-ui, sans-serif; }"
+      "refersTo": "service-row",
+      "description": "An open, ruled service-list row rather than an individual floating card.",
+      "html": "<article class=\"ds-service\"><h3>Quality Engineering</h3><p>Test management, automated testing frameworks and quality assurance transformations built around your delivery environment.</p><a href=\"#contact\" aria-label=\"Ask about quality engineering\">↗</a></article>",
+      "css": ".ds-service { display: grid; grid-template-columns: minmax(220px, .78fr) minmax(280px, 1fr) auto; align-items: center; gap: 2rem; border-bottom: 1px solid #c9cec4; padding: 1.75rem .25rem; transition: background .2s ease, transform .2s ease; } .ds-service:hover { transform: translateX(4px); background: #f1efe7; } .ds-service h3 { margin: 0; color: #17251f; font: 600 clamp(1.25rem, 2vw, 1.7rem)/1.2 \"Space Grotesk\", Arial, sans-serif; letter-spacing: -.035em; } .ds-service p { max-width: 55ch; margin: 0; color: #56645d; font: .94rem/1.75 \"Aptos\", \"Segoe UI\", system-ui, sans-serif; } .ds-service a { display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid #c9cec4; border-radius: 50%; color: #2349c7; text-decoration: none; } @media (max-width: 700px) { .ds-service { grid-template-columns: minmax(0, 1fr) auto; gap: .6rem 1rem; } .ds-service p { grid-column: 1; grid-row: 2; } .ds-service a { grid-column: 2; grid-row: 1 / span 2; } }"
     },
     {
-      "name": "Instrument Panel",
+      "name": "Pathway Illustration",
       "kind": "custom",
-      "refersTo": "instrument-panel",
-      "description": "Signature panel framing the three visitor pathways.",
-      "html": "<section class=\"ds-instrument\"><header class=\"ds-instrument-head\"><span>PATHWAY SELECTOR / MVX-01</span><span class=\"ds-ready\">READY</span></header><div class=\"ds-instrument-body\">THREE LABELED ROUTES</div><footer class=\"ds-instrument-foot\">INDEPENDENT PATHWAYS</footer></section>",
-      "css": ".ds-instrument { border: 1px solid #424849; border-radius: 3px; background: #111516; color: #dfe5e1; padding: clamp(1rem, 2.4vw, 2rem); box-shadow: inset 0 1px rgba(255, 255, 255, 0.04), 0 28px 64px rgba(0, 0, 0, 0.3); } .ds-instrument-head, .ds-instrument-foot { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid #3b4242; padding-bottom: 14px; color: #9da8a1; font: 600 0.63rem/1.5 ui-monospace, \"Cascadia Mono\", Consolas, monospace; letter-spacing: 0.13em; text-transform: uppercase; } .ds-instrument-foot { border-top: 1px solid #3b4242; border-bottom: 0; padding: 14px 0 0; } .ds-instrument-body { padding: 32px 0; color: #aeb7b2; font: 0.68rem/1.5 ui-monospace, \"Cascadia Mono\", Consolas, monospace; letter-spacing: 0.1em; text-align: center; } .ds-ready { color: #7cff9e; }"
-    },
-    {
-      "name": "Route Dial",
-      "kind": "custom",
-      "refersTo": "route-dial",
-      "description": "Focusable circular link indicating one of the three pathway destinations.",
-      "html": "<a class=\"ds-route\" href=\"#services\"><span class=\"ds-dial\" aria-hidden=\"true\"><span class=\"ds-needle\"></span></span><span class=\"ds-route-label\">CONSULTING &amp; INTEGRATION</span></a>",
-      "css": ".ds-route { display: inline-flex; flex-direction: column; align-items: center; gap: 12px; color: #dfe5e1; text-align: center; text-decoration: none; } .ds-dial { display: grid; width: clamp(76px, 8vw, 112px); aspect-ratio: 1; place-items: center; border: 1px solid #707a75; border-radius: 50%; background: radial-gradient(circle, #171c1a 0 45%, transparent 46%), repeating-conic-gradient(from 0deg, #b8c0bd 0 1deg, transparent 1deg 15deg); box-shadow: inset 0 0 0 7px #151a18, inset 0 0 0 8px #414a45; transition: border-color 180ms ease, box-shadow 180ms ease; } .ds-needle { width: 2px; height: 38%; background: linear-gradient(to top, #5f6963 50%, #7cff9e 50%); transform: rotate(24deg); } .ds-route:hover, .ds-route:focus-visible { color: #7cff9e; } .ds-route:hover .ds-dial, .ds-route:focus-visible .ds-dial { border-color: #7cff9e; box-shadow: inset 0 0 0 7px #151a18, inset 0 0 0 8px #7cff9e, 0 0 18px rgba(124, 255, 158, 0.13); } .ds-route:focus-visible { outline: 2px solid #7cff9e; outline-offset: 4px; } .ds-route-label { max-width: 14ch; font: 700 0.68rem/1.45 ui-monospace, \"Cascadia Mono\", Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase; } @media (max-width: 767px) { .ds-dial { width: clamp(68px, 20vw, 92px); } }"
+      "refersTo": "pathway-art",
+      "description": "Locally authored abstract pathway metaphor, not customer or team evidence.",
+      "html": "<div class=\"ds-pathway\" role=\"img\" aria-label=\"Mavenix brings people, quality engineering, connected systems and specialist talent together.\"><span class=\"ds-node ds-node-one\">Quality engineering</span><span class=\"ds-node ds-node-two\">Systems integration</span><span class=\"ds-center\">People<br>&amp; systems</span><svg viewBox=\"0 0 560 390\" aria-hidden=\"true\"><path d=\"M82 80C165 80 181 185 280 195S397 83 483 83M82 308C165 308 180 204 280 195s119 113 203 113\" fill=\"none\" stroke=\"rgba(255,255,255,.76)\" stroke-width=\"1.5\"/><circle cx=\"82\" cy=\"80\" r=\"5\" fill=\"#d9e56a\"/><circle cx=\"483\" cy=\"308\" r=\"5\" fill=\"#d9e56a\"/></svg></div>",
+      "css": ".ds-pathway { position: relative; display: grid; min-height: 400px; place-items: center; overflow: hidden; background: #2349c7; padding: 1.45rem; color: #fffefa; } .ds-pathway::before, .ds-pathway::after { position: absolute; width: 72%; aspect-ratio: 1; border: 1px solid rgba(255, 255, 255, .22); border-radius: 50%; content: \"\"; } .ds-pathway::before { top: 9%; right: -12%; } .ds-pathway::after { right: -3%; bottom: -35%; } .ds-pathway svg { position: absolute; inset: 4% 0; width: 100%; height: 92%; } .ds-center { position: relative; z-index: 1; display: grid; width: 142px; aspect-ratio: 1; place-items: center; border-radius: 50%; background: #d9e56a; color: #17251f; font: 600 1.2rem/1.1 \"Space Grotesk\", Arial, sans-serif; letter-spacing: -.04em; text-align: center; } .ds-node { position: absolute; z-index: 2; max-width: 150px; color: #fffefa; font: 600 .78rem/1.3 \"Aptos\", \"Segoe UI\", system-ui, sans-serif; } .ds-node-one { top: 12%; left: 5%; } .ds-node-two { top: 16%; right: 5%; text-align: right; }"
     },
     {
       "name": "Retail Status",
       "kind": "custom",
       "refersTo": "retail-status",
-      "description": "Ruled status line marking the planned storefront as in development.",
-      "html": "<div class=\"ds-status\"><span>STOREFRONT STATUS</span><span class=\"ds-status-amber\">● IN DEVELOPMENT</span></div>",
-      "css": ".ds-status { display: flex; justify-content: space-between; gap: 16px; border-top: 1px solid #414849; border-bottom: 1px solid #414849; margin-bottom: 24px; padding: 16px 0; color: #e5ebe7; font: 0.7rem/1.5 ui-monospace, \"Cascadia Mono\", Consolas, monospace; letter-spacing: 0.08em; text-transform: uppercase; } .ds-status-amber { color: #ffb000; }"
+      "description": "Compact status indicator for the planned retail offering.",
+      "html": "<span class=\"ds-retail-status\">In development</span>",
+      "css": ".ds-retail-status { display: inline-flex; align-items: center; gap: .5rem; margin-top: 1.4rem; color: #17251f; font: 700 .8rem/1.4 \"Aptos\", \"Segoe UI\", system-ui, sans-serif; } .ds-retail-status::before { width: 9px; height: 9px; border-radius: 50%; background: #9baa30; content: \"\"; }"
+    },
+    {
+      "name": "Quick Guide Link",
+      "kind": "button",
+      "refersTo": "quick-guide-trigger",
+      "description": "Inline hero text link opening the locally answered quick guide.",
+      "html": "<button class=\"ds-guide-link\" type=\"button\" aria-expanded=\"false\" aria-controls=\"chat-panel\">Need a quick answer? ↗</button>",
+      "css": ".ds-guide-link { margin-top: 1rem; border: 0; background: transparent; padding: 0; color: #173ba9; cursor: pointer; font: 700 .88rem/1.4 \"Aptos\", \"Segoe UI\", system-ui, sans-serif; } .ds-guide-link:hover { text-decoration: underline; text-underline-offset: .18em; } .ds-guide-link:focus-visible { outline: 3px solid #2349c7; outline-offset: 4px; }"
     }
   ],
   "narrative": {
-    "northStar": "Night-Flight Instrument Systems",
-    "overview": "Mavenix presents as a precise, low-light instrument panel: matte dark surfaces, restrained luminous markings, engraved-style labels, and fine rules. Its visual language helps visitors orient between business services, specialist recruitment, and retail interest without turning those routes into generic service cards or suggesting aviation capabilities.\n\nThe composition favors a direct proposition and contact action beside one distinctive instrument panel. Elsewhere, ruled grids, compact metadata, and understated surface changes keep information readable; green marks active or actionable states, while amber is reserved for the planned retail status.",
+    "northStar": "Warm Editorial Pathways",
+    "overview": "Mavenix is a warm, mineral-paper editorial consultancy: deep green-black ink, confident contemporary typography, generous open space, and crisp ruled structures. Cobalt creates a bold field for the homepage's pathway illustration; citron marks key points within that composition and small wayfinding details. The overall voice is human-centered and direct without relying on people photography.\n\nThe opening pairs an asymmetrical, left-aligned proposition and contact route with a locally authored abstract pathway illustration. It depicts connected disciplines, not customers, staff, or evidence. Elsewhere, open section introductions, ruled service rows, a dark about band, and a pale-blue retail area create distinct reading chapters without turning the page into a stack of floating cards.",
     "keyCharacteristics": [
-      "Panel black and charcoal establish the low-light field; luminous white and muted readouts carry content.",
-      "Radium green is the active signal; caution amber marks development status.",
-      "Platform system sans-serif carries prose, while platform monospace marks instrument and navigation labels.",
-      "Fine borders and square controls make the interface feel calibrated rather than ornamental."
+      "Mineral ivory and warm off-white ground deep green-black text and surfaces.",
+      "Cobalt is the main action color and the illustration's uninterrupted field; citron is a sparing signifier.",
+      "Space Grotesk leads display type; system sans-serif carries navigation, labels, and body copy.",
+      "Fine rules, small corner radii, circular illustration details, and asymmetrical whitespace keep the page crisp and open."
     ],
     "rules": [
       {
-        "name": "The State-Light Rule",
-        "body": "Green signals active or actionable content; amber is reserved for the in-development retail state.",
+        "name": "The Pathway-Not-Proof Rule",
+        "body": "The abstract pathway is a locally authored visual metaphor, not customer or team imagery, a case study, or proof of outcomes.",
+        "section": "overview"
+      },
+      {
+        "name": "The Cobalt-Action Rule",
+        "body": "Reserve saturated cobalt for clear actions, active navigation, and the illustration field; keep most reading surfaces quiet.",
         "section": "colors"
       },
       {
-        "name": "The Rule-Line Rule",
-        "body": "Use fine borders and ruled divisions to organize the dark surfaces before introducing extra surface colors or card-like elevation.",
-        "section": "colors"
-      },
-      {
-        "name": "The Instrument-Label Rule",
-        "body": "Reserve monospace, uppercase, tracked type for short labels and metadata; use the system sans for propositions and explanatory copy.",
+        "name": "The Two-Voice Rule",
+        "body": "Use Space Grotesk for prominent headings and Aptos/system sans for the supporting interface and prose; do not imply an additional display or mono face.",
         "section": "typography"
       },
       {
-        "name": "The Flat-Plate Rule",
-        "body": "Let borders and surface tone carry the hierarchy; reserve shadows for distinct panels and floating interface elements.",
+        "name": "The Flat-Field Rule",
+        "body": "Let paper, ink, and rules do the structural work; do not add card-like elevation to ordinary content rows.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do use the radium-green signal for active states, actionable links, focus, and primary actions.",
-      "Do use thin instrument-rule dividers to define section boundaries, navigation cells, and the service grid.",
-      "Do keep the three route dials labeled and linked to business services, recruitment, and retail.",
-      "Do preserve a visible keyboard-focus outline and honor reduced-motion preferences."
+      "Do keep the warm mineral-paper, deep ink, cobalt, and citron roles distinct.",
+      "Do preserve the open asymmetrical hero and continuous ruled service rows.",
+      "Do use the local abstract pathway illustration as a metaphor, not as human or customer evidence.",
+      "Do retain visible keyboard focus and reduced-motion support."
     ],
     "donts": [
-      "Don't turn the services into a generic stack of individually floating cards.",
-      "Don't use caution amber for ordinary actions or navigation; it marks the in-development state.",
-      "Don't add aviation claims, invented measurements, or decorative dashboard readouts.",
-      "Don't replace the squared controls and fine ruled geometry with pill buttons or heavily rounded cards."
+      "Don't revive the superseded dark instrument-panel or aviation styling.",
+      "Don't add customer, employee, or stock-photo proof to the illustration or imply that it represents real people.",
+      "Don't turn the service list into an unrelated stack of floating cards or overuse citron.",
+      "Don't introduce unsupported measurements, claims, or decorative dashboard readouts."
     ]
   }
 }
