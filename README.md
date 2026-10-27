@@ -9,6 +9,6 @@ npm install
 npm run build:css
 ```
 
-The contact and retail notification forms open a prefilled email to `support@mahven.com.au`. Visitors must send the draft from their email app; the site does not collect or store submissions.
+The contact and retail notification forms open an email draft without a prefilled recipient. Visitors choose the recipient and send it from their email app; the site does not collect or send submissions.
 
 The Mavenix brand uses a locally maintained SVG mark and favicon. Space Grotesk is bundled locally for display headings, with a system sans-serif stack for body text; no external font service is required.

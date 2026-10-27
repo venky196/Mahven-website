@@ -413,8 +413,8 @@
                         <button class="button-primary" type="submit">Prepare email <span aria-hidden="true">↗</span></button>
                     </form>
                     <p id="retail-notify-status" class="form-status hidden" aria-live="polite">
-                        Your email app should open with the request ready. Please send it there; nothing is sent to the website.
-                        If it doesn't open, <a id="retail-notify-email-link" href="mailto:support@mahven.com.au">open your email app</a>.
+                        Your email app should open with a draft. Add your intended recipient, then send it; this website does not collect or send the message.
+                        If it doesn't open, <a id="retail-notify-email-link" href="mailto:">open your email app</a>.
                     </p>
                 </div>
             </div>
@@ -425,7 +425,6 @@
                 <div class="contact-copy">
                     <h2 id="contact-title" class="contact-title">Let's make the next step clearer.</h2>
                     <p>Tell us whether you are exploring consulting, systems integration, quality engineering, specialist talent or the planned retail offering.</p>
-                    <p>Prefer email? <a class="contact-email" href="mailto:support@mahven.com.au">support@mahven.com.au</a></p>
                 </div>
                 <div>
                     <form id="contact-form" class="contact-form">
@@ -446,8 +445,8 @@
                         <button class="button-primary contact-submit" type="submit">Prepare email enquiry <span aria-hidden="true">↗</span></button>
                     </form>
                     <p id="contact-form-status" class="form-status hidden" aria-live="polite">
-                        Your email app should open with your message ready. Please send it there; nothing is sent to the website.
-                        If it doesn't open, <a id="contact-email-link" href="mailto:support@mahven.com.au">open your email app</a>.
+                        Your email app should open with a draft. Add your intended recipient, then send it; this website does not collect or send the message.
+                        If it doesn't open, <a id="contact-email-link" href="mailto:">open your email app</a>.
                     </p>
                 </div>
             </div>
@@ -475,7 +474,7 @@
                 </div>
                 <div id="chat-response" class="chat-response hidden" aria-live="polite">
                     <p id="chat-response-text" class="chat-response-text"></p>
-                    <a id="chat-email-link" class="button-primary chat-email" href="mailto:support@mahven.com.au">Email our team</a>
+                    <a id="chat-email-link" class="button-primary chat-email" href="mailto:">Prepare email draft</a>
                     <button id="chat-back" class="chat-back" type="button">Choose another topic</button>
                 </div>
                 <p class="chat-note">Answers are prewritten and shown on this page. Nothing you type is collected or sent to an AI service.</p>
@@ -556,10 +555,8 @@
         const chatEmailLink = document.getElementById("chat-email-link");
         const chatClose = document.getElementById("chat-close");
         const chatBack = document.getElementById("chat-back");
-        const supportEmail = "support@mahven.com.au";
-
-        function buildSupportEmailLink(subject, body) {
-            return `mailto:${supportEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        function buildEmailDraft(subject, body) {
+            return `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         }
 
         const chatAnswers = {
@@ -590,7 +587,7 @@
             },
             contact: {
                 label: "the Mavenix team",
-                answer: "Email support@mahven.com.au to discuss a project, consulting or recruitment needs, or the planned retail offering.",
+                answer: "Use the contact form to prepare an email draft about a project, consulting or recruitment needs, or the planned retail offering. Add your intended recipient in your email app before sending.",
                 subject: "General enquiry"
             }
         };
@@ -604,7 +601,7 @@
             const email = new FormData(retailNotifyForm).get("email");
             const subject = "Retail launch interest";
             const body = `Hello Mavenix team,\n\nPlease let me know when the retail marketplace launches.\n\nEmail address: ${email}\n`;
-            retailNotifyEmailLink.href = buildSupportEmailLink(subject, body);
+            retailNotifyEmailLink.href = buildEmailDraft(subject, body);
             retailNotifyStatus.classList.remove("hidden");
             retailNotifyEmailLink.click();
         });
@@ -618,7 +615,7 @@
             const formData = new FormData(contactForm);
             const subject = "Mavenix website enquiry";
             const body = `Hello Mavenix team,\n\nName: ${formData.get("name")}\nEmail: ${formData.get("email")}\n\nMessage:\n${formData.get("message")}\n`;
-            contactEmailLink.href = buildSupportEmailLink(subject, body);
+            contactEmailLink.href = buildEmailDraft(subject, body);
             contactFormStatus.classList.remove("hidden");
             contactEmailLink.click();
         });
@@ -646,7 +643,7 @@
             if (!topic) return;
 
             chatResponseText.textContent = topic.answer;
-            chatEmailLink.href = buildSupportEmailLink(`Mavenix enquiry: ${topic.subject}`, `Hello Mavenix team,\n\nI'm interested in ${topic.label}.\n\nName:\nCompany:\nHow can you help?\n`);
+            chatEmailLink.href = buildEmailDraft(`Mavenix enquiry: ${topic.subject}`, `Hello Mavenix team,\n\nI'm interested in ${topic.label}.\n\nName:\nCompany:\nHow can you help?\n`);
             chatTopics.classList.add("hidden");
             chatGreeting.classList.add("hidden");
             chatResponse.classList.remove("hidden");

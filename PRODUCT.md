@@ -19,15 +19,16 @@ The website introduces Mavenix's IT consulting, systems integration, quality eng
 ## Capabilities and Constraints
 
 - The current public-facing brand is Mavenix.
-- Preserve the existing service offering, company history established in 2017, support email (`support@mahven.com.au`), and retail plans while rebranding.
-- Contact and retail-interest forms open prefilled emails. The website does not collect or store submissions.
+- Preserve the existing service offering, company history established in 2017, and retail plans.
+- Contact and retail-interest forms open email drafts without a prefilled recipient. Visitors choose a recipient and send the draft themselves; the website does not collect or send submissions.
 - The FAQ assistant uses prewritten answers in the page; it does not call an AI service or collect visitor messages.
 - The site uses a locally compiled Tailwind stylesheet.
 
 ## Brand Commitments
 
 - Use Mavenix as the public-facing company and website name throughout the site and brand assets.
-- Retain existing company facts and contact details; the legal entity name and any future email/domain changes are unspecified.
+- Do not publish the former support email or prior domain in public website copy. No replacement mailbox is established in the product facts.
+- Retain existing company facts; the legal entity name remains unspecified.
 
 ## Evidence on Hand
 
